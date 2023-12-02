@@ -102,7 +102,7 @@ export const commonStyles = StyleSheet.create({
         borderRadius: 22.5,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: COLORS.gray
+        //backgroundColor: COLORS.gray
     },
     header2Icon:{
         height: 45,

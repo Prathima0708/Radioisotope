@@ -367,7 +367,7 @@ export const furnitureCategories = [
     },
     {
       id: 3,
-      name: "Paediatric dose",
+      name: "Paediatric \n dose",
       image: images.PD,
      
     },
@@ -384,59 +384,31 @@ export const furnitureCategories = [
   export const RadioisotopeData = [
     {
         id: "1",
-        image: images.product1,
-        name: "Elegant Sofa Set",
-        date: "Oct 14, 2023 | 8:00 AM", 
-        type: "Purchase",
-        amount: 299.99
+        image: images.diagnostic,
+        name: "Diagnostic Radioisotope",
+        date: "General", 
+     
     },
     {
         id: "2",
-        image: images.product2,
-        name: "Luxurious Bed Frame",
-        date: "Oct 14, 2023 | 9:00 AM", 
-        type: "Purchase",
-        amount: 499.99
+        image: images.therapeutic,
+        name: "Therapeutic Radioisotope",
+        date: "General", 
+      
     },
     {
         id: "3",
-        image: images.product3,
-        name: "Stylish Dining Table",
-        date: "Oct 13, 2023 | 10:00 AM", 
-        type: "Purchase",
-        amount: 199.99
+        image: images.theranostic,
+        name: "Theranostic Radioisotope",
+        date: "General", 
+        
     },
     {
         id: "4",
-        image: images.product4,
-        name: "Artistic Home Decor Accent",
-        date: "Oct 13, 2023 | 11:00 AM", 
-        type: "Purchase",
-        amount: 99.99
+        image: images.nonclinical,
+        name: "Non Clinical Radioisotope",
+        date: "General", 
     },
-    {
-        id: "5",
-        image: images.product5,
-        name: "Comfortable Office Chair",
-        date: "Oct 13, 2023 | 1:00 PM", 
-        type: "Purchase",
-        amount: 149.99
-    },
-    {
-        id: "6",
-        image: images.product6,
-        name: "Functional Bookcase",
-        date: "Oct 12, 2023 | 3:00 PM", 
-        type: "Purchase",
-        amount: 129.99
-    },
-    {
-        id: "7",
-        image: images.product7,
-        name: "Cozy Armchair",
-        date: "Oct 12, 2023 | 5:00 PM", 
-        type: "Purchase",
-        amount: 199.99
-    },
+   
   ];
   

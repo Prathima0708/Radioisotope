@@ -24,7 +24,8 @@ import CustomModal from '../components/CustomModal'
 import { furnitureStores } from '../data/shops'
 import { furnitureCategories, homeCategories } from '../data/utils'
 import { useNavigation } from '@react-navigation/native'
-import { homescreenOptions, products } from '../data/products'
+import { homescreenOptions, products, reviews } from '../data/products'
+import ReviewCard from '../components/ReviewCard'
 
 const HomeV1 = ({ navigation }) => {
     const [searchQuery, setSearchQuery] = useState('')
@@ -46,7 +47,7 @@ const HomeV1 = ({ navigation }) => {
                     style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
-                        marginVertical: 8,
+                        marginVertical: 15,
                         alignItems: 'center',
                     }}
                 >
@@ -62,7 +63,7 @@ const HomeV1 = ({ navigation }) => {
                             style={{
                                 alignItems: 'center',
                                 flexDirection: 'column',
-                                marginHorizontal: 10,
+                                marginHorizontal:3,
                             }}
                         >
                             <View
@@ -277,7 +278,7 @@ const HomeV1 = ({ navigation }) => {
     const renderProducts = () => {
         const navigation = useNavigation()
         return (
-            <View style={{ marginVertical: 22 }}>
+            <View style={{ marginVertical: 5 }}>
                 <View
                     style={{
                         flexDirection: 'row',
@@ -296,7 +297,7 @@ const HomeV1 = ({ navigation }) => {
                                 paddingHorizontal: 12,
                                 height: 100,
                                 width: 130,
-                                marginVertical: 10,
+                                marginVertical: 7,
                                 marginLeft: 30,
                                 borderWidth: 1,
                                 borderColor: COLORS.gray6,
@@ -308,8 +309,7 @@ const HomeV1 = ({ navigation }) => {
                                 shadowOpacity: 0.2,
                                 shadowRadius: 4,
                                 elevation: 3,
-                              }}
-                              
+                            }}
                         >
                             <Text
                                 style={{
@@ -348,7 +348,7 @@ const HomeV1 = ({ navigation }) => {
                         }}
                     >
                         <TouchableOpacity
-                            onPress={() => navigation.toggleDrawer()}
+                            // onPress={() => navigation.toggleDrawer()}
                             style={{
                                 height: 45,
                                 width: 45,
@@ -388,6 +388,9 @@ const HomeV1 = ({ navigation }) => {
 
                     {renderProducts()}
                     {renderProductCategories()}
+                    <View>
+                        <ReviewCard />
+                    </View>
                 </ScrollView>
             </View>
             {/* <CustomModal

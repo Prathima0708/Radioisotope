@@ -89,30 +89,7 @@ export const reviews = [
     date: '23/09/2025',
     rating: 5,
   },
-  {
-    id: 3,
-    image: images.avatar3,
-    title: 'Stylish and Sturdy',
-    description: "The furniture I received was stylish and sturdy. It's great to know that I can rely on this store for my furniture needs.",
-    date: '20/12/2024',
-    rating: 5,
-  },
-  {
-    id: 4,
-    image: images.avatar4,
-    title: 'Good Quality Decor Accent',
-    description: "I'm satisfied with the quality of the home decor accent. It added a unique touch to my living room. I will definitely shop here again.",
-    date: '20/12/2024',
-    rating: 4,
-  },
-  {
-    id: 5,
-    image: images.avatar5,
-    title: 'Comfortable and Durable',
-    description: "The office chair I bought was comfortable and durable. It was exactly what I needed for my home office. I recommend it to anyone in need of quality office furniture.",
-    date: '20/12/2024',
-    rating: 5,
-  },
+  
 ];
 
 
@@ -126,19 +103,19 @@ export const homescreenOptions = [
   {
     id: 2,
     name: "Unit Conversion",
-    navigate:'Radio'
+    navigate:'UnitConversion'
    
   },
   {
     id: 3,
     name: "Acceptable Dose Limit",
-    navigate:'Radio'
+    navigate:'AcceptableDoseLimit'
    
   },
   {
     id: 4,
     name: "About Application",
-    navigate:'Radio'
+    navigate:'Aboutapplication'
    
   },
 

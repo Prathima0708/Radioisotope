@@ -54,6 +54,8 @@ import { Onboarding1,
 import { NavigationContainer } from '@react-navigation/native'
 import BottomTabNavigation from './BottomTabNavigation'
 import Radioisotope from '../screens/Radioisotope/Radioisotope'
+import UnitConversion from '../screens/UnitConversion/UnitConversion'
+import AcceptableDoseLimit from '../screens/AcceptableDoseLimit/AcceptableDoseLimit'
 
 const Stack = createNativeStackNavigator()
 
@@ -141,7 +143,11 @@ const AppNavigation = () => {
                 <Stack.Screen name="Favourite" component={Favourite}/>
                 <Stack.Screen name="TermsAndConditions" component={TermsAndConditions}/>
                 <Stack.Screen name="CaptureProduct" component={CaptureProduct}/>
+
                 <Stack.Screen name="Radio" component={Radioisotope}/>
+                <Stack.Screen name="UnitConversion" component={UnitConversion}/>
+                <Stack.Screen name="AcceptableDoseLimit" component={AcceptableDoseLimit}/>
+                <Stack.Screen name="Aboutapplication" component={TermsAndConditions}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

@@ -48,6 +48,11 @@ const elution=require("../assets/images/elution.png")
 const PD=require("../assets/images/PD.png")
 const more=require("../assets/images/more.png")
 
+const diagnostic=require("../assets/images/diagnosticrd.png")
+const therapeutic=require("../assets/images/therapeuticrd.png")
+const theranostic=require("../assets/images/thernosticrd.png")
+const nonclinical=require("../assets/images/nonclinical.png")
+
 export default {
     avatar,
     avatar2,
@@ -92,5 +97,9 @@ export default {
     halfLife,
     elution,
     PD,
-    more
+    more,
+    diagnostic,
+    therapeutic,
+    theranostic,
+    nonclinical
 }

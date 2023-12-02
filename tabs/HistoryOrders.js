@@ -7,96 +7,77 @@ import {
     StyleSheet,
 } from 'react-native'
 import React from 'react'
-import { orderHistory } from '../data/utils'
-import { COLORS } from '../constants'
+import { homeCategories, orderHistory } from '../data/utils'
+import { COLORS, FONTS } from '../constants'
 import { useNavigation } from '@react-navigation/native'
 
 const HistoryOrders = () => {
     const navigation = useNavigation()
 
     return (
-        <View style={styles.container}>
+        <View>
+            <View
+                style={{
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    marginVertical: 8,
+                    alignItems: 'center',
+                }}
+            >
+               
+            </View>
+
             <FlatList
-                data={orderHistory}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item, index }) => (
-                    <View style={styles.itemContainer}>
-                        <View style={styles.borderBottom}>
-                            <Text style={styles.typeText}>{item.type}</Text>
-                            <Text
-                                style={[
-                                    styles.statusText,
-                                    item.status === 'Completed'
-                                        ? styles.completedStatus
-                                        : styles.pendingStatus,
-                                ]}
-                            >
-                                {item.status}
-                            </Text>
+                horizontal={false} // Set to false for vertical display
+                numColumns={2} // Set the number of columns to 2
+                data={homeCategories}
+                keyExtractor={(item) => item.id.toString()}
+                renderItem={({ item }) => (
+                    <TouchableOpacity
+                        style={{
+                         
+                            flexDirection: 'column',
+                            marginHorizontal: 50,
+                            marginBottom: 30,
+                            marginRight:30,
+                             // Adjust spacing between rows
+                        }}
+                    >
+                        <View
+                            style={{
+                                height: 70,
+                                width: 70,
+                                borderRadius: 35,
+                                overflow: 'hidden',
+                                marginBottom: 10,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                shadowColor: 'rgba(150, 150, 154, 0.4)',
+                                shadowOffset: {
+                                    width: 12,
+                                    height: 12,
+                                },
+                                shadowOpacity: 0.15,
+                                shadowRadius: 30,
+                                elevation: 0.1,
+                                borderColor: COLORS.tertiaryGray,
+                                borderWidth: 1,
+                            }}
+                        >
+                            <Image
+                                source={item.image}
+                                resizeMode="cover"
+                                style={{
+                                    height: 30,
+                                    width: 30,
+                                    borderRadius: 35,
+                                }}
+                            />
                         </View>
-                        <View style={styles.rowContainer}>
-                            <View style={styles.imageContainer}>
-                                <Image
-                                    source={item.image}
-                                    style={styles.image}
-                                />
-                                <View style={{ marginLeft: 12 }}>
-                                    <Text style={styles.nameText}>
-                                        {item.name}
-                                    </Text>
-                                    <View
-                                        style={{
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            marginTop: 4,
-                                        }}
-                                    >
-                                        <Text style={styles.priceText}>
-                                            ${item.price}
-                                        </Text>
-                                        <Text style={styles.dateText}>
-                                            {' '}
-                                            | {item.date}
-                                        </Text>
-                                        <Text style={styles.numberOfItemsText}>
-                                            {' '}
-                                            | {item.numberOfItems} Items
-                                        </Text>
-                                    </View>
-                                </View>
-                            </View>
-                            <Text style={styles.receiptText}>
-                                {item.receipt}
-                            </Text>
-                        </View>
-                        <View style={styles.buttonContainer}>
-                            <TouchableOpacity
-                                onPress={() =>
-                                    navigation.navigate('AddReviews')
-                                }
-                                style={styles.rateButton}
-                            >
-                                <Text
-                                    style={[
-                                        styles.buttonText,
-                                        styles.rateButtonText,
-                                    ]}
-                                >
-                                    Rate
-                                </Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.reorderButton}>
-                                <Text
-                                    style={[
-                                        styles.buttonText,
-                                        styles.reorderButtonText,
-                                    ]}
-                                >
-                                    Re-Order
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
+                        <Text style={{ fontSize: 16, fontFamily: 'regular' }}>
+                            {item.name}
+                        </Text>
+                    </TouchableOpacity>
                 )}
             />
         </View>

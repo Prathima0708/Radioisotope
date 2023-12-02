@@ -37,7 +37,7 @@ const BottomTabNavigation = () => {
                                 style={{
                                     height: 24,
                                     width: 24,
-                                    tintColor: focused ? COLORS.primary : COLORS.black
+                                    tintColor: focused ? COLORS.blue : COLORS.black
                                 }}
                             />
                         )
@@ -47,7 +47,7 @@ const BottomTabNavigation = () => {
 
             <Tab.Screen
                 name="Orders"
-                component={MyOrders}
+                component={DrawerNavigation}
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
@@ -57,7 +57,7 @@ const BottomTabNavigation = () => {
                                 style={{
                                     height: 24,
                                     width: 24,
-                                    tintColor: focused ? COLORS.primary : COLORS.black
+                                    tintColor: focused ? COLORS.blue : COLORS.black
                                 }}
                             />
                         )
@@ -65,36 +65,11 @@ const BottomTabNavigation = () => {
                 }}
             />
 
-            <Tab.Screen
-                name="Search"
-                component={Search}
-                options={{
-                    tabBarIcon: () => {
-                        return (
-                            <View
-                                style={{
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    backgroundColor: COLORS.primary,
-                                    height: Platform.OS == 'ios' ? 50 : 60,
-                                    width: Platform.OS == 'ios' ? 50 : 60,
-                                    top: Platform.OS == 'ios' ? -10 : -20,
-                                    borderRadius:
-                                        Platform.OS == 'ios' ? 25 : 30,
-                                    borderWidth: 2,
-                                    borderColor: COLORS.white,
-                                }}
-                            >
-                                <Ionicons name="md-search-outline" size={24} color={COLORS.white} />
-                            </View>
-                        )
-                    },
-                }}
-            />
+          
 
             <Tab.Screen
                 name="Message"
-                component={Message}
+                component={DrawerNavigation}
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
@@ -104,7 +79,7 @@ const BottomTabNavigation = () => {
                                 style={{
                                     height: 24,
                                     width: 24,
-                                    tintColor: focused ? COLORS.primary : COLORS.black
+                                    tintColor: focused ? COLORS.blue : COLORS.black
                                 }}
                             />
                         )
@@ -114,7 +89,7 @@ const BottomTabNavigation = () => {
 
             <Tab.Screen
                 name="Profile"
-                component={Profile}
+                component={DrawerNavigation}
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
@@ -124,7 +99,7 @@ const BottomTabNavigation = () => {
                                 style={{
                                     height: 24,
                                     width: 24,
-                                    tintColor: focused ? COLORS.primary : COLORS.black
+                                    tintColor: focused ? COLORS.blue : COLORS.black
                                 }}
                             />
                         )

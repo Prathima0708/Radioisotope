@@ -163,7 +163,7 @@ const Search = ({ navigation }) => {
         return (
             <View style={{ marginBottom: 80 }}>
                 <Text style={{ ...FONTS.body3, marginBottom: 6 }}>
-                    Popular productsx
+                    Popular products
                 </Text>
                 <FlatList
                     horizontal={true}

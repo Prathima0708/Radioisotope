@@ -18,7 +18,8 @@ export const COLORS = {
     gray6: "#EDEDED",
     red: "#E04444",
     green: "#059C6A",
-    lightBlue:'#E5F1FF'
+    lightBlue:'#E5F1FF',
+    blue:'#5A6CEA'
 }
 
 export const SIZES = {

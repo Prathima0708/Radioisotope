@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Moderna",
-    "slug": "Moderna",
+    "name": "Radioisotope",
+    "slug": "Radioisotope",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#016A70"
+      "backgroundColor": "#E5F1FF"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,7 +20,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#016A70"
+        "backgroundColor": "#5A6CEA"
       },
       "config": {
         "googleMaps": {

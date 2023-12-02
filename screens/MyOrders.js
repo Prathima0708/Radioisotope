@@ -12,7 +12,7 @@ import { useNavigation } from '@react-navigation/native'
 import { commonStyles } from '../styles/CommonStyles'
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view'
 import { StatusBar } from 'expo-status-bar'
-import OngoingOrders from '../tabs/OngoingOrders'
+import OngoingOrders from '../tabs/Converter'
 import HistoryOrders from '../tabs/HistoryOrders'
 
 const renderScene = SceneMap({
