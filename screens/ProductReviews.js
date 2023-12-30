@@ -11,7 +11,7 @@ import { COLORS, icons } from '../constants'
 import { ScrollView } from 'react-native-virtualized-view'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import ReviewCard from '../components/ReviewCard'
-import { reviews } from '../data/products'
+import { reviews } from '../data/data'
 
 const ProductReviews = ({ navigation }) => {
     /**

@@ -2,10 +2,16 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { COLORS } from '../constants'
 import { AntDesign } from "@expo/vector-icons"
+import { useNavigation } from '@react-navigation/native'
 
-const TransactionCard = ({ image, name, date, type, amount }) => {
+const RadioIsotopeCard = ({ image, name, date, type, amount ,item}) => {
+    const navigation=useNavigation()
+   
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container}onPress={()=>navigation.navigate('Radioisotopeelements',{
+        itemName:name,
+        itemDetails: item.elements,
+    })} >
         <View style={{ flexDirection: "row" }}>
             <Image
               source={image}
@@ -35,6 +41,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         marginVertical: 8,
         marginHorizontal:15,
+        marginTop:20
     },
     carImage: {
         width: 58,
@@ -63,4 +70,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default TransactionCard
+export default RadioIsotopeCard

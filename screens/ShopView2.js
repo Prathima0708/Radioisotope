@@ -14,7 +14,8 @@ import {
 import { recentKeywords } from '../data/keywords'
 import ImageSlider from '../components/ImageSlider'
 import { StatusBar } from 'expo-status-bar'
-import { products } from '../data/products'
+import { products } from '../data/data'
+
 
 const ShopView2 = () => {
     const renderHeader = () => {

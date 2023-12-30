@@ -4,7 +4,7 @@ import { COLORS } from '../constants'
 import { ScrollView } from 'react-native-virtualized-view'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { TransactionHistoryData } from '../data/utils'
-import TransactionCard from '../components/TransactionCard'
+import TransactionCard from '../components/RadioIsotopeCard'
 import Header from '../components/Header'
 
 const TransactionHistory = ({ navigation }) => {

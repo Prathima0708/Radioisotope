@@ -56,6 +56,9 @@ import BottomTabNavigation from './BottomTabNavigation'
 import Radioisotope from '../screens/Radioisotope/Radioisotope'
 import UnitConversion from '../screens/UnitConversion/UnitConversion'
 import AcceptableDoseLimit from '../screens/AcceptableDoseLimit/AcceptableDoseLimit'
+import RadioisotopeElements from '../screens/Radioisotope/RadioisotopeElements'
+import ElementsDetailsScreen from '../screens/Radioisotope/ElementsDetailsScreen'
+import ADBDetailsScreen from '../screens/AcceptableDoseLimit/ADBDetailsScreen'
 
 const Stack = createNativeStackNavigator()
 
@@ -145,8 +148,11 @@ const AppNavigation = () => {
                 <Stack.Screen name="CaptureProduct" component={CaptureProduct}/>
 
                 <Stack.Screen name="Radio" component={Radioisotope}/>
+                <Stack.Screen name="Radioisotopeelements" component={RadioisotopeElements}/>
+                <Stack.Screen name="ElementDetailsScreen" component={ElementsDetailsScreen}/>
                 <Stack.Screen name="UnitConversion" component={UnitConversion}/>
                 <Stack.Screen name="AcceptableDoseLimit" component={AcceptableDoseLimit}/>
+                <Stack.Screen name="ADBDetails" component={ADBDetailsScreen}/>
                 <Stack.Screen name="Aboutapplication" component={TermsAndConditions}/>
             </Stack.Navigator>
         </NavigationContainer>

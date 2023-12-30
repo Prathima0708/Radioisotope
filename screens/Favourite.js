@@ -4,8 +4,9 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { COLORS } from '../constants'
 import { ScrollView } from 'react-native-virtualized-view'
 import FavouriteCard from '../components/FavouriteCard'
-import { products } from '../data/products'
+
 import Header from '../components/Header'
+import { products } from '../data/data'
 
 const Favourite = ({ navigation }) => {
     /***

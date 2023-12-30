@@ -8,14 +8,22 @@ import {
     Image,
     SafeAreaView,
     StatusBar,
+    FlatList,
 } from 'react-native'
 import { Table, Row, Rows } from 'react-native-table-component'
 import { COLORS, icons } from '../../constants'
 import { commonStyles } from '../../styles/CommonStyles'
+import { ADB } from '../../data/data'
 
-const AcceptableDoseLimit = () => {
+const AcceptableDoseLimit = ({navigation}) => {
     const tableHead = ['Type of Dose Limit', 'Limit on Dose', 'Limit on Dose']
     const tableData = [
+        ['Item 1', '111', '444'],
+        ['Item 2', '333', '444'],
+        ['Item 3', '666', '777'],
+        ['Item 1', '111', '444'],
+        ['Item 2', '333', '444'],
+        ['Item 3', '666', '777'],
         ['Item 1', '111', '444'],
         ['Item 2', '333', '444'],
         ['Item 3', '666', '777'],
@@ -36,6 +44,7 @@ const AcceptableDoseLimit = () => {
                     <TouchableOpacity
                         onPress={() => navigation.goBack()}
                         style={commonStyles.header1Icon}
+                        
                     >
                         <Image
                             resizeMode="contain"
@@ -69,6 +78,16 @@ const AcceptableDoseLimit = () => {
             <StatusBar hidden={true} />
             {renderHeader()}
             <View style={styles.container}>
+            {/* <TouchableOpacity style={styles.reorderButton}>
+                        <Text
+                            style={[
+                                styles.buttonText,
+                                styles.reorderButtonText,
+                            ]}
+                        >
+                         AERB
+                        </Text>
+                    </TouchableOpacity>
                 <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
                     <Row
                         data={tableHead}
@@ -76,7 +95,27 @@ const AcceptableDoseLimit = () => {
                         textStyle={styles.text}
                     />
                     <Rows data={tableData} textStyle={styles.text} />
-                </Table>
+                </Table> */}
+                <FlatList data={ADB}   renderItem={({ item, index }) => (
+                          
+                          <TouchableOpacity
+                          key={index}
+                          style={styles.elementButton}
+                          onPress={()=>navigation.navigate('ADBDetails',{
+                            details:item,
+                          })}
+                         
+                      >
+                          <View>
+                             
+                                  <Text style={styles.elementButtonText}>
+                                      {item.name}
+                                  </Text>
+                             
+                          </View>
+                      </TouchableOpacity>
+                        
+                      )}/>
             </View>
         </SafeAreaView>
     )
@@ -91,6 +130,36 @@ const styles = StyleSheet.create({
     },
     head: { height: 65, backgroundColor: '#f1f8ff', width: 'auto' },
     text: { margin: 6 },
+    reorderButton: {
+        height: 38,
+        width: 80,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#3498DB',
+       borderRadius:5,
+        marginTop: 20,
+        marginBottom:10
+    },
+    buttonText: {
+        fontSize: 14,
+        fontFamily: 'regular',
+        color: 'white',
+        fontWeight:'bold'
+    },
+    rateButtonText: {
+        color: 'white',
+    },
+    elementButton: {
+        backgroundColor: '#3498db', // You can replace this with your desired background color
+        padding: 10,
+        borderRadius: 5,
+        marginVertical: 10,
+    },
+    elementButtonText: {
+        color: '#fff', // Text color
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
 })
 
 export default AcceptableDoseLimit

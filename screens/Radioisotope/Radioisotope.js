@@ -1,12 +1,12 @@
-import { View, StyleSheet, FlatList, TextInput } from 'react-native'
+import { View, StyleSheet, FlatList, TextInput, TouchableOpacity, Text, Image } from 'react-native'
 import React, { useState } from 'react'
 
 import { ScrollView } from 'react-native-virtualized-view'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { RadioisotopeData, TransactionHistoryData } from '../../data/utils'
+
 import Header from '../../components/Header'
 import { COLORS, SIZES } from '../../constants'
-import TransactionCard from '../../components/TransactionCard'
+import TransactionCard from '../../components/RadioIsotopeCard'
 import {
     Feather,
     Ionicons,
@@ -15,6 +15,8 @@ import {
     MaterialCommunityIcons,
     Fontisto,
 } from '@expo/vector-icons'
+import { RadioisotopeData, homescreenOptions, radioisotopeOptions } from '../../data/data'
+import RadioIsotopeCard from '../../components/RadioIsotopeCard'
 
 const renderSearchBar = () => {
     const [searchQuery, setSearchQuery] = useState('')
@@ -50,6 +52,7 @@ const renderSearchBar = () => {
 const Radioisotope = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.area}>
+            <ScrollView>
             <View style={styles.container}>
                 <Header title="Radioisotope Library" />
                {renderSearchBar()}
@@ -58,7 +61,10 @@ const Radioisotope = ({ navigation }) => {
                         data={RadioisotopeData}
                         keyExtractor={(item) => item.id}
                         renderItem={({ item, index }) => (
-                            <TransactionCard
+                          
+                            <RadioIsotopeCard
+                            item={item}
+                            key={index}
                                 image={item.image}
                                 amount={item.amount}
                                 type={item.type}
@@ -66,10 +72,32 @@ const Radioisotope = ({ navigation }) => {
                                 date={item.date}
                                 name={item.name}
                             />
+                          
                         )}
                     />
                 </ScrollView>
             </View>
+
+            {/* <View style={styles.boxcontainer}>
+      <View style={styles.box}>
+      <Text style={styles.text}>Cyclotron,Nuclear fission</Text>
+        <Image
+          source={require('../../assets/images/carbon.png')} // Replace with your image source
+          style={styles.image}
+        />
+       
+      </View>
+      
+      <View style={styles.box}>
+      <Text style={styles.text}>Generator</Text>
+        <Image
+          source={require('../../assets/images/gallium.png')} // Replace with your image source
+          style={styles.image}
+        />
+        
+      </View>
+    </View> */}
+    </ScrollView>
         </SafeAreaView>
     )
 }
@@ -114,6 +142,29 @@ const styles = StyleSheet.create({
         fontFamily: 'bold',
         color: COLORS.black,
     },
+    boxcontainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 16,
+       
+      },
+      box: {
+        flex: 1,
+        alignItems: 'center',
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 16,
+        marginLeft:10
+      },
+      image: {
+        width: 90,
+        height: 50,
+        borderRadius: 10,
+        marginBottom: 8,
+      },
+      text: {
+        fontSize: 16,
+      },
 })
 
 export default Radioisotope

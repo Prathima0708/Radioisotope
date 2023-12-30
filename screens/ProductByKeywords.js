@@ -12,10 +12,11 @@ import {
     Fontisto,
     MaterialIcons,
 } from '@expo/vector-icons'
-import { products } from '../data/products'
+
 import { furnitureStores } from '../data/shops'
 import { ScrollView } from 'react-native-virtualized-view'
 import { StatusBar } from 'expo-status-bar'
+import { products } from '../data/data'
 
 const ProductByKeywords = () => {
     const renderHeader = () => {

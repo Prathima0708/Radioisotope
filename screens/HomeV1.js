@@ -24,7 +24,7 @@ import CustomModal from '../components/CustomModal'
 import { furnitureStores } from '../data/shops'
 import { furnitureCategories, homeCategories } from '../data/utils'
 import { useNavigation } from '@react-navigation/native'
-import { homescreenOptions, products, reviews } from '../data/products'
+import { homescreenOptions, products, reviews } from '../data/data'
 import ReviewCard from '../components/ReviewCard'
 
 const HomeV1 = ({ navigation }) => {
@@ -63,7 +63,7 @@ const HomeV1 = ({ navigation }) => {
                             style={{
                                 alignItems: 'center',
                                 flexDirection: 'column',
-                                marginHorizontal:3,
+                                marginHorizontal:11,
                             }}
                         >
                             <View
@@ -309,6 +309,7 @@ const HomeV1 = ({ navigation }) => {
                                 shadowOpacity: 0.2,
                                 shadowRadius: 4,
                                 elevation: 3,
+                                marginTop:20
                             }}
                         >
                             <Text
@@ -332,7 +333,7 @@ const HomeV1 = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.area}>
             <View style={{ flex: 1, marginHorizontal: 16 }}>
-                <StatusBar hidden={true} />
+                <StatusBar  />
                 <View
                     style={{
                         flexDirection: 'row',
@@ -347,25 +348,7 @@ const HomeV1 = ({ navigation }) => {
                             alignItems: 'center',
                         }}
                     >
-                        <TouchableOpacity
-                            // onPress={() => navigation.toggleDrawer()}
-                            style={{
-                                height: 45,
-                                width: 45,
-                                borderRadius: 22.5,
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                backgroundColor: COLORS.gray,
-                            }}
-                        >
-                            <Image
-                                source={icons.menu}
-                                style={{
-                                    height: 24,
-                                    width: 24,
-                                }}
-                            />
-                        </TouchableOpacity>
+                      
                         <View
                             style={{
                                 flexDirection: 'column',
@@ -375,8 +358,8 @@ const HomeV1 = ({ navigation }) => {
                             <Image
                                 source={images.logo}
                                 style={{
-                                    height: 55,
-                                    width: 224,
+                                    height: 61,
+                                    width: 254,
                                 }}
                             />
                         </View>
@@ -384,7 +367,7 @@ const HomeV1 = ({ navigation }) => {
                 </View>
 
                 <ScrollView style={{ marginTop: 5 }}>
-                    {renderSearchBar()}
+                
 
                     {renderProducts()}
                     {renderProductCategories()}

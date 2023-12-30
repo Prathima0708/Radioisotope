@@ -19,7 +19,8 @@ export const COLORS = {
     red: "#E04444",
     green: "#059C6A",
     lightBlue:'#E5F1FF',
-    blue:'#5A6CEA'
+    blue:'#5A6CEA',
+    btnclr:'#3498DB'
 }
 
 export const SIZES = {

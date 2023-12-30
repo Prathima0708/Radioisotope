@@ -19,7 +19,7 @@ const ReviewCard = ({ image, date, title, description, num }) => {
                                 styles.reorderButtonText,
                             ]}
                         >
-                           Click here
+                           Click here {'>'}
                         </Text>
                     </TouchableOpacity>
             </View>
@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
         marginVertical: 12,
         width: SIZES.width - 24,
         marginBottom:10,
-        paddingBottom:70
+        paddingBottom:70,
+       
     },
     avatar: {
         height: 48,
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
         marginVertical: 6
     },
     description: {
-        fontSize: 12,
+        fontSize: 14,
         fontFamily: 'regular',
         marginTop: 6
     },
@@ -90,12 +91,12 @@ const styles = StyleSheet.create({
         width: 140,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: COLORS.blue,
+        backgroundColor: COLORS.btnclr,
         borderRadius: 8,
         marginTop: 20,
     },
     buttonText: {
-        fontSize: 14,
+        fontSize: 16,
         fontFamily: 'regular',
     },
     rateButtonText: {
@@ -103,6 +104,7 @@ const styles = StyleSheet.create({
     },
     reorderButtonText: {
         color: COLORS.white,
+        fontWeight:'500'
     },
 })
 

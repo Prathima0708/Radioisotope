@@ -30,7 +30,7 @@ import { commonStyles } from '../../styles/CommonStyles'
   
     const [routes] = React.useState([
         { key: 'first', title: 'Converter' },
-        { key: 'second', title: 'Calculator' },
+      //  { key: 'second', title: 'Calculator' },
     ])
   
     const renderTabBar = (props) => (

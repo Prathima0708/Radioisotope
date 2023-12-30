@@ -1,4 +1,4 @@
-import { images } from "../constants";
+import { images } from '../constants'
 
 export const contacts = [
     {
@@ -91,115 +91,115 @@ export const contacts = [
         messageInQueue: 3,
         sentDate: '12/7',
     },
-];
+]
 
 export const furnitureCategories = [
     {
-      id: 1,
-      name: "All Furniture",
-      image: images.livingroom,
-      description: "Explore our entire furniture collection",
-      startingPrice: 99.99
+        id: 1,
+        name: 'All Furniture',
+        image: images.livingroom,
+        description: 'Explore our entire furniture collection',
+        startingPrice: 99.99,
     },
     {
-      id: 2,
-      name: "Sofas",
-      image: images.sofa,
-      description: "Find comfortable and stylish sofas for your living room",
-      startingPrice: 299.99
+        id: 2,
+        name: 'Sofas',
+        image: images.sofa,
+        description: 'Find comfortable and stylish sofas for your living room',
+        startingPrice: 299.99,
     },
     {
-      id: 3,
-      name: "Beds",
-      image: images.bed,
-      description: "Discover cozy and elegant beds for a restful night's sleep",
-      startingPrice: 399.99
+        id: 3,
+        name: 'Beds',
+        image: images.bed,
+        description:
+            "Discover cozy and elegant beds for a restful night's sleep",
+        startingPrice: 399.99,
     },
     {
-      id: 4,
-      name: "Tables",
-      image: images.table,
-      description: "Browse our collection of modern and functional tables",
-      startingPrice: 149.99
+        id: 4,
+        name: 'Tables',
+        image: images.table,
+        description: 'Browse our collection of modern and functional tables',
+        startingPrice: 149.99,
     },
     {
-      id: 5,
-      name: "Chairs",
-      image: images.chair,
-      description:  "Find ergonomic and stylish chairs for your home or office",
-      startingPrice: 89.99
+        id: 5,
+        name: 'Chairs',
+        image: images.chair,
+        description:
+            'Find ergonomic and stylish chairs for your home or office',
+        startingPrice: 89.99,
     },
-  ];
-  
-  
-  export const orders = [
+]
+
+export const orders = [
     {
-      id: 1,
-      name: 'Elegant Sofa Set',
-      type: 'Furniture',
-      price: 299.99,
-      numberOfItems: 1,
-      receipt: "#20231001",
-      image: images.product1
-    },
-    {
-      id: 2,
-      name: 'Luxurious Bed Frame',
-      type: 'Furniture',
-      price: 499.99,
-      numberOfItems: 2,
-      receipt: "#20231002",
-      image: images.product2
+        id: 1,
+        name: 'Elegant Sofa Set',
+        type: 'Furniture',
+        price: 299.99,
+        numberOfItems: 1,
+        receipt: '#20231001',
+        image: images.product1,
     },
     {
-      id: 3,
-      name: 'Stylish Dining Table',
-      type: 'Furniture',
-      price: 199.99,
-      numberOfItems: 1,
-      receipt: "#20231003",
-      image: images.product3
-    },
-  ];
-  
-  export const orderHistory = [
-    {
-      id: 1,
-      status: "Completed",
-      date: "12 Oct, 10:30",
-      name: 'Elegant Sofa Set',
-      type: 'Furniture',
-      price: 299.99,
-      numberOfItems: 1,
-      receipt: "#20231001",
-      image: images.product1
+        id: 2,
+        name: 'Luxurious Bed Frame',
+        type: 'Furniture',
+        price: 499.99,
+        numberOfItems: 2,
+        receipt: '#20231002',
+        image: images.product2,
     },
     {
-      id: 2,
-      status: "Completed",
-      date: "13 Oct, 14:15",
-      name: 'Luxurious Bed Frame',
-      type: 'Furniture',
-      price: 499.99,
-      numberOfItems: 2,
-      receipt: "#20231002",
-      image: images.product2
+        id: 3,
+        name: 'Stylish Dining Table',
+        type: 'Furniture',
+        price: 199.99,
+        numberOfItems: 1,
+        receipt: '#20231003',
+        image: images.product3,
+    },
+]
+
+export const orderHistory = [
+    {
+        id: 1,
+        status: 'Completed',
+        date: '12 Oct, 10:30',
+        name: 'Elegant Sofa Set',
+        type: 'Furniture',
+        price: 299.99,
+        numberOfItems: 1,
+        receipt: '#20231001',
+        image: images.product1,
     },
     {
-      id: 3,
-      status: "Canceled",
-      date: "14 Oct, 11:45",
-      name: 'Stylish Dining Table',
-      type: 'Furniture',
-      price: 199.99,
-      numberOfItems: 1,
-      receipt: "#20231003",
-      image: images.product3
+        id: 2,
+        status: 'Completed',
+        date: '13 Oct, 14:15',
+        name: 'Luxurious Bed Frame',
+        type: 'Furniture',
+        price: 499.99,
+        numberOfItems: 2,
+        receipt: '#20231002',
+        image: images.product2,
     },
-  ];
-  
-  
-  export const orderList = [
+    {
+        id: 3,
+        status: 'Canceled',
+        date: '14 Oct, 11:45',
+        name: 'Stylish Dining Table',
+        type: 'Furniture',
+        price: 199.99,
+        numberOfItems: 1,
+        receipt: '#20231003',
+        image: images.product3,
+    },
+]
+
+export const orderList = [
     {
         latitude: 48.8566,
         longitude: 2.3522,
@@ -230,185 +230,202 @@ export const furnitureCategories = [
         name: 'Order 5',
         description: 'Order description 5',
     },
-  ];
-  
-  
-  export const TransactionHistoryData = [
+]
+
+export const TransactionHistoryData = [
     {
-        id: "1",
+        id: '1',
         image: images.product1,
-        name: "Elegant Sofa Set",
-        date: "Oct 14, 2023 | 8:00 AM", 
-        type: "Purchase",
-        amount: 299.99
+        name: 'Elegant Sofa Set',
+        date: 'Oct 14, 2023 | 8:00 AM',
+        type: 'Purchase',
+        amount: 299.99,
     },
     {
-        id: "2",
+        id: '2',
         image: images.product2,
-        name: "Luxurious Bed Frame",
-        date: "Oct 14, 2023 | 9:00 AM", 
-        type: "Purchase",
-        amount: 499.99
+        name: 'Luxurious Bed Frame',
+        date: 'Oct 14, 2023 | 9:00 AM',
+        type: 'Purchase',
+        amount: 499.99,
     },
     {
-        id: "3",
+        id: '3',
         image: images.product3,
-        name: "Stylish Dining Table",
-        date: "Oct 13, 2023 | 10:00 AM", 
-        type: "Purchase",
-        amount: 199.99
+        name: 'Stylish Dining Table',
+        date: 'Oct 13, 2023 | 10:00 AM',
+        type: 'Purchase',
+        amount: 199.99,
     },
     {
-        id: "4",
+        id: '4',
         image: images.product4,
-        name: "Artistic Home Decor Accent",
-        date: "Oct 13, 2023 | 11:00 AM", 
-        type: "Purchase",
-        amount: 99.99
+        name: 'Artistic Home Decor Accent',
+        date: 'Oct 13, 2023 | 11:00 AM',
+        type: 'Purchase',
+        amount: 99.99,
     },
     {
-        id: "5",
+        id: '5',
         image: images.product5,
-        name: "Comfortable Office Chair",
-        date: "Oct 13, 2023 | 1:00 PM", 
-        type: "Purchase",
-        amount: 149.99
+        name: 'Comfortable Office Chair',
+        date: 'Oct 13, 2023 | 1:00 PM',
+        type: 'Purchase',
+        amount: 149.99,
     },
     {
-        id: "6",
+        id: '6',
         image: images.product6,
-        name: "Functional Bookcase",
-        date: "Oct 12, 2023 | 3:00 PM", 
-        type: "Purchase",
-        amount: 129.99
+        name: 'Functional Bookcase',
+        date: 'Oct 12, 2023 | 3:00 PM',
+        type: 'Purchase',
+        amount: 129.99,
     },
     {
-        id: "7",
+        id: '7',
         image: images.product7,
-        name: "Cozy Armchair",
-        date: "Oct 12, 2023 | 5:00 PM", 
-        type: "Purchase",
-        amount: 199.99
+        name: 'Cozy Armchair',
+        date: 'Oct 12, 2023 | 5:00 PM',
+        type: 'Purchase',
+        amount: 199.99,
     },
-  ];
-  
-  export const notifications = [
-      { 
-          id: 1,
-          image: images.product1,
-          avatar: images.avatar,
-          name: 'Furniture Store',
-          message: 'New collection of elegant sofas now available!',
-          time: '2023-10-06T03:55:02.922Z'
-      },
-      { 
-          id: 2,
-          image: images.product2,
-          avatar: images.avatar2,
-          name: 'Home Decor Center',
-          message: 'Limited-time offer: 20% off on all home decor items!',
-          time: '2023-10-02T03:55:02.922Z'
-      },
-      { 
-          id: 3,
-          image: images.product3,
-          avatar: images.avatar3,
-          name: 'Furniture Sale',
-          message: 'Big sale event this weekend. Don\'t miss out!',
-          time: '2023-09-16T03:55:02.922Z'
-      },
-      { 
-          id: 4,
-          image: images.product4,
-          avatar: images.avatar4,
-          name: 'Furniture Specials',
-          message: 'Special discount on all furniture sets today!',
-          time: '2023-09-16T03:55:02.922Z'
-      },
-      { 
-          id: 5,
-          image: images.product5,
-          avatar: images.avatar5,
-          name: 'Home Furnishings',
-          message: 'New arrivals in the chairs and tables section!',
-          time: '2023-08-16T03:55:02.922Z'
-      },
-      { 
-          id: 6,
-          image: images.product6,
-          avatar: images.avatar6,
-          name: 'Interior Designs',
-          message: 'Get a free consultation for your home makeover!',
-          time: '2023-08-16T03:55:02.922Z'
-      },
-      { 
-          id: 7,
-          image: images.product7,
-          avatar: images.avatar7,
-          name: 'Furniture Styles',
-          message: 'Discover the latest trends in modern furniture design.',
-          time: '2023-08-16T03:55:02.922Z'
-      }
-  ];
+]
 
+export const notifications = [
+    {
+        id: 1,
+        image: images.product1,
+        avatar: images.avatar,
+        name: 'Furniture Store',
+        message: 'New collection of elegant sofas now available!',
+        time: '2023-10-06T03:55:02.922Z',
+    },
+    {
+        id: 2,
+        image: images.product2,
+        avatar: images.avatar2,
+        name: 'Home Decor Center',
+        message: 'Limited-time offer: 20% off on all home decor items!',
+        time: '2023-10-02T03:55:02.922Z',
+    },
+    {
+        id: 3,
+        image: images.product3,
+        avatar: images.avatar3,
+        name: 'Furniture Sale',
+        message: "Big sale event this weekend. Don't miss out!",
+        time: '2023-09-16T03:55:02.922Z',
+    },
+    {
+        id: 4,
+        image: images.product4,
+        avatar: images.avatar4,
+        name: 'Furniture Specials',
+        message: 'Special discount on all furniture sets today!',
+        time: '2023-09-16T03:55:02.922Z',
+    },
+    {
+        id: 5,
+        image: images.product5,
+        avatar: images.avatar5,
+        name: 'Home Furnishings',
+        message: 'New arrivals in the chairs and tables section!',
+        time: '2023-08-16T03:55:02.922Z',
+    },
+    {
+        id: 6,
+        image: images.product6,
+        avatar: images.avatar6,
+        name: 'Interior Designs',
+        message: 'Get a free consultation for your home makeover!',
+        time: '2023-08-16T03:55:02.922Z',
+    },
+    {
+        id: 7,
+        image: images.product7,
+        avatar: images.avatar7,
+        name: 'Furniture Styles',
+        message: 'Discover the latest trends in modern furniture design.',
+        time: '2023-08-16T03:55:02.922Z',
+    },
+]
 
-  export const homeCategories = [
+export const homeCategories = [
     {
-      id: 1,
-      name: "Half Life",
-      image: images.halfLife,
-     
+        id: 1,
+        name: 'Half Life',
+        image: images.halfLife,
     },
     {
-      id: 2,
-      name: "Elution",
-      image: images.elution,
-     
+        id: 2,
+        name: 'Elution',
+        image: images.elution,
     },
     {
-      id: 3,
-      name: "Paediatric \n dose",
-      image: images.PD,
-     
+        id: 3,
+        name: 'Paediatric \n dose',
+        image: images.PD,
     },
     {
-      id: 4,
-      name: "More",
-      image: images.more,
-      
+        id: 4,
+        name: 'More',
+        image: images.more,
     },
- 
-  ];
+]
 
-
-  export const RadioisotopeData = [
+export const RadioisotopeData = [
     {
-        id: "1",
+        id: '1',
         image: images.diagnostic,
-        name: "Diagnostic Radioisotope",
-        date: "General", 
+        name: 'Diagnostic Radioisotope',
+        date: 'General',
+         elements: [
+      {
+        id: 'e1',
+        name:'Carbon-11',
+        symbol: 'C-11',
+        period: 2,
+        group: 14,
+        atomicNumber: 6,
+        atomicWeight: 11.011,
+        halfLife: '20.364 minutes',
+        productionMethod: 'Cyclotron',
+        energyType: 'Positron emission',
+        // ... other details
+      },
+      {
+        id: 'e2',
+        name: 'Copper62',
+        symbol: 'Cu',
+        period: 4,
+        group: 11,
+        atomicNumber: 29,
+        atomicWeight: 62.929,
+        halfLife: '9.67 minutes',
+        productionMethod: 'Cyclotron',
+        energyType: 'Beta decay',
+        // ... other details
+      },
      
+      // ... other elements
+    ],
     },
     {
-        id: "2",
+        id: '2',
         image: images.therapeutic,
-        name: "Therapeutic Radioisotope",
-        date: "General", 
-      
+        name: 'Therapeutic Radioisotope',
+        date: 'General',
     },
     {
-        id: "3",
+        id: '3',
         image: images.theranostic,
-        name: "Theranostic Radioisotope",
-        date: "General", 
-        
+        name: 'Theranostic Radioisotope',
+        date: 'General',
     },
     {
-        id: "4",
+        id: '4',
         image: images.nonclinical,
-        name: "Non Clinical Radioisotope",
-        date: "General", 
+        name: 'Non Clinical Radioisotope',
+        date: 'General',
     },
-   
-  ];
-  
+]
