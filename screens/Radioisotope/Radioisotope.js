@@ -15,8 +15,9 @@ import {
     MaterialCommunityIcons,
     Fontisto,
 } from '@expo/vector-icons'
-import { RadioisotopeData, homescreenOptions, radioisotopeOptions } from '../../data/data'
+
 import RadioIsotopeCard from '../../components/RadioIsotopeCard'
+import { RadioisotopeData } from '../../data/radioisotopedata'
 
 const renderSearchBar = () => {
     const [searchQuery, setSearchQuery] = useState('')

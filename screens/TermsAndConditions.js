@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, StatusBar } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { COLORS, FONTS } from '../constants'
@@ -7,7 +7,8 @@ import { ScrollView } from 'react-native-virtualized-view'
 
 const TermsAndConditions = () => {
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1, }}>
+            <StatusBar barStyle='dark-content' backgroundColor='white'/>
             <View
                 style={{ flex: 1, backgroundColor: COLORS.white, padding: 16 }}
             >

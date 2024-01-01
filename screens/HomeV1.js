@@ -22,23 +22,16 @@ import { ScrollView } from 'react-native-virtualized-view'
 import { StatusBar } from 'expo-status-bar'
 import CustomModal from '../components/CustomModal'
 import { furnitureStores } from '../data/shops'
-import { furnitureCategories, homeCategories } from '../data/utils'
+
 import { useNavigation } from '@react-navigation/native'
-import { homescreenOptions, products, reviews } from '../data/data'
+
 import ReviewCard from '../components/ReviewCard'
+import { homeCategories, homescreenOptions } from '../data/homescreendata'
 
 const HomeV1 = ({ navigation }) => {
-    const [searchQuery, setSearchQuery] = useState('')
-    const [modalVisible, setModalVisible] = useState(true)
+    
 
-    const handlePressGotIt = () => {
-        // Handle the logic when the "GOT IT" button is pressed
-        setModalVisible(false)
-    }
-
-    const handleSearch = (text) => {
-        setSearchQuery(text)
-    }
+   
 
     const renderProductCategories = () => {
         return (
@@ -108,172 +101,9 @@ const HomeV1 = ({ navigation }) => {
             </View>
         )
     }
-    const renderSearchBar = () => {
-        return (
-            <View
-                style={{
-                    width: SIZES.width - 32,
-                    height: 62,
-                    borderRadius: 10,
-                    backgroundColor: COLORS.tertiaryGray,
-                    alignItems: 'center',
-                    flexDirection: 'row',
-                }}
-            >
-                <View
-                    style={{
-                        marginHorizontal: SIZES.padding,
-                    }}
-                >
-                    <Ionicons name="search" size={24} color={COLORS.gray4} />
-                </View>
-                <TextInput
-                    placeholder="Search here..."
-                    onChangeText={handleSearch}
-                    placeholderTextColor={COLORS.gray5}
-                />
-            </View>
-        )
-    }
+  
 
-    const renderShops = () => {
-        return (
-            <View style={{ height: 'auto' }}>
-                <View
-                    style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        marginVertical: 8,
-                        alignItems: 'center',
-                    }}
-                >
-                    <Text style={{ ...FONTS.body2 }}>Open Shops</Text>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate('OpenShops')}
-                        style={{ flexDirection: 'row', alignItems: 'center' }}
-                    >
-                        <Text style={{ fontSize: 16, fontFamily: 'regular' }}>
-                            See All
-                        </Text>
-                        <View>
-                            <MaterialIcons
-                                name="keyboard-arrow-right"
-                                size={24}
-                                color={COLORS.gray4}
-                            />
-                        </View>
-                    </TouchableOpacity>
-                </View>
-                <FlatList
-                    nestedScrollEnabled
-                    data={furnitureStores}
-                    keyExtractor={(item) => item.id}
-                    renderItem={({ item, index }) => (
-                        <TouchableOpacity
-                            onPress={() => navigation.navigate('ShopView2')}
-                            style={{
-                                width: SIZES.width - 32,
-                                borderColor: COLORS.tertiaryGray,
-                                borderWidth: 1,
-                                paddingBottom: 2,
-                                marginBottom: 12,
-                                borderRadius: 15,
-                            }}
-                        >
-                            <Image
-                                source={item.image}
-                                style={{
-                                    width: SIZES.width - 32,
-                                    height: 136,
-                                    borderRadius: 15,
-                                }}
-                            />
-                            <Text
-                                style={{
-                                    fontSize: 18,
-                                    fontFamily: 'regular',
-                                    marginVertical: 6,
-                                }}
-                            >
-                                {item.name}
-                            </Text>
-                            <View
-                                style={{
-                                    marginBottom: 4,
-                                    flexDirection: 'row',
-                                }}
-                            >
-                                {item.keywords.map((keyword, index) => (
-                                    <Text
-                                        key={index}
-                                        style={{
-                                            fontSize: 14,
-                                            color: COLORS.gray5,
-                                            textTransform: 'capitalize',
-                                        }}
-                                    >
-                                        {keyword}
-                                        {index !== item.keywords.length - 1
-                                            ? '-'
-                                            : ''}
-                                    </Text>
-                                ))}
-                            </View>
-
-                            <View style={{ flexDirection: 'row' }}>
-                                <View
-                                    style={{
-                                        flexDirection: 'row',
-                                        alignItems: 'center',
-                                    }}
-                                >
-                                    <Octicons
-                                        name="star"
-                                        size={24}
-                                        color={COLORS.primary}
-                                    />
-                                    <Text style={{ marginLeft: 8 }}>
-                                        {item.rating}
-                                    </Text>
-                                </View>
-                                <View
-                                    style={{
-                                        flexDirection: 'row',
-                                        alignItems: 'center',
-                                        marginHorizontal: SIZES.padding3,
-                                    }}
-                                >
-                                    <MaterialCommunityIcons
-                                        name="truck-delivery-outline"
-                                        size={24}
-                                        color={COLORS.primary}
-                                    />
-                                    <Text style={{ marginLeft: 8 }}>
-                                        {item.shipping}
-                                    </Text>
-                                </View>
-                                <View
-                                    style={{
-                                        flexDirection: 'row',
-                                        alignItems: 'center',
-                                    }}
-                                >
-                                    <Fontisto
-                                        name="stopwatch"
-                                        size={22}
-                                        color={COLORS.primary}
-                                    />
-                                    <Text style={{ marginLeft: 8 }}>
-                                        {item.deliveryTime} days
-                                    </Text>
-                                </View>
-                            </View>
-                        </TouchableOpacity>
-                    )}
-                />
-            </View>
-        )
-    }
+   
 
     const renderProducts = () => {
         const navigation = useNavigation()

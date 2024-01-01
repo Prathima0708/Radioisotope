@@ -37,7 +37,7 @@ const RadioisotopeElements = ({ route,navigation }) => {
             <Header title={`${itemName} elements`} />
 
             <ScrollView style={{ padding: 16,height:500 }}>
-                {itemDetails.map((element, index) => (
+                {itemDetails?.map((element, index) => (
                     <TouchableOpacity
                         key={index}
                         style={styles.elementButton}

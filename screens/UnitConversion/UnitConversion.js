@@ -1,54 +1,24 @@
+import { useNavigation } from '@react-navigation/native'
+import React from 'react'
 import {
     View,
     Text,
+    StyleSheet,
     TouchableOpacity,
     Image,
-    useWindowDimensions,
-  } from 'react-native'
-  import React from 'react'
-  import { SafeAreaView } from 'react-native-safe-area-context'
-
-  import { useNavigation } from '@react-navigation/native'
-  
-  import { TabView, SceneMap, TabBar } from 'react-native-tab-view'
-  import { StatusBar } from 'expo-status-bar'
-import OngoingOrders from '../../tabs/Converter'
-import HistoryOrders from '../../tabs/HistoryOrders'
+    SafeAreaView,
+    StatusBar,
+    FlatList,
+} from 'react-native'
+import { Table, Row, Rows } from 'react-native-table-component'
 import { COLORS, icons } from '../../constants'
 import { commonStyles } from '../../styles/CommonStyles'
- 
-  
-  const renderScene = SceneMap({
-    first: OngoingOrders,
-    second: HistoryOrders,
-  })
-  
-  const UnitConversion = ({ navigation }) => {
-    const layout = useWindowDimensions()
-  
-    const [index, setIndex] = React.useState(0)
-  
-    const [routes] = React.useState([
-        { key: 'first', title: 'Converter' },
-      //  { key: 'second', title: 'Calculator' },
-    ])
-  
-    const renderTabBar = (props) => (
-        <TabBar
-            {...props}
-            indicatorStyle={{
-                backgroundColor: COLORS.primary,
-            }}
-            style={{
-                backgroundColor: '#fff',
-            }}
-            renderLabel={({ route, focused, color }) => (
-                <Text style={[{ color: focused ? COLORS.black : 'gray' }]}>
-                    {route.title}
-                </Text>
-            )}
-        />
-    )
+import { ADB } from '../../data/data'
+import { UnitConversionOptions } from '../../data/unitconversiondata'
+
+
+const UnitConversion = ({ navigation }) => {
+   
     const renderHeader = () => {
         const navigation = useNavigation()
         return (
@@ -83,40 +53,86 @@ import { commonStyles } from '../../styles/CommonStyles'
                             fontFamily: 'regular',
                         }}
                     >
-                      Unit Conversion
+                        Unit Conversion
                     </Text>
                 </View>
                 <TouchableOpacity
                     onPress={() => console.log('Pressed')}
                     style={commonStyles.header1Icon}
-                >
-                  
-                </TouchableOpacity>
+                ></TouchableOpacity>
             </View>
         )
     }
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
             <StatusBar hidden={true} />
-            <View style={{ flex: 1 }}>
-                {renderHeader()}
-                <View
-                    style={{
-                        flex: 1,
-                        marginHorizontal: 22,
-                    }}
-                >
-                    <TabView
-                        navigationState={{ index, routes }}
-                        renderScene={renderScene}
-                        onIndexChange={setIndex}
-                        initialLayout={{ width: layout.width }}
-                        renderTabBar={renderTabBar}
-                    />
-                </View>
+            {renderHeader()}
+            <View style={styles.container}>
+                <FlatList
+                    data={UnitConversionOptions}
+                    renderItem={({ item, index }) => (
+                        <TouchableOpacity
+                            key={index}
+                            style={styles.elementButton}
+                            onPress={() =>
+                                navigation.navigate('UnitConversionCalculator', {
+                                    name:item.name,
+                                  units: item.units,
+                                })
+                              }
+                        >
+                            <View>
+                                <Text style={styles.elementButtonText}>
+                                    {item.name}
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
+                    )}
+                />
             </View>
         </SafeAreaView>
     )
-  }
-  
-  export default UnitConversion
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: 16,
+        paddingTop: 30,
+        backgroundColor: '#fff',
+    },
+    head: { height: 65, backgroundColor: '#f1f8ff', width: 'auto' },
+    text: { margin: 6 },
+    reorderButton: {
+        height: 38,
+        width: 80,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#3498DB',
+        borderRadius: 5,
+        marginTop: 20,
+        marginBottom: 10,
+    },
+    buttonText: {
+        fontSize: 14,
+        fontFamily: 'regular',
+        color: 'white',
+        fontWeight: 'bold',
+    },
+    rateButtonText: {
+        color: 'white',
+    },
+    elementButton: {
+        backgroundColor: '#3498db', // You can replace this with your desired background color
+        padding: 10,
+        borderRadius: 5,
+        marginVertical: 10,
+    },
+    elementButtonText: {
+        color: '#fff', // Text color
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+})
+
+export default UnitConversion

@@ -54,11 +54,13 @@ import { Onboarding1,
 import { NavigationContainer } from '@react-navigation/native'
 import BottomTabNavigation from './BottomTabNavigation'
 import Radioisotope from '../screens/Radioisotope/Radioisotope'
-import UnitConversion from '../screens/UnitConversion/UnitConversion'
+
 import AcceptableDoseLimit from '../screens/AcceptableDoseLimit/AcceptableDoseLimit'
 import RadioisotopeElements from '../screens/Radioisotope/RadioisotopeElements'
 import ElementsDetailsScreen from '../screens/Radioisotope/ElementsDetailsScreen'
 import ADBDetailsScreen from '../screens/AcceptableDoseLimit/ADBDetailsScreen'
+import UnitConversionCalculator from '../screens/UnitConversion/UnitConversionCalculator'
+import UnitConversion from '../screens/UnitConversion/UnitConversion'
 
 const Stack = createNativeStackNavigator()
 
@@ -151,6 +153,7 @@ const AppNavigation = () => {
                 <Stack.Screen name="Radioisotopeelements" component={RadioisotopeElements}/>
                 <Stack.Screen name="ElementDetailsScreen" component={ElementsDetailsScreen}/>
                 <Stack.Screen name="UnitConversion" component={UnitConversion}/>
+                <Stack.Screen name="UnitConversionCalculator" component={UnitConversionCalculator}/>
                 <Stack.Screen name="AcceptableDoseLimit" component={AcceptableDoseLimit}/>
                 <Stack.Screen name="ADBDetails" component={ADBDetailsScreen}/>
                 <Stack.Screen name="Aboutapplication" component={TermsAndConditions}/>
