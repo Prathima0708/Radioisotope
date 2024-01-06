@@ -26,7 +26,8 @@ import { furnitureStores } from '../data/shops'
 import { useNavigation } from '@react-navigation/native'
 
 import ReviewCard from '../components/ReviewCard'
-import { homeCategories, homescreenOptions } from '../data/homescreendata'
+import {  homescreenOptions } from '../data/homescreendata'
+import { calculatorOptions, homeCategories } from '../data/calculatoroptions'
 
 const HomeV1 = ({ navigation }) => {
     
@@ -49,7 +50,7 @@ const HomeV1 = ({ navigation }) => {
 
                 <FlatList
                     horizontal={true}
-                    data={homeCategories}
+                    data={calculatorOptions}
                     keyExtractor={(item) => item.id.toString()} // Ensure the key is a string
                     renderItem={({ item }) => (
                         <TouchableOpacity
@@ -58,6 +59,7 @@ const HomeV1 = ({ navigation }) => {
                                 flexDirection: 'column',
                                 marginHorizontal:11,
                             }}
+                            onPress={()=>navigation.navigate(item.navigate)}
                         >
                             <View
                                 style={{

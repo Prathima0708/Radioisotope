@@ -61,6 +61,17 @@ import ElementsDetailsScreen from '../screens/Radioisotope/ElementsDetailsScreen
 import ADBDetailsScreen from '../screens/AcceptableDoseLimit/ADBDetailsScreen'
 import UnitConversionCalculator from '../screens/UnitConversion/UnitConversionCalculator'
 import UnitConversion from '../screens/UnitConversion/UnitConversion'
+import CalculatorOptions from '../screens/Calculator/CalculatorOptions'
+import Calculate from '../screens/Calculator/CalculatePD'
+import CalculatePD from '../screens/Calculator/CalculatePD'
+import CalculateSensitivity from '../screens/Calculator/CalculateSensitivity'
+import Cardiacfunction from '../screens/Calculator/CardiaFunction/Cardiacfunction'
+import CalculateTargetHeartRate from '../screens/Calculator/CardiaFunction/CalculateTargetHeartRate'
+import CalculateEjection from '../screens/Calculator/CardiaFunction/CalculateEjection'
+import StrokeVolume from '../screens/Calculator/CardiaFunction/StrokeVolume'
+import CardiacOutput from '../screens/Calculator/CardiaFunction/CardiacOutput'
+import InverseSL from '../screens/Calculator/InverseSquareLaw/InverseSL'
+import Shielding from '../screens/Calculator/Shielding/Shielding'
 
 const Stack = createNativeStackNavigator()
 
@@ -110,8 +121,8 @@ const AppNavigation = () => {
                 <Stack.Screen name="ResetPassword" component={ResetPassword}/>
                 <Stack.Screen name="Verification" component={Verification}/>
                 <Stack.Screen name="LocationAccess" component={LocationAccess}/> */}
-                <Stack.Screen name="Main" component={BottomTabNavigation}/>
-                <Stack.Screen name="PersonalProfile" component={PersonalProfile}/>
+                
+                {/* <Stack.Screen name="PersonalProfile" component={PersonalProfile}/>
                 <Stack.Screen name="AddNewAddress" component={AddNewAddress}/>
                 <Stack.Screen name="Address" component={Address}/>
                 <Stack.Screen name="EditProfile" component={EditProfile}/>
@@ -147,13 +158,32 @@ const AppNavigation = () => {
                 <Stack.Screen name='Notifications' component={Notifications}/>
                 <Stack.Screen name="Favourite" component={Favourite}/>
                 <Stack.Screen name="TermsAndConditions" component={TermsAndConditions}/>
-                <Stack.Screen name="CaptureProduct" component={CaptureProduct}/>
+                <Stack.Screen name="CaptureProduct" component={CaptureProduct}/> */}
 
+
+                <Stack.Screen name="Signup" component={Signup}/>
+                <Stack.Screen name="Login" component={Login}/>
+                <Stack.Screen name="Main" component={BottomTabNavigation}/>
+                <Stack.Screen name="PersonalProfile" component={PersonalProfile}/>
+                <Stack.Screen name="EditProfile" component={EditProfile}/>
+                <Stack.Screen name="ForgotPassword" component={ForgotPassword}/>
                 <Stack.Screen name="Radio" component={Radioisotope}/>
                 <Stack.Screen name="Radioisotopeelements" component={RadioisotopeElements}/>
                 <Stack.Screen name="ElementDetailsScreen" component={ElementsDetailsScreen}/>
                 <Stack.Screen name="UnitConversion" component={UnitConversion}/>
                 <Stack.Screen name="UnitConversionCalculator" component={UnitConversionCalculator}/>
+
+                <Stack.Screen name="Calculator" component={CalculatorOptions}/>
+                <Stack.Screen name="CalculatePD" component={CalculatePD}/>
+                <Stack.Screen name="CalculateSensitivity" component={CalculateSensitivity}/>
+                <Stack.Screen name="Cardiacfunction" component={Cardiacfunction}/>
+                <Stack.Screen name="CalculateTargetHeartRate" component={CalculateTargetHeartRate}/>
+                <Stack.Screen name="CalculateEjection" component={CalculateEjection}/>
+                <Stack.Screen name="StrokeVolume" component={StrokeVolume}/>
+                <Stack.Screen name="CardiacOutput" component={CardiacOutput}/>
+                <Stack.Screen name="InverseSL" component={InverseSL}/>
+                <Stack.Screen name="Shielding" component={Shielding}/>
+
                 <Stack.Screen name="AcceptableDoseLimit" component={AcceptableDoseLimit}/>
                 <Stack.Screen name="ADBDetails" component={ADBDetailsScreen}/>
                 <Stack.Screen name="Aboutapplication" component={TermsAndConditions}/>

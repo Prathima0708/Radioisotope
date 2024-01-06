@@ -45,30 +45,7 @@ const PersonalProfile = () => {
         )
     }
 
-    const renderUserProfile = () => {
-        return (
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 16 }}>
-                <Image
-                    source={images.avatar3}
-                    resizeMode='contain'
-                    style={{
-                        height: 100,
-                        width: 100,
-                        borderRadius: 50
-                    }}
-                />
-                <View style={{ marginLeft: 12 }}>
-                    <Text style={{ ...FONTS.h4 }}>John Bulla</Text>
-                    <Text style={{
-                        fontSize: 12,
-                        fontFamily: 'regular',
-                        color: COLORS.gray5,
-                        marginVertical: 6
-                    }}>I love Bugatti Chiron</Text>
-                </View>
-            </View>
-        )
-    }
+   
 
     const renderUserProfileInfo = () => {
         return (
@@ -109,7 +86,7 @@ const PersonalProfile = () => {
                                 <Feather name="phone" size={24} color="#369BFF" />
                             </View>
                             <View style={{ flexDirection: 'column' }}>
-                                <Text style={styles.boldBody}>Phone Number</Text>
+                                <Text style={styles.boldBody}>Password</Text>
                                 <Text style={styles.textBody}>408-278-248</Text>
                             </View>
                         </View>
@@ -129,7 +106,7 @@ const PersonalProfile = () => {
             }}>
                 {renderHeader()}
                 <ScrollView>
-                    {renderUserProfile()}
+                  
                     {renderUserProfileInfo()}
                 </ScrollView>
             </View>

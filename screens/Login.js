@@ -62,7 +62,7 @@ const Login = ({ navigation }) => {
 
     return (
         <LinearGradient 
-          colors={[COLORS.primary, COLORS.primary]}
+          colors={[COLORS.btnclr, COLORS.btnclr]}
           style={{ flex: 1, backgroundColor: COLORS.blue }}>
             <StatusBar hidden />
             <View style={commonStyles.header}>
@@ -93,72 +93,48 @@ const Login = ({ navigation }) => {
                     secureTextEntry={true}
                 />
 
-                <View style={commonStyles.checkBoxContainer}>
-                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <Checkbox
-                            style={commonStyles.checkbox}
-                            value={isChecked}
-                            color={isChecked ? COLORS.primary : COLORS.black}
-                            onValueChange={setChecked}
-                        />
-                        <Text style={{ ...FONTS.body4 }}>Remenber me</Text>
-                    </View>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate("ForgotPassword")}
-                    >
-                        <Text style={{ ...FONTS.body4, color: COLORS.primary }}>Forgot Password ?</Text>
-                    </TouchableOpacity>
-                </View>
 
+
+             <View style={{marginBottom:30}}/>
                 <Button
                     title="LOG IN"
+                    
                     isLoading={isLoading}
                     filled
-                    onPress={() => navigation.navigate('LocationAccess')}
+                    onPress={() => navigation.navigate('Main')}
                     style={commonStyles.btn}
                 />
+              
+
+                
                 <View style={commonStyles.center}>
                     <Text style={{ ...FONTS.body4, color: COLORS.black }}>Don't have an account?{" "}</Text>
                     <TouchableOpacity
                         onPress={() => navigation.navigate("Signup")}
                     >
-                        <Text style={{ ...FONTS.body4, color: COLORS.primary }}>SIGN UP</Text>
+                        <Text style={{ ...FONTS.body4, color: COLORS.blue }}>SIGN UP</Text>
                     </TouchableOpacity>
                 </View>
-                <Text style={{ ...FONTS.body4, color: COLORS.black, textAlign: 'center' }}>Or</Text>
+                <Text
+                    style={{
+                        ...FONTS.body4,
+                        color: COLORS.black,
+                        textAlign: 'center',
+                    }}
+                >
+                    Or
+                </Text>
 
                 <View style={commonStyles.socialContainer}>
+                <Text style={{ ...FONTS.body4, color: COLORS.black }}>Forgot password ?{" "}</Text>
                     <TouchableOpacity
-                        onPress={facebookAuthHandler}
-                        style={commonStyles.socialIconContainer}
+                        onPress={() => navigation.navigate("ForgotPassword")}
                     >
-                        <Image
-                            source={icons.facebook}
-                            resizeMode="contain"
-                            style={commonStyles.socialLogo}
-                        />
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={twitterAuthHandler}
-                        style={commonStyles.socialIconContainer}
-                    >
-                        <Image
-                            source={icons.twitter}
-                            resizeMode="contain"
-                            style={commonStyles.socialLogo}
-                        />
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={appleAuthHandler}
-                        style={commonStyles.socialIconContainer}
-                    >
-                        <Image
-                            source={icons.apple}
-                            resizeMode="contain"
-                            style={commonStyles.socialLogo}
-                        />
+                        <Text style={{ ...FONTS.body4, color: COLORS.blue }}>Reset</Text>
                     </TouchableOpacity>
                 </View>
+
+              
             </Animatable.View>
         </LinearGradient>
     )

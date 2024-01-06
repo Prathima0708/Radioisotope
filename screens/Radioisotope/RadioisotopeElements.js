@@ -36,7 +36,7 @@ const RadioisotopeElements = ({ route,navigation }) => {
         <View style={styles.container}>
             <Header title={`${itemName} elements`} />
 
-            <ScrollView style={{ padding: 16,height:500 }}>
+            <ScrollView style={{ padding: 16, }}>
                 {itemDetails?.map((element, index) => (
                     <TouchableOpacity
                         key={index}
@@ -72,12 +72,14 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: COLORS.white,
         paddingTop: 50,
+
     },
     elementButton: {
         backgroundColor: '#3498db', // You can replace this with your desired background color
         padding: 10,
         borderRadius: 5,
         marginVertical: 10,
+        
     },
     elementButtonText: {
         color: '#fff', // Text color

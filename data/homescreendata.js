@@ -23,25 +23,3 @@ export const homescreenOptions = [
     },
 ]
 
-export const homeCategories = [
-    {
-        id: 1,
-        name: 'Half Life',
-        image: images.halfLife,
-    },
-    {
-        id: 2,
-        name: 'Elution',
-        image: images.elution,
-    },
-    {
-        id: 3,
-        name: 'Paediatric \n dose',
-        image: images.PD,
-    },
-    {
-        id: 4,
-        name: 'More',
-        image: images.more,
-    },
-]

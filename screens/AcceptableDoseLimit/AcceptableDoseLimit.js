@@ -13,7 +13,8 @@ import {
 import { Table, Row, Rows } from 'react-native-table-component'
 import { COLORS, icons } from '../../constants'
 import { commonStyles } from '../../styles/CommonStyles'
-import { ADB } from '../../data/data'
+import { ADB } from '../../data/ADB'
+
 
 const AcceptableDoseLimit = ({navigation}) => {
     const tableHead = ['Type of Dose Limit', 'Limit on Dose', 'Limit on Dose']

@@ -93,43 +93,11 @@ const EditProfile = () => {
         const navigation = useNavigation()
         return (
             <View style={{ flexDirection: 'column', alignItems: 'center' }}>
-                <View style={{ marginVertical: 12 }}>
-                    <Image
-                        source={
-                            image === null ?
-                                images.avatar3 :
-                                image
-                        }
-                        resizeMode='contain'
-                        style={{
-                            height: 130,
-                            width: 130,
-                            borderRadius: 65
-                        }}
-                    />
-                    <TouchableOpacity
-                        onPress={pickImage}
-                        style={{
-                            height: 42,
-                            width: 42,
-                            borderRadius: 21,
-                            backgroundColor: COLORS.primary,
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            position: 'absolute',
-                            bottom: 0,
-                            right: 0
-                        }}
-                    >
-                        <MaterialCommunityIcons
-                            name="pencil-outline"
-                            size={24}
-                            color={COLORS.white} />
-                    </TouchableOpacity>
-                </View>
+               
 
                 <View style={{
                     width: SIZES.width - 32,
+                    marginTop:30
                 }}>
                     <Text style={commonStyles.inputHeader}>Full Name</Text>
                     <Input
@@ -148,30 +116,25 @@ const EditProfile = () => {
                         placeholderTextColor="rgba(0,0,0,0.5)"
                         keyboardType="email-address"
                     />
-                    <Text style={commonStyles.inputHeader}>Phone Number</Text>
+                    <Text style={commonStyles.inputHeader}>Password</Text>
+                   
                     <Input
-                        id="phoneNumber"
-                        onInputChanged={inputChangedHandler}
-                        errorText={formState.inputValidities['phoneNumber']}
-                        placeholder="111-111-111-222"
-                        placeholderTextColor="rgba(0,0,0,0.5)"
-                        keyboardType="numeric"
-                    />
-                    <Text style={commonStyles.inputHeader}>Bio</Text>
-                    <Input
-                        id="bio"
-                        onInputChanged={inputChangedHandler}
-                        errorText={formState.inputValidities['bio']}
-                        placeholder="I love Australia"
-                        placeholderTextColor="rgba(0,0,0,0.5)"
-                    />
+                    onInputChanged={inputChangedHandler}
+                    errorText={formState.inputValidities['password']}
+                    autoCapitalize="none"
+                    id="password"
+                    placeholder="*************"
+                    placeholderTextColor={COLORS.black}
+                    secureTextEntry={true}
+                />
                     <Button
                         title="SAVE"
                         filled
                         onPress={() => navigation.navigate("PersonalProfile")}
                         style={{
                             marginTop: 12,
-                            marginBottom: 30
+                            marginBottom: 30,
+                            backgroundColor:COLORS.btnclr
                         }}
                     />
                 </View>

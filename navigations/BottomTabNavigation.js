@@ -2,7 +2,7 @@ import { View, Platform, Image } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { COLORS, icons } from '../constants'
-import { Profile, Search, Message, HomeV1, MyOrders, HomeV2, HomeV3 } from '../screens'
+import { Profile, Search, Message, HomeV1, MyOrders, HomeV2, HomeV3, PersonalProfile } from '../screens'
 import { Ionicons } from '@expo/vector-icons'
 import DrawerNavigation from './DrawerNavigation'
 
@@ -89,7 +89,7 @@ const BottomTabNavigation = () => {
 
             <Tab.Screen
                 name="Profile"
-                component={DrawerNavigation}
+                component={Profile}
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (

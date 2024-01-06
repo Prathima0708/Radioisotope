@@ -41,6 +41,7 @@ const ElementsDetailsScreen = ({ route }) => {
                 <Text style={styles.detailText}>
                     Oxidation state: {elementDetails.oxidationstate}
                 </Text>
+               
                 <Text style={styles.detailText}>
                     Parent Radionuclide: {elementDetails.parentRadionuclide}
                 </Text>
@@ -51,11 +52,11 @@ const ElementsDetailsScreen = ({ route }) => {
                 Natural Structure : {elementDetails.naturalstructure}
                 </Text>
                 <Text style={styles.detailText}> Decay Scheme:</Text>
-
-                <Image
+                <Image source={elementDetails.decayimage} style={{ height: 200, width: 270 }}/>
+                {/* <Image
                     source={elementDetails.decayimage}
-                    style={{ height: 100, width: 200 }}
-                />
+                    //style={{ height: 100, width: 200 }}
+                /> */}
 
                 {/* Add more details as needed */}
             </View>
@@ -70,6 +71,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: COLORS.white,
         paddingTop: 50,
+       // marginBottom:10
     },
     detailsContainer: {
         padding: 16,

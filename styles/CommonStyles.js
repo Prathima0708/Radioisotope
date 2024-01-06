@@ -52,10 +52,13 @@ export const commonStyles = StyleSheet.create({
     btn:{
         width: SIZES.width - 44,
         marginBottom: SIZES.padding,
+        backgroundColor:COLORS.btnclr,
+       
     },
     btn1:{
         width: SIZES.width - 44,
         marginVertical: SIZES.padding,
+        backgroundColor:COLORS.btnclr
     },
     center:{
         flexDirection: 'row',

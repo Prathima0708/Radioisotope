@@ -31,28 +31,73 @@ const initialState = {
 }
 
 const Signup = ({ navigation }) => {
-    const [error, setError] = useState()
-    const [isLoading, setIsLoading] = useState(false)
-    const [formState, dispatchFormState] = useReducer(reducer, initialState)
-
-    const inputChangedHandler = useCallback(
-        (inputId, inputValue) => {
-            const result = validateInput(inputId, inputValue)
-            dispatchFormState({ inputId, validationResult: result, inputValue })
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        password: '',
+      });
+    
+      const [formState, setFormState] = useState({
+        inputValidities: {
+          fullName: true,
+          email: true,
+          password: true,
         },
-        [dispatchFormState]
-    )
-
-    useEffect(() => {
-        if (error) {
-            Alert.alert('An error occured', error)
+      });
+    
+      const [isLoading, setIsLoading] = useState(false);
+    
+      const inputChangedHandler = (id, value) => {
+        setFormData((prevData) => ({
+          ...prevData,
+          [id]: value,
+        }));
+      };
+    
+      const validateInput = () => {
+        const newInputValidities = {
+          fullName: formData.fullName.trim() !== '',
+          email: /^\S+@\S+\.\S+$/.test(formData.email),
+          password: formData.password.trim().length >= 6,
+        };
+    
+        setFormState((prevFormState) => ({
+          ...prevFormState,
+          inputValidities: newInputValidities,
+        }));
+    
+        return Object.values(newInputValidities).every((isValid) => isValid);
+      };
+    
+      const handleSignUp = async () => {
+        if (!validateInput()) {
+          // Validation failed
+          return;
         }
-    }, [error])
-
+    
+        // Validation successful, make API call
+        try {
+          setIsLoading(true);
+    
+          const response = await axios.post('YOUR_SIGNUP_API_ENDPOINT', {
+            fullName: formData.fullName,
+            email: formData.email,
+            password: formData.password,
+          });
+    
+          // Handle the response as needed
+    
+          setIsLoading(false);
+          navigation.navigate('Login'); // Navigate to the login screen after successful signup
+        } catch (error) {
+          // Handle error
+          setIsLoading(false);
+        }
+      };
     return (
         <LinearGradient 
-          colors={[COLORS.primary, COLORS.primary]}
-          style={{ flex: 1, backgroundColor: COLORS.blue }}>
+          colors={[COLORS.btnclr, COLORS.btnclr]}
+          style={{ flex: 1, backgroundColor: 'red' }}>
             <StatusBar hidden={true} />
             <View style={commonStyles.header}>
                 <TouchableOpacity
@@ -96,16 +141,7 @@ const Signup = ({ navigation }) => {
                         secureTextEntry={true}
                     />
 
-                    <Text style={commonStyles.inputHeader}>Re-Type Password</Text>
-                    <Input
-                        onInputChanged={inputChangedHandler}
-                        errorText={formState.inputValidities['passwordConfirm']}
-                        autoCapitalize="none"
-                        id="passwordConfirm"
-                        placeholder="*************"
-                        placeholderTextColor={COLORS.black}
-                        secureTextEntry={true}
-                    />
+                 
 
                     <Button
                         title="SIGN UP"

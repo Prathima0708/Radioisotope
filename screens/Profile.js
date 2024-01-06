@@ -7,8 +7,18 @@ import { commonStyles } from '../styles/CommonStyles'
 import { Feather, Ionicons, MaterialIcons, MaterialCommunityIcons } from "@expo/vector-icons"
 import { ScrollView } from 'react-native-virtualized-view'
 import { StatusBar } from 'expo-status-bar'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
-const Profile = () => {
+const Profile = ({navigation}) => {
+   
+    const logoutHandler=async()=>{
+ // Remove the value stored in AsyncStorage
+ await AsyncStorage.removeItem('userId');
+ await AsyncStorage.removeItem('username');
+ 
+ // Redirect to the Login screen
+ navigation.replace('Login');
+    }
     const renderHeader = () => {
         const navigation = useNavigation()
         return (
@@ -31,44 +41,12 @@ const Profile = () => {
                     </TouchableOpacity>
                     <Text style={{ marginLeft: 12, fontSize: 17, fontFamily: 'regular' }}>Profile</Text>
                 </View>
-                <TouchableOpacity
-                    onPress={() => console.log("Pressed")}
-                    style={commonStyles.header1Icon}
-                >
-                    <Image
-                        resizeMode='contain'
-                        source={icons.more}
-                        style={{ height: 24, width: 24, tintColor: COLORS.black }}
-                    />
-                </TouchableOpacity>
+              
             </View>
         )
     }
 
-    const renderUserProfile = () => {
-        return (
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 16 }}>
-                <Image
-                    source={images.avatar3}
-                    resizeMode='contain'
-                    style={{
-                        height: 100,
-                        width: 100,
-                        borderRadius: 50
-                    }}
-                />
-                <View style={{ marginLeft: 12 }}>
-                    <Text style={{ ...FONTS.h4 }}>John Bulla</Text>
-                    <Text style={{
-                        fontSize: 12,
-                        fontFamily: 'regular',
-                        color: COLORS.gray5,
-                        marginVertical: 6
-                    }}>I love Bugatti Chiron</Text>
-                </View>
-            </View>
-        )
-    }
+  
 
     const renderSettings = () => {
         const navigation = useNavigation()
@@ -91,116 +69,9 @@ const Profile = () => {
                                 style={styles.iconRight}
                             />
                         </View>
+                        
                     </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate("Address")}
-                        style={styles.subContainer}
-                    >
-                        <View style={styles.subLeftContainer}>
-                            <View style={styles.rounded}>
-                                <Feather name="map" size={24} color="#413DFB" />
-                            </View>
-                            <Text style={styles.textBody}>Addresses</Text>
-                        </View>
-                        <View>
-                            <Image
-                                source={icons.arrowRight}
-                                style={styles.iconRight}
-                            />
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate("PaymentMethod")}
-                        style={styles.subContainer}
-                    >
-                        <View style={styles.subLeftContainer}>
-                            <View style={styles.rounded}>
-                                <Feather name="credit-card" size={24} color="#369BFF" />
-                            </View>
-                            <Text style={styles.textBody}>Payment Method</Text>
-                        </View>
-                        <View>
-                            <Image
-                                source={icons.arrowRight}
-                                style={styles.iconRight}
-                            />
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate("TransactionHistory")}
-                        style={styles.subContainer}
-                    >
-                        <View style={styles.subLeftContainer}>
-                            <View style={styles.rounded}>
-                                <MaterialIcons name="add-chart" size={24} color="orange" />
-                            </View>
-                            <Text style={styles.textBody}>Transaction History</Text>
-                        </View>
-                        <View>
-                            <Image
-                                source={icons.arrowRight}
-                                style={styles.iconRight}
-                            />
-                        </View>
-                    </TouchableOpacity>
-                </View>
-
-                <View style={styles.container}>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate("Favourite")}
-                        style={styles.subContainer}
-                    >
-                        <View style={styles.subLeftContainer}>
-                            <View style={styles.rounded}>
-                                <Feather name="heart" size={24} color="#B33DFB" />
-                            </View>
-                            <Text style={styles.textBody}>Favourite</Text>
-                        </View>
-                        <View>
-                            <Image
-                                source={icons.arrowRight}
-                                style={styles.iconRight}
-                            />
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate("History")}
-                        style={styles.subContainer}
-                    >
-                        <View style={styles.subLeftContainer}>
-                            <View style={styles.rounded}>
-                                <MaterialCommunityIcons name="history" size={26} color={COLORS.orange} />
-                            </View>
-                            <Text style={styles.textBody}>History</Text>
-                        </View>
-                        <View>
-                            <Image
-                                source={icons.arrowRight}
-                                style={styles.iconRight}
-                            />
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate("Notifications")}
-                        style={styles.subContainer}
-                    >
-                        <View style={styles.subLeftContainer}>
-                            <View style={styles.rounded}>
-                                <Ionicons name="notifications-outline" size={24} color={COLORS.primary} />
-                            </View>
-                            <Text style={styles.textBody}>Notifications</Text>
-                        </View>
-                        <View>
-                            <Image
-                                source={icons.arrowRight}
-                                style={styles.iconRight}
-                            />
-                        </View>
-                    </TouchableOpacity>
-
-                </View>
-
-                <View style={styles.container}>
+                
                     <TouchableOpacity
                         onPress={() => navigation.navigate("Faqs")}
                         style={styles.subContainer}
@@ -219,44 +90,7 @@ const Profile = () => {
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        onPress={() => navigation.navigate("Settings")}
-                        style={styles.subContainer}
-                    >
-                        <View style={styles.subLeftContainer}>
-                            <View style={styles.rounded}>
-                                <Feather name="settings" size={24} color="#413DFB" />
-                            </View>
-                            <Text style={styles.textBody}>Settings</Text>
-                        </View>
-                        <View>
-                            <Image
-                                source={icons.arrowRight}
-                                style={styles.iconRight}
-                            />
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate("TermsAndConditions")}
-                        style={styles.subContainer}
-                    >
-                        <View style={styles.subLeftContainer}>
-                            <View style={styles.rounded}>
-                            <MaterialCommunityIcons name="file-document-multiple-outline" size={26} color="orange" />
-                            </View>
-                            <Text style={styles.textBody}>Terms And Conditions</Text>
-                        </View>
-                        <View>
-                            <Image
-                                source={icons.arrowRight}
-                                style={styles.iconRight}
-                            />
-                        </View>
-                    </TouchableOpacity>
-                </View>
-
-                <View style={[styles.container, { marginBottom: 100 }]}>
-                    <TouchableOpacity
-                        onPress={() => console.log("Log out")}
+                        onPress={logoutHandler}
                         style={styles.subContainer}
                     >
                         <View style={styles.subLeftContainer}>
@@ -273,6 +107,8 @@ const Profile = () => {
                         </View>
                     </TouchableOpacity>
                 </View>
+
+               
             </View>
         )
     }
@@ -288,7 +124,7 @@ const Profile = () => {
                 <ScrollView
                     showsVerticalScrollIndicator={false}
                 >
-                    {renderUserProfile()}
+                
                     {renderSettings()}
                 </ScrollView>
             </View>
@@ -302,7 +138,8 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         width: SIZES.width - 32,
         paddingVertical: 8,
-        marginBottom: 12
+        marginBottom: 12,
+        marginTop:30
     },
     subContainer: {
         flexDirection: 'row',
