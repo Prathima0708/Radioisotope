@@ -9,10 +9,11 @@ import React from 'react'
 import { ScrollView } from 'react-native'
 import Header from '../../components/Header'
 import { COLORS } from '../../constants'
+import { FlatList } from 'react-native'
 
-const RadioisotopeElements = ({ route,navigation }) => {
+const RadioisotopeElements = ({ route, navigation }) => {
     const { itemName, itemDetails } = route.params
-   
+
     //  const elementsArray = itemDetails.split('\n')
     const getElementDetails = (element) => {
         // Retrieve and format additional details for the clicked element
@@ -29,9 +30,9 @@ const RadioisotopeElements = ({ route,navigation }) => {
     const navigateToDetailsScreen = (element) => {
         // Navigate to a new screen and pass the details as parameters
         navigation.navigate('ElementDetailsScreen', {
-          elementDetails: element,
-        });
-      };
+            elementDetails: element,
+        })
+    }
     return (
         <View style={styles.container}>
             <Header title={`${itemName} elements`} />
@@ -56,7 +57,31 @@ const RadioisotopeElements = ({ route,navigation }) => {
                         </View>
                     </TouchableOpacity>
                 ))}
+                <View style={{ height: 30 }} />
             </ScrollView>
+            {/* <FlatList
+                style={{ padding: 16 }}
+                data={itemDetails}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={({ item, index }) => (
+                    <TouchableOpacity
+                        style={styles.elementButton}
+                        onPress={() => navigateToDetailsScreen(item)}
+                    >
+                        <View>
+                            {item.name ? (
+                                <Text style={styles.elementButtonText}>
+                                    {item.name}
+                                </Text>
+                            ) : (
+                                <Text style={styles.elementButtonText}>
+                                    Name Missing
+                                </Text>
+                            )}
+                        </View>
+                    </TouchableOpacity>
+                )}
+            /> */}
         </View>
     )
 }
@@ -72,14 +97,12 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: COLORS.white,
         paddingTop: 50,
-
     },
     elementButton: {
         backgroundColor: '#3498db', // You can replace this with your desired background color
         padding: 10,
         borderRadius: 5,
         marginVertical: 10,
-        
     },
     elementButtonText: {
         color: '#fff', // Text color

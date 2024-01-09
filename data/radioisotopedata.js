@@ -637,7 +637,7 @@ export const RadioisotopeData = [
                 parentRadionuclide:'Rb-89',
                 decayproduct:'Y-89',
                 naturalstructure:'FCC',
-                decayimage:''
+                decayimage:require('../assets/radioisotopeimages/diagnoticimages/Strontium89.jpg')
                
                 // ... other details
             },
@@ -698,7 +698,7 @@ export const RadioisotopeData = [
                 parentRadionuclide:'Rh-109,Pd-109m1',
                 decayproduct:'Ag-109',
                 naturalstructure:'FCC',
-                decayimage:''
+                decayimage:require('../assets/radioisotopeimages/diagnoticimages/Palladium109.jpg')
                
                 // ... other details
             },
@@ -718,7 +718,7 @@ export const RadioisotopeData = [
                 parentRadionuclide:'Pd-111,Ag-111m1,Pd-111m1',
                 decayproduct:'Cd-111',
                 naturalstructure:'FCC',
-                decayimage:''
+                decayimage:require('../assets/radioisotopeimages/diagnoticimages/Silver111.jpg')
                
                 // ... other details
             },
@@ -839,7 +839,7 @@ export const RadioisotopeData = [
                 parentRadionuclide:'Pm-153,Sm-153m',
                 decayproduct:'Eu-153',
                 naturalstructure:'Rhombohedral',
-                decayimage:''
+                decayimage:require('../assets/radioisotopeimages/diagnoticimages/Samarium153.jpg')
                
                 // ... other details
             },
@@ -878,7 +878,7 @@ export const RadioisotopeData = [
                 parentRadionuclide:'Yb-177,Lu-177m4',
                 decayproduct:'Hf-177',
                 naturalstructure:'Close packed hexagonal',
-                decayimage:''
+                decayimage:require('../assets/radioisotopeimages/diagnoticimages/Lutetium177.jpg')
                
                 // ... other details
             },
@@ -897,7 +897,7 @@ export const RadioisotopeData = [
                 parentRadionuclide:'Re-186m1',
                 decayproduct:'Os-186, W-186',
                 naturalstructure:'Hexagonal closed packed',
-                decayimage:''
+                decayimage:require('../assets/radioisotopeimages/diagnoticimages/Rhemium186.jpg')
                
                 // ... other details
             },
@@ -917,7 +917,7 @@ export const RadioisotopeData = [
                 parentRadionuclide:'W-188,Re-188m',
                 decayproduct:'Os-188',
                 naturalstructure:'Hexagonal closed packed',
-                decayimage:''
+                decayimage:require('../assets/radioisotopeimages/diagnoticimages/Rhemium188.jpg')
                
                 // ... other details
             },

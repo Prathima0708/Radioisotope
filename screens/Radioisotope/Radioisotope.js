@@ -56,7 +56,7 @@ const Radioisotope = ({ navigation }) => {
             <ScrollView>
             <View style={styles.container}>
                 <Header title="Radioisotope Library" />
-               {renderSearchBar()}
+               
                 <ScrollView>
                     <FlatList
                         data={RadioisotopeData}

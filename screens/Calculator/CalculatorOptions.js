@@ -92,6 +92,7 @@ const CalculatorOptions = () => {
             />
         </View>
         </View>
+        <View style={{ height: 90 }} />
         </SafeAreaView>
     )
 }

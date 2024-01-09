@@ -60,6 +60,7 @@ const ElementsDetailsScreen = ({ route }) => {
 
                 {/* Add more details as needed */}
             </View>
+            <View style={{ height: 70 }} />
         </ScrollView>
     )
 }
@@ -77,12 +78,14 @@ const styles = StyleSheet.create({
         padding: 16,
         marginHorizontal: 30,
        
+       
     },
     detailText: {
         fontSize: 16,
         marginBottom: 15,
         fontWeight:'500',
-        fontFamily:'regular'
+        fontFamily:'regular',
+        marginVertical:10
        
     },
 })
