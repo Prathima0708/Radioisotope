@@ -10,6 +10,7 @@ import { reducer } from '../utils/reducers/formReducers'
 import { commonStyles } from '../styles/CommonStyles'
 import { StatusBar } from 'expo-status-bar'
 import { LinearGradient } from 'expo-linear-gradient'
+import axios from "axios";
 
 const isTestMode = true
 
@@ -29,15 +30,34 @@ const Login = ({ navigation }) => {
     const [isChecked, setChecked] = useState(false);
     const [error, setError] = useState()
     const [isLoading, setIsLoading] = useState(false)
-    const [formState, dispatchFormState] = useReducer(reducer, initialState)
+    // const [formState, dispatchFormState] = useReducer(reducer, initialState)
 
-    const inputChangedHandler = useCallback(
-        (inputId, inputValue) => {
-            const result = validateInput(inputId, inputValue)
-            dispatchFormState({ inputId, validationResult: result, inputValue })
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+      });
+    
+      const [formState, setFormState] = useState({
+        inputValidities: {
+          email: true,
+          password: true,
         },
-        [dispatchFormState]
-    )
+      });
+
+      const inputChangedHandler = (id, value) => {
+        setFormData((prevData) => ({
+          ...prevData,
+          [id]: value,
+        }));
+      };
+
+    // const inputChangedHandler = useCallback(
+    //     (inputId, inputValue) => {
+    //         const result = validateInput(inputId, inputValue)
+    //         dispatchFormState({ inputId, validationResult: result, inputValue })
+    //     },
+    //     [dispatchFormState]
+    // )
 
     useEffect(() => {
         if (error) {
@@ -59,6 +79,52 @@ const Login = ({ navigation }) => {
     const appleAuthHandler = () => {
         return null
     }
+
+    const handleLogin = async () => {
+        console.log(formData)
+        if (!formData.email || !formData.password) {
+          alert('Please fill in all fields');
+          return
+        }
+  
+    
+        // Validation successful, make API call
+        try {
+          setIsLoading(true);
+    
+          let headers = {
+            "Content-Type": "application/json; charset=utf-8",
+          };
+
+          const user={
+            email_address: formData.email,
+            password: formData.password
+          }
+
+          const response = await axios.post(
+            `http://10.0.2.2:8000/isotopes/user_login/`,
+            user,
+  
+            {
+              headers: headers,
+            }
+          );
+
+          console.log(response.data)
+          if (response.status==200) {
+            navigation.navigate('Main'); // Navigate to the login screen after successful signup
+          } else {
+            throw new Error('Login failed');
+          }
+    
+          setIsLoading(false);
+          
+        } catch (error) {
+          // Handle error
+          setIsLoading(false);
+          alert('Error', 'Login failed. Please try again.');
+        }
+      };
 
     return (
         <LinearGradient 
@@ -101,7 +167,8 @@ const Login = ({ navigation }) => {
                     
                     isLoading={isLoading}
                     filled
-                    onPress={() => navigation.navigate('Main')}
+                    onPress={handleLogin}
+                    // onPress={() => navigation.navigate('Main')}
                     style={commonStyles.btn}
                 />
               

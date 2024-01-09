@@ -962,7 +962,7 @@ const UnitConversionCalculator = ({ route }) => {
     const convertUnits = () => {
         console.log(selectedSourceUnit, selectedDestinationUnit)
         if (selectedSourceUnit === 'Bq' && selectedDestinationUnit === 'GBq') {
-            const result = inputValue * 1.0 * Math.pow(10, -9)
+            const result = inputValue * 1.0* Math.pow(10, -9)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Bq' &&
@@ -1058,7 +1058,7 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'GBq' &&
             selectedDestinationUnit === 'µCi'
         ) {
-            const result = 1 * 27027.027
+            const result = 1 * 27027.02703
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'GBq' &&
@@ -1536,7 +1536,7 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'µGy' &&
             selectedDestinationUnit === 'Gy'
         ) {
-            const result = inputValue * 1.0 * Math.pow(10, -6)
+            const result = inputValue * 1.0* Math.pow(10, -6)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µGy' &&
@@ -1566,7 +1566,7 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'µGy' &&
             selectedDestinationUnit === 'J/kg'
         ) {
-            const result = inputValue * 1.0 * Math.pow(10, -6)
+            const result = inputValue *1.0* Math.pow(10, -6)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µGy' &&
@@ -1632,7 +1632,7 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'mrd' &&
             selectedDestinationUnit === 'Gy'
         ) {
-            const result = inputValue * 1.0 * Math.pow(10, -5)
+            const result = inputValue *1.0* Math.pow(10, -5)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'mrd' &&
@@ -1662,7 +1662,7 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'mrd' &&
             selectedDestinationUnit === 'J/kg'
         ) {
-            const result = inputValue * 1.0 * Math.pow(10, -5)
+            const result = inputValue * 1.0* Math.pow(10, -5)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'mrd' &&
@@ -1680,13 +1680,13 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'µrd' &&
             selectedDestinationUnit === 'Gy'
         ) {
-            const result = inputValue * 1.0 * Math.pow(10, -8)
+            const result = inputValue * 1.0*Math.pow(10, -8)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µrd' &&
             selectedDestinationUnit === 'mGy'
         ) {
-            const result = inputValue * 1.0 * Math.pow(10, -5)
+            const result = inputValue *1.0* Math.pow(10, -5)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µrd' &&
@@ -1698,7 +1698,7 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'µrd' &&
             selectedDestinationUnit === 'rd'
         ) {
-            const result = inputValue * 1.0 * Math.pow(10, -6)
+            const result = inputValue *1.0* Math.pow(10, -6)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µrd' &&
@@ -1710,13 +1710,13 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'µrd' &&
             selectedDestinationUnit === 'J/kg'
         ) {
-            const result = inputValue * 1.0 * Math.pow(10, -8)
+            const result = inputValue * 1.0*Math.pow(10, -8)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µrd' &&
             selectedDestinationUnit === 'mJ/kg'
         ) {
-            const result = inputValue * 1.0 * Math.pow(10, -5)
+            const result = inputValue * 1.0*Math.pow(10, -5)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µrd' &&
@@ -1824,7 +1824,7 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'µJ/kg' &&
             selectedDestinationUnit === 'Gy'
         ) {
-            const result = inputValue * 1.0 * Math.pow(10, -6)
+            const result = inputValue *1.0* Math.pow(10, -6)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µJ/kg' &&
@@ -1860,7 +1860,7 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'µJ/kg' &&
             selectedDestinationUnit === 'J/kg'
         ) {
-            const result = inputValue * 1.0 * Math.pow(10, -6)
+            const result = inputValue * 1.0*Math.pow(10,-6)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µJ/kg' &&
@@ -1869,56 +1869,111 @@ const UnitConversionCalculator = ({ route }) => {
             const result = inputValue * 0.001
             setOutputValue(result)
         }
-        //Contiunation
+    //Contiunation
+    //weight
+    
         else if (
             selectedSourceUnit === 'kgs' &&
             selectedDestinationUnit === 'lbs'
         ) {
             const result = inputValue / 2.2
             setOutputValue(result)
-        } else if (
+        }
+    
+        else if (
             selectedSourceUnit === 'lbs' &&
             selectedDestinationUnit === 'kg'
         ) {
             const result = inputValue * 2.2
             setOutputValue(result)
-        } else if (
+        }
+    //height
+        else if (
             selectedSourceUnit === 'inches' &&
             selectedDestinationUnit === 'cm'
         ) {
             const result = inputValue / 2.54
             setOutputValue(result)
-        } else if (
+        }
+    
+        else if (
             selectedSourceUnit === 'cm' &&
             selectedDestinationUnit === 'inches'
         ) {
             const result = inputValue * 2.54
             setOutputValue(result)
-        } else if (
+        }
+        //Temperature
+        else if (
             selectedSourceUnit === 'F' &&
             selectedDestinationUnit === 'C'
         ) {
-            const result = (inputValue - 32) / 1.8
+            const result = (inputValue - 32)/1.8
             setOutputValue(result)
-        } else if (
+        }
+        else if (
             selectedSourceUnit === 'C' &&
             selectedDestinationUnit === 'F'
         ) {
-            const result = inputValue * 1.8 + 32
+            const result = (inputValue * 1.8)+32
             setOutputValue(result)
-        } else if (
+        }
+    
+        //Liquid
+        else if (
             selectedSourceUnit === 'Ounce' &&
             selectedDestinationUnit === 'mL'
         ) {
-            const result = inputValue * 29.57
+            const result = inputValue * 29.57352956
             setOutputValue(result)
-        } else if (
+        }
+        else if (
             selectedSourceUnit === 'mL' &&
             selectedDestinationUnit === 'Ounce'
         ) {
             const result = inputValue / 29.57
             setOutputValue(result)
         }
+        else if (
+            selectedSourceUnit === 'Ounce' &&
+            selectedDestinationUnit === 'mL'
+        ) {
+            const result = inputValue / 29.57
+            setOutputValue(result)
+        }
+    //Energy
+    else if (
+        selectedSourceUnit === 'J' &&
+        selectedDestinationUnit === 'eV'
+    ) {
+        const result = inputValue * 6.242*Math.pow(10,18)     
+        setOutputValue(result)
+    }
+    else if (
+        selectedSourceUnit === 'eV' &&
+        selectedDestinationUnit === 'J'
+    ) {
+        const result = inputValue * 1.602 *Math.pow(10,-19)    
+        setOutputValue(result)
+    }
+    //Exposure
+    else if (
+        selectedSourceUnit === 'C/kg' &&
+        selectedDestinationUnit === 'R'
+    ) {
+        const result = inputValue * 3876     
+        setOutputValue(result)
+    }
+    else if (
+        selectedSourceUnit === 'R' &&
+        selectedDestinationUnit === 'C/kg'
+    ) {
+        const result = inputValue * 2.58 *Math.pow(10,-4)   
+        setOutputValue(result)
+    }
+    
+    
+    
     }
     const filteredDestinationUnits = units
         .filter((unit) => unit.destinationUnit !== selectedSourceUnit)

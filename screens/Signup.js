@@ -11,7 +11,7 @@ import { StatusBar } from 'expo-status-bar'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { MaterialIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient'
-
+import axios from "axios";
 const isTestMode = true
 
 const initialState = {
@@ -70,28 +70,48 @@ const Signup = ({ navigation }) => {
       };
     
       const handleSignUp = async () => {
-        if (!validateInput()) {
-          // Validation failed
-          return;
-        }
+        console.log(formData)
+        // if (!formData.fullName || !formData.email || !formData.password) {
+        //   alert('Please fill in all fields');
+        //   return
+        // }
+  
     
         // Validation successful, make API call
         try {
           setIsLoading(true);
     
-          const response = await axios.post('YOUR_SIGNUP_API_ENDPOINT', {
-            fullName: formData.fullName,
-            email: formData.email,
-            password: formData.password,
-          });
-    
-          // Handle the response as needed
+          let headers = {
+            "Content-Type": "application/json; charset=utf-8",
+          };
+
+          const user={
+            username:formData.fullName,
+            email_address: formData.email,
+            password: formData.password
+          }
+
+          const response = await axios.post(
+            `http://10.0.2.2:8000/isotopes/user_save_details/`,
+            user,
+  
+            {
+              headers: headers,
+            }
+          );
+
+          if (response.status==201) {
+            navigation.navigate('Login'); // Navigate to the login screen after successful signup
+          } else {
+            throw new Error('Signup failed');
+          }
     
           setIsLoading(false);
-          navigation.navigate('Login'); // Navigate to the login screen after successful signup
+          
         } catch (error) {
           // Handle error
           setIsLoading(false);
+          alert('Error', 'Signup failed. Please try again.');
         }
       };
     return (
@@ -147,7 +167,7 @@ const Signup = ({ navigation }) => {
                         title="SIGN UP"
                         isLoading={isLoading}
                         filled
-                        onPress={() => navigation.navigate('Login')}
+                        onPress={handleSignUp}
                         style={commonStyles.btn1}
                     />
                 </KeyboardAwareScrollView>

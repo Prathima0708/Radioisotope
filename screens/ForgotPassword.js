@@ -10,6 +10,7 @@ import { commonStyles } from '../styles/CommonStyles'
 import { StatusBar } from 'expo-status-bar'
 import { MaterialIcons } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
+import axios from "axios";
 
 const isTestMode = true
 
@@ -28,19 +29,78 @@ const ForgotPassword = ({ navigation }) => {
     const [isLoading, setIsLoading] = useState(false)
     const [formState, dispatchFormState] = useReducer(reducer, initialState)
 
-    const inputChangedHandler = useCallback(
-        (inputId, inputValue) => {
-            const result = validateInput(inputId, inputValue)
-            dispatchFormState({ inputId, validationResult: result, inputValue })
-        },
-        [dispatchFormState]
-    )
+    const [formData, setFormData] = useState({
+        password: ''
+      });
+
+    // const inputChangedHandler = useCallback(
+    //     (inputId, inputValue) => {
+    //         const result = validateInput(inputId, inputValue)
+    //         dispatchFormState({ inputId, validationResult: result, inputValue })
+    //     },
+    //     [dispatchFormState]
+    // )
+
+    const inputChangedHandler = (id, value) => {
+        setFormData((prevData) => ({
+          ...prevData,
+          [id]: value,
+        }));
+      };
 
     useEffect(() => {
         if (error) {
             Alert.alert('An error occured', error)
         }
     }, [error])
+
+    const handlePasswordChange = async () => {
+
+        // if (!formData.email || !formData.password) {
+        //   alert('Please fill in all fields');
+        //   return
+        // }
+  
+    
+        // Validation successful, make API call
+        try {
+          setIsLoading(true);
+    
+          let headers = {
+            "Content-Type": "application/json; charset=utf-8",
+          };
+
+          const user={
+            password: formData.password
+          }
+
+          const pk=1;
+
+          const response = await axios.put(
+            `http://10.0.2.2:8000/isotopes/forgotpass/${pk}/`,
+            user,
+  
+            {
+              headers: headers,
+            }
+          );
+
+          console.log(response.status)
+
+          if (response.status==200) {
+            navigation.navigate('Main'); // Navigate to the login screen after successful signup
+          } else {
+            throw new Error('Login failed');
+          }
+    
+          setIsLoading(false);
+          
+        } catch (error) {
+          // Handle error
+          setIsLoading(false);
+        //   alert('Error', 'Login failed. Please try again.');
+        }
+      };
 
     return (
         <LinearGradient
@@ -90,7 +150,7 @@ const ForgotPassword = ({ navigation }) => {
                     title="SAVE"
                     isLoading={isLoading}
                     filled
-                    onPress={() => navigation.navigate('Login')}
+                    onPress={handlePasswordChange}
                     style={commonStyles.btn1}
                 />
             </Animatable.View>
