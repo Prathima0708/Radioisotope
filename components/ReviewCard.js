@@ -2,8 +2,10 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import ReviewStars from './ReviewStars'
 import { COLORS, SIZES } from "../constants"
+import { useNavigation } from '@react-navigation/native'
 
 const ReviewCard = ({ image, date, title, description, num }) => {
+    const navigation=useNavigation()
     return (
         <View style={styles.container}>
            
@@ -12,7 +14,7 @@ const ReviewCard = ({ image, date, title, description, num }) => {
                 <Text style={styles.title}>Unit Conversion</Text>
                 
                 <Text style={styles.description}>Enter a value below to perform a conversion</Text>
-                <TouchableOpacity style={styles.reorderButton}>
+                <TouchableOpacity style={styles.reorderButton} onPress={()=>navigation.navigate('UnitConversion')}>
                         <Text
                             style={[
                                 styles.buttonText,

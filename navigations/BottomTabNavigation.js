@@ -2,9 +2,10 @@ import { View, Platform, Image } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { COLORS, icons } from '../constants'
-import { Profile, Search, Message, HomeV1, MyOrders, HomeV2, HomeV3, PersonalProfile } from '../screens'
+import { Profile, Search, Message, HomeV1, MyOrders, HomeV2, HomeV3, PersonalProfile, TermsAndConditions } from '../screens'
 import { Ionicons } from '@expo/vector-icons'
 import DrawerNavigation from './DrawerNavigation'
+import Radioisotope from '../screens/Radioisotope/Radioisotope'
 
 const Tab = createBottomTabNavigator()
 
@@ -47,12 +48,12 @@ const BottomTabNavigation = () => {
 
             <Tab.Screen
                 name="Orders"
-                component={DrawerNavigation}
+                component={Radioisotope}
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
                             <Image
-                                source={focused ? icons.shoppingBag : icons.shoppingBagOutline}
+                            source={require('../assets/images/nonclinical.png')}
                                 resizeMode="contain"
                                 style={{
                                     height: 24,
@@ -69,7 +70,7 @@ const BottomTabNavigation = () => {
 
             <Tab.Screen
                 name="Message"
-                component={DrawerNavigation}
+                component={TermsAndConditions}
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (

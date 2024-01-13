@@ -44,6 +44,7 @@ const CalculatorOptions = () => {
                         style={{
                          
                             flexDirection: 'column',
+                            justifyContent:'space-between',
                             marginHorizontal: 50,
                             marginBottom: 30,
                             marginRight:30,
@@ -76,11 +77,12 @@ const CalculatorOptions = () => {
                         >
                             <Image
                                 source={item.image}
-                                resizeMode="cover"
+                                
                                 style={{
-                                    height: 30,
-                                    width: 30,
+                                    height: 40,
+                                    width: 40,
                                     borderRadius: 35,
+                                    resizeMode: 'contain'
                                 }}
                             />
                         </View>

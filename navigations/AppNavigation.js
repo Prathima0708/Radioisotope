@@ -72,6 +72,23 @@ import StrokeVolume from '../screens/Calculator/CardiaFunction/StrokeVolume'
 import CardiacOutput from '../screens/Calculator/CardiaFunction/CardiacOutput'
 import InverseSL from '../screens/Calculator/InverseSquareLaw/InverseSL'
 import Shielding from '../screens/Calculator/Shielding/Shielding'
+import BiologicalHL from '../screens/Calculator/BiologicalHL/BiologicalHL'
+import CalculateTE from '../screens/Calculator/BiologicalHL/CalculateTE'
+import CalculateTB from '../screens/Calculator/BiologicalHL/CalculateTB'
+import VolumeDraw from '../screens/Calculator/VolumeToDraw/VolumeDraw'
+import CalculateI1 from '../screens/Calculator/InverseSquareLaw/CalculateI1'
+import CalculateD1 from '../screens/Calculator/InverseSquareLaw/CalculateD1'
+import CalculateI2 from '../screens/Calculator/InverseSquareLaw/CalculateI2'
+import CalculateD2 from '../screens/Calculator/InverseSquareLaw/CalculateD2'
+import Concentration from '../screens/Calculator/Concentration/Concentration'
+import CalculateC1 from '../screens/Calculator/Concentration/CalculateC1'
+import CalculateV1 from '../screens/Calculator/Concentration/CalculateV1'
+import CalculateC2 from '../screens/Calculator/Concentration/CalculateC2'
+import CalculateV2 from '../screens/Calculator/Concentration/CalculateV2'
+import DosesConcentration from '../screens/Calculator/DosesConcentration/DosesConcentration'
+import DrawConcentration from '../screens/Calculator/DosesConcentration/DrawConcentration'
+import DecayFactor from '../screens/Calculator/DecayFactor/DecayFactor'
+import CalculateDF from '../screens/Calculator/DecayFactor/CalculateDF'
 
 const Stack = createNativeStackNavigator()
 
@@ -181,8 +198,32 @@ const AppNavigation = () => {
                 <Stack.Screen name="CalculateEjection" component={CalculateEjection}/>
                 <Stack.Screen name="StrokeVolume" component={StrokeVolume}/>
                 <Stack.Screen name="CardiacOutput" component={CardiacOutput}/>
+
                 <Stack.Screen name="InverseSL" component={InverseSL}/>
+                <Stack.Screen name="CalculateI1" component={CalculateI1}/>
+                <Stack.Screen name="CalculateI2" component={CalculateI2}/>
+                <Stack.Screen name="CalculateD1" component={CalculateD1}/>
+                <Stack.Screen name="CalculateD2" component={CalculateD2}/>
+
                 <Stack.Screen name="Shielding" component={Shielding}/>
+
+                <Stack.Screen name="CalculateConcentration" component={Concentration}/>
+                <Stack.Screen name="CalculateC1" component={CalculateC1}/>
+                <Stack.Screen name="CalculateV1" component={CalculateV1}/>
+                <Stack.Screen name="CalculateC2" component={CalculateC2}/>
+                <Stack.Screen name="CalculateV2" component={CalculateV2}/>
+
+                <Stack.Screen name="DosesConcentration" component={DosesConcentration}/>
+                <Stack.Screen name="DrawConcentration" component={DrawConcentration}/>
+
+                <Stack.Screen name="BiologicalHL" component={BiologicalHL}/>
+                <Stack.Screen name="CalculateTe" component={CalculateTE}/>
+                <Stack.Screen name="CalculateTb" component={CalculateTB}/>
+
+                <Stack.Screen name="Volumedraw" component={VolumeDraw}/>
+
+                <Stack.Screen name="DecayFactor" component={DecayFactor}/>
+                <Stack.Screen name="CalculateDF" component={CalculateDF}/>
 
                 <Stack.Screen name="AcceptableDoseLimit" component={AcceptableDoseLimit}/>
                 <Stack.Screen name="ADBDetails" component={ADBDetailsScreen}/>

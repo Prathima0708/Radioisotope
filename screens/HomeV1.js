@@ -59,7 +59,9 @@ const HomeV1 = ({ navigation }) => {
                                 flexDirection: 'column',
                                 marginHorizontal:11,
                             }}
-                            onPress={()=>navigation.navigate(item.navigate)}
+                            onPress={()=>navigation.navigate(item.navigate,{
+                                name:item.name
+                            })}
                         >
                             <View
                                 style={{

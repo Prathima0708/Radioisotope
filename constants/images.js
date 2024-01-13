@@ -46,6 +46,12 @@ const logo=require("../assets/images/logo.png")
 const halfLife=require("../assets/images/halflife.png")
 const elution=require("../assets/images/elution.png")
 const PD=require("../assets/images/PD.png")
+const cardiac=require("../assets/images/cardiac2.jpg")
+const inversesl=require("../assets/images/inversesquarelaw.jpg")
+const concentration=require("../assets/images/concentration4.jpg")
+const shielding=require("../assets/images/sheilding2.jpg")
+const sensitivity=require("../assets/images/sensitivity2.jpg")
+const child=require("../assets/images/pediatric2.jpg")
 const more=require("../assets/images/more.png")
 
 const diagnostic=require("../assets/images/diagnosticrd.png")
@@ -101,5 +107,11 @@ export default {
     diagnostic,
     therapeutic,
     theranostic,
-    nonclinical
+    nonclinical,
+    cardiac,
+    inversesl,
+    concentration,
+    shielding,
+    child,
+    sensitivity
 }

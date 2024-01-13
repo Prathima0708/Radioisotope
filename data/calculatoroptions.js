@@ -1,119 +1,22 @@
-// import { images } from "../constants";
-
-// export const calculatorOptions = [
-//     {
-//         id: 1,
-//         name: 'Half Life',
-//         image: images.halfLife,
-//         navigate:'Calculate'
-//     },
-//     {
-//         id: 2,
-//         name: 'Elution',
-//         image: images.elution,
-//         navigate:'Calculate'
-//     },
-//     {
-//         id: 3,
-//         name: 'Paediatric \n dose',
-//         image: images.PD,
-//         navigate:'Calculate'
-//     },
-//     {
-//         id: 4,
-//         name: 'More',
-//         image: images.more,
-//         navigate:'Calculator'
-//     },
-// ]
-
-
-
-// export const morecalculatorOptions = [
-//     {
-//         id: 1,
-//         name: 'Biological \n Half Life',
-//         image: images.halfLife,
-//         navigate:'CalculatePD'
-//     },
-//     {
-//         id: 2,
-//         name: 'Inverse\nSquare Law',
-//         image: images.elution,
-//         navigate:'InverseSL'
-//     },
-//     {
-//         id: 3,
-//         name: 'Paediatric \n dose',
-//         image: images.PD,
-//         navigate:'CalculatePD'
-//     },
-//     {
-//         id: 4,
-//         name: 'Sensitivity ',
-//         image: images.PD,
-//         navigate:'CalculateSensitivity'
-//     },
-//     {
-//         id: 5,
-//         name: 'Cardiac \n functions',
-//         image: images.PD,
-//         navigate:'Cardiacfunction',
-//         options:[
-//             {
-//                 id:'1',
-//                 name:'Target Heart Rate',
-//                 navigate:'CalculateTargetHeartRate'
-//             },
-//             {
-//                 id:'2',
-//                 name:'% Ejection fraction',
-//                 navigate:'CalculateEjection'
-//             },
-//             {
-//                 id:'3',
-//                 name:'Stroke volume ',
-//                 navigate:'StrokeVolume'
-//             },
-//             {
-//                 id:'4',
-//                 name:'Cardiac output ',
-//                 navigate:'CardiacOutput'
-//             },
-//         ]
-//     },
-//     {
-//         id: 6,
-//         name: 'Shielding ',
-//         image: images.PD,
-//         navigate:'Shielding'
-//     },
-  
-// ]
-
-
-
-
 import { images } from "../constants";
-
 export const calculatorOptions = [
     {
         id: 1,
         name: 'Half Life',
         image: images.halfLife,
-        navigate:'Calculate'
+        navigate:'BiologicalHL'
     },
     {
         id: 2,
-        name: 'Elution',
-        image: images.elution,
-        navigate:'Calculate'
+        name: 'Sensitivity',
+        image: images.sensitivity,
+        navigate:'CalculateSensitivity'
     },
     {
         id: 3,
         name: 'Paediatric \n dose',
-        image: images.PD,
-        navigate:'Calculate'
+        image: images.child,
+        navigate:'CalculatePD'
     },
     {
         id: 4,
@@ -122,38 +25,36 @@ export const calculatorOptions = [
         navigate:'Calculator'
     },
 ]
-
-
-
 export const morecalculatorOptions = [
     {
         id: 1,
         name: 'Biological \n Half Life',
         image: images.halfLife,
-        navigate:'CalculatePD'
+        navigate:'BiologicalHL',
+        options:[
+            {
+                id:'1',
+                name:'Calculate Te',
+                navigate:'CalculateTe'
+            },
+            {
+                id:'2',
+                name:'Calculate Tb',
+                navigate:'CalculateTb'
+            },
+           
+        ]
     },
     {
         id: 2,
-        name: 'Inverse\nSquare Law',
+        name: 'Volume to draw \n up(in ml)',
         image: images.elution,
-        navigate:'InverseSL'
+        navigate:'Volumedraw'
     },
     {
         id: 3,
-        name: 'Paediatric \n dose',
-        image: images.PD,
-        navigate:'CalculatePD'
-    },
-    {
-        id: 4,
-        name: 'Sensitivity ',
-        image: images.PD,
-        navigate:'CalculateSensitivity'
-    },
-    {
-        id: 5,
         name: 'Cardiac \n functions',
-        image: images.PD,
+        image: images.cardiac,
         navigate:'Cardiacfunction',
         options:[
             {
@@ -179,35 +80,66 @@ export const morecalculatorOptions = [
         ]
     },
     {
-        id: 6,
-        name: 'Shielding ',
-        image: images.PD,
-        navigate:'Shielding'
+        id: 4,
+        name: 'Inverse\n square law',
+        image: images.inversesl,
+        navigate:'InverseSL',
+        options:[
+            {
+                id:'1',
+                name:'Calculate Intensity 1',
+                navigate:'CalculateI1'
+            },
+            {
+                id:'2',
+                name:'Calculate Distance 1²',
+                navigate:'CalculateD1'
+            },
+            {
+                id:'3',
+                name:'Calculate Intensity 2',
+                navigate:'CalculateI2'
+            },
+            {
+                id:'4',
+                name:'Calculate Distance 2²',
+                navigate:'CalculateD2'
+            },
+        ]
     },
     {
-        id: 7,
-        name: 'Pediatric Dose',
-        image: images.halfLife,
-        navigate:'CalculatePD'
-    },
-    {
-        id: 8,
-        name: 'Volume to \n draw up',
-        image: images.halfLife,
-        navigate:'CalculatePD'
-    },
-  
-    {
-        id: 10,
+        id: 5,
         name: 'Concentration',
-        image: images.halfLife,
-        navigate:'CalculatePD'
+        image: images.concentration,
+        navigate:'CalculateConcentration',
+        options:[
+            {
+                id:'1',
+                name:'Calculate C1',
+                navigate:'CalculateC1'
+            },
+            {
+                id:'2',
+                name:'Calculate V1',
+                navigate:'CalculateV1'
+            },
+            {
+                id:'3',
+                name:'Calculate C2',
+                navigate:'CalculateC2'
+            },
+            {
+                id:'4',
+                name:'Calculate V2',
+                navigate:'CalculateV2'
+            },
+        ]
     },
     {
-        id: 11,
+        id: 6,
         name: 'Doses from \n Concentrations',
         image: images.PD,
-        navigate:'Cardiacfunction',
+        navigate:'DosesConcentration',
         options:[
             {
                 id:'1',
@@ -217,18 +149,92 @@ export const morecalculatorOptions = [
             {
                 id:'2',
                 name:'Draw from concentration',
-                navigate:'CalculateEjection'
+                navigate:'DrawConcentration'
             },
            
         ]
     },
-  
- 
     {
-        id: 14,
+        id: 7,
+        name: 'Shielding ',
+        image: images.shielding,
+        navigate:'Shielding',
+     
+    },
+    {
+        id: 8,
+        name: 'Paediatric \n dose',
+        image: images.child,
+        navigate:'CalculatePD'
+    },
+    {
+        id: 9,
+        name: 'Sensitivity',
+        image: images.sensitivity,
+        navigate:'CalculateSensitivity'
+    },
+    {
+        id: 10,
         name: 'Decay factor',
         image: images.PD,
-        navigate: 'CalculatePD'
+        navigate: 'DecayFactor',
+        options:[
+            {
+                id:'1',
+                name:'Calculate Λ for Mo99',
+                
+                value:0.0105,
+                navigate:'CalculateDF'
+            },
+            {
+                id:'2',
+                name:'Calculate Λ for Tc99m',
+                value:0.1155 ,
+                navigate:'CalculateDF'
+            },
+            {
+                id:'3',
+                name:'Calculate Λ for F18',
+                value:0.3780 ,
+                navigate:'CalculateDF'
+            },
+            {
+                id:'4',
+                name:'Calculate Λ for Y90',
+                value:0.01069,
+                navigate:'CalculateDF'
+            },
+            {
+                id:'5',
+                name:'Calculate Λ for Lu177',
+                value:0.004309,
+                navigate:'CalculateDF'
+            },
+            {
+                id:'6',
+                name:'Calculate Λ for C11',
+                value:2.0442,
+                navigate:'CalculateDF'
+            },
+            {
+                id:'7',
+                name:'Calculate Λ for Ga68',
+                value:0.6116,
+                navigate:'CalculateDF'
+            },
+            {
+                id:'8',
+                name:'Calculate Λ for Ga67',
+                value:0.00875,
+                navigate:'CalculateDF'
+            },
+            {
+                id:'9',
+                name:'Calculate Λ for Re188',
+                value:0.04100,
+                navigate:'CalculateDF'
+            },
+        ]
     },
   
 ]

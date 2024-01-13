@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { StyleSheet } from 'react-native'
 import Header from '../../components/Header'
 import { COLORS } from '../../constants'
+import UIButtonReset from '../../components/UIButton/UIButtonReset'
+import UIButton from '../../components/UIButton/UIButton'
 
 const CalculateSensitivity = ({route}) => {
  
@@ -74,8 +76,8 @@ const CalculateSensitivity = ({route}) => {
       />
 
       <View style={styles.buttonContainer}>
-        <Button title="Calculate" onPress={calculateSensitivity} />
-        <Button title="Reset" onPress={resetFields} />
+      <UIButtonReset title='Reset' onPress={resetFields} />
+            <UIButton title='Calculate' onPress={calculateSensitivity} />
       </View>
 
       {sensitivity !== null && (

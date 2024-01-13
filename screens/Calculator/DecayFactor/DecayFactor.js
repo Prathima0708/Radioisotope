@@ -12,16 +12,11 @@ import { COLORS } from '../../../constants'
 import { morecalculatorOptions } from '../../../data/calculatoroptions'
 
 
-const Cardiacfunction = ({ route,navigation }) => {
+const DecayFactor = ({ route,navigation }) => {
     const {name}=route.params
    
   
-    const navigateToDetailsScreen = (element) => {
-        // Navigate to a new screen and pass the details as parameters
-        navigation.navigate('ElementDetailsScreen', {
-          elementDetails: element,
-        });
-      };
+
     return (
         <View style={styles.container}>
             <Header title={`Calculate ${name}`} />
@@ -30,12 +25,13 @@ const Cardiacfunction = ({ route,navigation }) => {
       
 
       {/* Map the options inside the object with id 5 */}
-      {morecalculatorOptions.find((option) => option.id === 3)?.options?.map((subOption) => (
+      {morecalculatorOptions.find((option) => option.id === 10)?.options?.map((subOption) => (
         <TouchableOpacity
           key={subOption.id}
           style={styles.elementButton}
           onPress={() => navigation.navigate(subOption.navigate,{
-            name:subOption.name
+            name:subOption.name,
+            value:subOption.value
           })}
         >
           <Text style={styles.elementButtonText}>{subOption.name}</Text>
@@ -47,7 +43,7 @@ const Cardiacfunction = ({ route,navigation }) => {
     )
 }
 
-export default Cardiacfunction
+export default DecayFactor
 
 const styles = StyleSheet.create({
     area: {

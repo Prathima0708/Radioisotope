@@ -12,7 +12,7 @@ import { COLORS } from '../../../constants'
 import { morecalculatorOptions } from '../../../data/calculatoroptions'
 
 
-const Cardiacfunction = ({ route,navigation }) => {
+const BiologicalHL = ({ route,navigation }) => {
     const {name}=route.params
    
   
@@ -30,7 +30,7 @@ const Cardiacfunction = ({ route,navigation }) => {
       
 
       {/* Map the options inside the object with id 5 */}
-      {morecalculatorOptions.find((option) => option.id === 3)?.options?.map((subOption) => (
+      {morecalculatorOptions.find((option) => option.id === 1)?.options?.map((subOption) => (
         <TouchableOpacity
           key={subOption.id}
           style={styles.elementButton}
@@ -47,7 +47,7 @@ const Cardiacfunction = ({ route,navigation }) => {
     )
 }
 
-export default Cardiacfunction
+export default BiologicalHL
 
 const styles = StyleSheet.create({
     area: {

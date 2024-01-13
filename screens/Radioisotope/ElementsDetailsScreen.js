@@ -30,6 +30,9 @@ const ElementsDetailsScreen = ({ route }) => {
                     Energy Type: {elementDetails.energyType}
                 </Text>
                 <Text style={styles.detailText}>
+                    Energy : {elementDetails.energy}
+                </Text>
+                <Text style={styles.detailText}>
                     Half Life: {elementDetails.halfLife}
                 </Text>
                 <Text style={styles.detailText}>
@@ -51,8 +54,16 @@ const ElementsDetailsScreen = ({ route }) => {
                 <Text style={styles.detailText}>
                 Natural Structure : {elementDetails.naturalstructure}
                 </Text>
-                <Text style={styles.detailText}> Decay Scheme:</Text>
-                <Image source={elementDetails.decayimage} style={{ height: 200, width: 270 }}/>
+                {elementDetails.decayimage && (
+  <React.Fragment>
+    <Text style={styles.detailText}> Decay Scheme:</Text>
+    <Image
+      source={elementDetails.decayimage}
+      style={{ height: 200, width: 270, resizeMode: 'contain' }}
+    />
+  </React.Fragment>
+)}
+
                 {/* <Image
                     source={elementDetails.decayimage}
                     //style={{ height: 100, width: 200 }}

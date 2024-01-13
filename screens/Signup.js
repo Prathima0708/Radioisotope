@@ -75,7 +75,7 @@ const Signup = ({ navigation }) => {
         //   alert('Please fill in all fields');
         //   return
         // }
-  
+        navigation.navigate('Login');
     
         // Validation successful, make API call
         try {
@@ -138,7 +138,7 @@ const Signup = ({ navigation }) => {
                         id="fullName"
                         onInputChanged={inputChangedHandler}
                         errorText={formState.inputValidities['fullName']}
-                        placeholder="John Doe"
+                        placeholder="Name"
                         placeholderTextColor={COLORS.black}
                     />
                     <Text style={commonStyles.inputHeader}>Email</Text>
@@ -146,7 +146,7 @@ const Signup = ({ navigation }) => {
                         id="email"
                         onInputChanged={inputChangedHandler}
                         errorText={formState.inputValidities['email']}
-                        placeholder="example@gmail.com"
+                        placeholder="email"
                         placeholderTextColor={COLORS.black}
                         keyboardType="email-address"
                     />
@@ -156,7 +156,7 @@ const Signup = ({ navigation }) => {
                         errorText={formState.inputValidities['password']}
                         autoCapitalize="none"
                         id="password"
-                        placeholder="*************"
+                        placeholder="password"
                         placeholderTextColor={COLORS.black}
                         secureTextEntry={true}
                     />

@@ -6,7 +6,7 @@ import { COLORS } from '../../constants'
 
 const CalculatePD = ({route}) => {
  
-    const {name}=route.params
+    const {name}=route?.params
     const [weight, setWeight] = useState('');
     const [adultDose, setAdultDose] = useState('');
     const [pediatricDose, setPediatricDose] = useState(null);
