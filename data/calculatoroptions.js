@@ -137,7 +137,7 @@ export const morecalculatorOptions = [
     },
     {
         id: 6,
-        name: 'Doses from \n Concentrations',
+        name: 'Doses \n Concentration',
         image: images.PD,
         navigate:'DosesConcentration',
         options:[
@@ -234,6 +234,113 @@ export const morecalculatorOptions = [
                 value:0.04100,
                 navigate:'CalculateDF'
             },
+        ]
+    },
+    {
+        id: 11,
+        name: 'Endocrine',
+        image: images.endocrine,
+        navigate:'Endocrine',
+        options:[
+            {
+                id:'1',
+                name:'Percentage radioactive iodine thyroid uptake',
+                navigate:'CalculateRAIU'
+            },
+            {
+                id:'2',
+                name:'I-131 Administered dose',
+                navigate:'CalculateAdministeredDose'
+            },
+           
+        ]
+    },
+
+    {
+        id: 12,
+        name: 'Genitourinary',
+        image: images.genitournary,
+        navigate:'Genitournary',
+        options:[
+            {
+                id:'1',
+                name:'Clearance',
+                navigate:'CalculateClearance'
+            },
+            {
+                id:'2',
+                name:'Filling phase',
+                navigate:'CalculateFillingPhase'
+            },
+           
+        ]
+    },
+    {
+        id: 13,
+        name: 'Pet Oncology',
+        image: images.pet,
+        navigate:'PetOncology',
+        options:[
+            {
+                id:'1',
+                name:'SUV',
+                navigate:'Calculate'
+            },
+        ]
+    },
+    {
+        id: 14,
+        name: 'Gastrointestinal',
+        image: images.Gastrointestinal,
+        navigate:'Gastrointestinal',
+        options:[
+            {
+                id:'1',
+                name:'Percentage retention of semisolid meal',
+                navigate:'Calculate'
+            },
+        ]
+    },
+    {
+        id: 15,
+        name: 'Infection and \n Inflammation',
+        image: images.infection,
+        navigate:'Infection',
+        options:[
+            {
+                id:'1',
+                name:'Labeling efficiency',
+                navigate:'Calculate'
+            },
+        ]
+    },
+    {
+        id: 16,
+        name: 'Extra Formulas',
+        image: images.more,
+        navigate:'Extraformulas',
+        options:[
+            {
+                id:'1',
+                name:'Net Counts',
+                navigate:'NetCounts'
+            },
+            {
+                id:'2',
+                name:'Administered counts',
+                navigate:'AdministeredCounts'
+            },
+            {
+                id:'3',
+                name:'Activity calculation',
+                navigate:'Activity'
+            },
+            {
+                id:'4',
+                name:'Elution efficiency',
+                navigate:'ElutionEfficiency'
+            },
+           
         ]
     },
   

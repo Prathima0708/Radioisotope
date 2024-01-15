@@ -11,38 +11,38 @@ import Header from '../../../components/Header'
 import { COLORS } from '../../../constants'
 import { morecalculatorOptions } from '../../../data/calculatoroptions'
 
+const Genitournary = ({ route, navigation }) => {
+    const { name } = route.params
 
-const BiologicalHL = ({ route,navigation }) => {
-    const {name}=route.params
-   
-  
-  
     return (
         <View style={styles.container}>
             <Header title={`Calculate ${name}`} />
 
-            <ScrollView style={{ padding: 16,height:500 }}>
-      
-
-      {/* Map the options inside the object with id 5 */}
-      {morecalculatorOptions.find((option) => option.id === 1)?.options?.map((subOption) => (
-        <TouchableOpacity
-          key={subOption.id}
-          style={styles.elementButton}
-          onPress={() => navigation.navigate(subOption.navigate,{
-            name:subOption.name
-          })}
-        >
-          <Text style={styles.elementButtonText}>{subOption.name}</Text>
-        </TouchableOpacity>
-      ))}
-    
+            <ScrollView style={{ padding: 16, height: 500 }}>
+                {/* Map the options inside the object with id 5 */}
+                {morecalculatorOptions
+                    .find((option) => option.id === 12)
+                    ?.options?.map((subOption) => (
+                        <TouchableOpacity
+                            key={subOption.id}
+                            style={styles.elementButton}
+                            onPress={() =>
+                                navigation.navigate(subOption.navigate, {
+                                    name: subOption.name,
+                                })
+                            }
+                        >
+                            <Text style={styles.elementButtonText}>
+                                {subOption.name}
+                            </Text>
+                        </TouchableOpacity>
+                    ))}
             </ScrollView>
         </View>
     )
 }
 
-export default BiologicalHL
+export default Genitournary
 
 const styles = StyleSheet.create({
     area: {

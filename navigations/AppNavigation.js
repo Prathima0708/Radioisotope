@@ -89,6 +89,20 @@ import DosesConcentration from '../screens/Calculator/DosesConcentration/DosesCo
 import DrawConcentration from '../screens/Calculator/DosesConcentration/DrawConcentration'
 import DecayFactor from '../screens/Calculator/DecayFactor/DecayFactor'
 import CalculateDF from '../screens/Calculator/DecayFactor/CalculateDF'
+import Endocrine from '../screens/Calculator/Endocrine/Endocrine'
+import CalculateRAIU from '../screens/Calculator/Endocrine/CalculateRAIU'
+import CalculateAdministeredDose from '../screens/Calculator/Endocrine/CalculateAdministeredDose'
+import Genitournary from '../screens/Calculator/Genitournary/Genitournary'
+import CalculateClearance from '../screens/Calculator/Genitournary/CalculateClearance'
+import CalculateFillingPhase from '../screens/Calculator/Genitournary/CalculateFillingPhase'
+import PetOncology from '../screens/Calculator/PetOncology/PetOncology'
+import Gastrointestinal from '../screens/Calculator/Gastrointestinal/Gastrointestinal'
+import Extraformulas from '../screens/Calculator/ExtraFormulas/Extraformulas'
+import NetCounts from '../screens/Calculator/ExtraFormulas/NetCounts'
+import AdministeredCounts from '../screens/Calculator/ExtraFormulas/AdministeredCounts'
+import ElutionEfficiency from '../screens/Calculator/ExtraFormulas/ElutionEfficiency'
+import Infection from '../screens/Calculator/Infection/Infection'
+import Activity from '../screens/Calculator/ExtraFormulas/Activity'
 
 const Stack = createNativeStackNavigator()
 
@@ -224,6 +238,26 @@ const AppNavigation = () => {
 
                 <Stack.Screen name="DecayFactor" component={DecayFactor}/>
                 <Stack.Screen name="CalculateDF" component={CalculateDF}/>
+
+                <Stack.Screen name="Endocrine" component={Endocrine}/>
+                <Stack.Screen name="CalculateRAIU" component={CalculateRAIU}/>
+                <Stack.Screen name="CalculateAdministeredDose" component={CalculateAdministeredDose}/>
+
+                <Stack.Screen name="Genitournary" component={Genitournary}/>
+                <Stack.Screen name="CalculateClearance" component={CalculateClearance}/>
+                <Stack.Screen name="CalculateFillingPhase" component={CalculateFillingPhase}/>
+
+                <Stack.Screen name="PetOncology" component={PetOncology}/>
+
+                <Stack.Screen name="Gastrointestinal" component={Gastrointestinal}/>
+
+                <Stack.Screen name="Extraformulas" component={Extraformulas}/>
+                <Stack.Screen name="NetCounts" component={NetCounts}/>
+                <Stack.Screen name="AdministeredCounts" component={AdministeredCounts}/>
+                <Stack.Screen name="ElutionEfficiency" component={ElutionEfficiency}/>
+                <Stack.Screen name="Activity" component={Activity}/>
+
+                <Stack.Screen name="Infection" component={Infection}/>
 
                 <Stack.Screen name="AcceptableDoseLimit" component={AcceptableDoseLimit}/>
                 <Stack.Screen name="ADBDetails" component={ADBDetailsScreen}/>

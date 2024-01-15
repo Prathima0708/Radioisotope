@@ -29,7 +29,7 @@ const UnitConversionCalculator = ({ route }) => {
 
     const [selectedSourceUnit, setSelectedSourceUnit] = useState(null)
     const [selectedDestinationUnit, setSelectedDestinationUnit] = useState(null)
-    const [showDestinationUnit,setShowDestinationUnit]=useState(false)
+    const [showDestinationUnit, setShowDestinationUnit] = useState(false)
     const [selectListKey, setSelectListKey] = useState(0)
 
     // Add your conversion logic here
@@ -52,7 +52,7 @@ const UnitConversionCalculator = ({ route }) => {
 
     const convertUnits = () => {
         setShowDestinationUnit(true)
-        console.log(selectedSourceUnit, selectedDestinationUnit)
+     
         if (selectedSourceUnit === 'Bq' && selectedDestinationUnit === 'GBq') {
             const result = inputValue * 1.0 * Math.pow(10, -9)
             setOutputValue(result)
@@ -1004,7 +1004,7 @@ const UnitConversionCalculator = ({ route }) => {
             const result = inputValue * 1.8 + 32
             setOutputValue(result)
         }
-    
+
         //Liquid
         else if (
             selectedSourceUnit === 'Ounce' &&
@@ -2067,12 +2067,11 @@ const UnitConversionCalculator = ({ route }) => {
             value: unit.destinationUnit,
             // disabled: shouldDisableDestination(unit.destinationUnit),
         }))
-  const  filteredSourceUnits=units.map((unit) => ({
-            key: unit.id,
-            value: unit.sourceUnit,
+    const filteredSourceUnits = units.map((unit) => ({
+        key: unit.id,
+        value: unit.sourceUnit,
     }))
-       
-        
+
     const handleInputFocus = () => {
         // Immediately blur the input to prevent the keyboard from appearing
         inputRef.current.blur()
@@ -2175,15 +2174,14 @@ const UnitConversionCalculator = ({ route }) => {
                         />
                         <View style={styles.space} />
                         <View style={{ width: 120 }}>
-                        <Dropdown
+                            <Dropdown
                                 style={styles.dropdown}
                                 placeholderStyle={styles.placeholderStyle}
                                 selectedTextStyle={styles.selectedTextStyle}
                                 inputSearchStyle={styles.inputSearchStyle}
                                 iconStyle={styles.iconStyle}
                                 data={filteredSourceUnits}
-                               
-                               maxHeight={300}
+                                maxHeight={300}
                                 labelField="value"
                                 valueField="value"
                                 placeholder="Select "
@@ -2228,8 +2226,7 @@ const UnitConversionCalculator = ({ route }) => {
                                 inputSearchStyle={styles.inputSearchStyle}
                                 iconStyle={styles.iconStyle}
                                 data={filteredDestinationUnits}
-                               
-                               maxHeight={300}
+                                maxHeight={300}
                                 labelField="value"
                                 valueField="value"
                                 placeholder="Select"
@@ -2276,7 +2273,11 @@ const UnitConversionCalculator = ({ route }) => {
                     /> */}
                 </View>
                 {/* Calculator Buttons */}
-             { showDestinationUnit &&  <Text>{outputValue} {selectedDestinationUnit}</Text>}
+                {showDestinationUnit && (
+                    <Text style={styles.resultLabel}>
+                        {outputValue} {selectedDestinationUnit}
+                    </Text>
+                )}
                 <View style={styles.calculatorContainer}>
                     <View style={styles.rowContainer}>
                         {renderCalculatorButton('1')}
@@ -2395,6 +2396,12 @@ const styles = StyleSheet.create({
     inputSearchStyle: {
         height: 40,
         fontSize: 16,
+    },
+    resultLabel: {
+        marginTop: 20,
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: 'green',
     },
 })
 

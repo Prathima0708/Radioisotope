@@ -53,6 +53,11 @@ const shielding=require("../assets/images/sheilding2.jpg")
 const sensitivity=require("../assets/images/sensitivity2.jpg")
 const child=require("../assets/images/pediatric2.jpg")
 const more=require("../assets/images/more.png")
+const endocrine=require("../assets/images/Endocrinen1.jpg")
+const genitournary=require("../assets/images/Genitourinaryn1.jpg")
+const pet=require("../assets/images/PetOncologyn2.jpg")
+const Gastrointestinal=require("../assets/images/Gastrointestinaln1.jpg")
+const infection=require("../assets/images/Infection_Inflammationn1.jpg")
 
 const diagnostic=require("../assets/images/diagnosticrd.png")
 const therapeutic=require("../assets/images/therapeuticrd.png")
@@ -113,5 +118,10 @@ export default {
     concentration,
     shielding,
     child,
-    sensitivity
+    sensitivity,
+    endocrine,
+    genitournary,
+    pet,
+    Gastrointestinal,
+    infection
 }

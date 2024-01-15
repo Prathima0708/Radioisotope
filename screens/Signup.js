@@ -111,7 +111,7 @@ const Signup = ({ navigation }) => {
         } catch (error) {
           // Handle error
           setIsLoading(false);
-          alert('Error', 'Signup failed. Please try again.');
+       //   alert('Error', 'Signup failed. Please try again.');
         }
       };
     return (
