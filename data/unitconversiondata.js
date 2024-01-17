@@ -104,9 +104,16 @@ export const UnitConversionOptions = [
         name: 'Activity',
         units: [
             { id: '1', sourceUnit: 'Bq', destinationUnit: 'GBq' },
-            { id: '2', sourceUnit: 'GBq', destinationUnit: 'MBq' },
-            { id: '3', sourceUnit: 'MBq', destinationUnit: 'KBq' },
-            { id: '4', sourceUnit: 'KBq', destinationUnit: 'KCi' },
+            { id: '2', sourceUnit: 'GBq', destinationUnit: 'mBq' },
+            { id: '3', sourceUnit: 'mBq', destinationUnit: 'kBq' },
+            { id: '4', sourceUnit: 'kBq', destinationUnit: 'kCi' },
+            { id: '5', sourceUnit: null, destinationUnit: 'Ci' },
+            { id: '6', sourceUnit: null, destinationUnit: 'mCi' },
+            { id: '7', sourceUnit: null, destinationUnit: 'µCi' },
+            { id: '8', sourceUnit: null, destinationUnit: 'pCi' },
+            { id: '9', sourceUnit: null, destinationUnit: 'dpm' },
+            { id: '10', sourceUnit: null, destinationUnit: 'Bq' },
+
 
             // Additional unit for "Activity"
             // Add other source and destination units for "Activity"
@@ -116,14 +123,14 @@ export const UnitConversionOptions = [
         id: '2',
         name: 'Absorbed Dose',
         units: [
-            { id: '1', sourceUnit: 'Gy', destinationUnit: 'MGy' },
-            { id: '2', sourceUnit: 'MGy', destinationUnit: 'µGy' },
+            { id: '1', sourceUnit: 'Gy', destinationUnit: 'mGy' },
+            { id: '2', sourceUnit: 'mGy', destinationUnit: 'µGy' },
             { id: '3', sourceUnit: 'µGy', destinationUnit: 'rd' },
-            { id: '4', sourceUnit: 'rd', destinationUnit: 'MRd' },
-            { id: '5', sourceUnit: 'MRd', destinationUnit: 'µrd' },
+            { id: '4', sourceUnit: 'rd', destinationUnit: 'mrd' },
+            { id: '5', sourceUnit: 'mrd', destinationUnit: 'µrd' },
             { id: '6', sourceUnit: 'µrd', destinationUnit: 'J/Kg' },
-            { id: '7', sourceUnit: 'J/Kg', destinationUnit: 'MJ/Kg' },
-            { id: '8', sourceUnit: 'MJ/Kg', destinationUnit: 'µJ/Kg' },
+            { id: '7', sourceUnit: 'J/Kg', destinationUnit: 'mJ/Kg' },
+            { id: '8', sourceUnit: 'mJ/Kg', destinationUnit: 'µJ/Kg' },
             { id: '9', sourceUnit: 'µJ/Kg', destinationUnit: 'Gy' },
             // Add other source and destination units for "Absorbed Dose"
         ],
@@ -132,12 +139,12 @@ export const UnitConversionOptions = [
         id: '3',
         name: 'Equivalent Dose , Effective Dose',
         units: [
-            { id: '1', sourceUnit: 'Sv', destinationUnit: 'MSv' },
-            { id: '2', sourceUnit: 'MSv', destinationUnit: 'µSv' },
-            { id: '3', sourceUnit: 'µSv', destinationUnit: 'REm' },
-            { id: '4', sourceUnit: 'REm', destinationUnit: 'MRem' },
-            { id: '5', sourceUnit: 'MRem', destinationUnit: 'µRem' },
-            { id: '6', sourceUnit: 'µRem', destinationUnit: 'Sv' },
+            { id: '1', sourceUnit: 'Sv', destinationUnit: 'mSv' },
+            { id: '2', sourceUnit: 'mSv', destinationUnit: 'µSv' },
+            { id: '3', sourceUnit: 'µSv', destinationUnit: 'rem' },
+            { id: '4', sourceUnit: 'rem', destinationUnit: 'mrem' },
+            { id: '5', sourceUnit: 'mrem', destinationUnit: 'µrem' },
+            { id: '6', sourceUnit: 'µrem', destinationUnit: 'Sv' },
             // Add other source and destination units for "Equivalent Dose , Effective Dose"
         ],
     },
@@ -146,7 +153,7 @@ export const UnitConversionOptions = [
 
     {
         id: '4',
-        name: 'Exposure',
+        name: 'Exposure Dose',
         units: [
             { id: '1', sourceUnit: 'C/Kg', destinationUnit: 'R' },
             { id: '2', sourceUnit: 'R', destinationUnit: 'C/Kg' },
@@ -166,8 +173,8 @@ export const UnitConversionOptions = [
         id: '6',
         name: 'Weight',
         units: [
-            { id: '1', sourceUnit: 'Kgs', destinationUnit: 'lbs' },
-            { id: '2', sourceUnit: 'lbs', destinationUnit: 'Kgs' },
+            { id: '1', sourceUnit: 'kg', destinationUnit: 'lbs' },
+            { id: '2', sourceUnit: 'lbs', destinationUnit: 'kg' },
         ],
     },
 
@@ -175,8 +182,8 @@ export const UnitConversionOptions = [
         id: '7',
         name: 'Height',
         units: [
-            { id: '1', sourceUnit: 'inches', destinationUnit: 'CM' },
-            { id: '2', sourceUnit: 'CM', destinationUnit: 'inches' },
+            { id: '1', sourceUnit: 'inches', destinationUnit: 'cm' },
+            { id: '2', sourceUnit: 'cm', destinationUnit: 'inches' },
         ],
     },
     {

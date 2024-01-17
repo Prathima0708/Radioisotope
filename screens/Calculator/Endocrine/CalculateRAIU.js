@@ -6,31 +6,31 @@ import UIButtonReset from '../../../components/UIButton/UIButtonReset';
 
 const CalculateRAIU = ({ route }) => {
   const { name } = route.params;
-  const [countThigh, setCountThigh] = useState('');
-  const [countNeck, setCountNeck] = useState('');
-  const [administeredDoseCounts, setAdministeredDoseCounts] = useState('');
+  const [neckCounts, setNeckCounts] = useState('');
   const [backgroundCounts, setBackgroundCounts] = useState('');
+  const [administeredDoseCounts, setAdministeredDoseCounts] = useState('');
+  const [backgroundCorrectedCounts, setBackgroundCorrectedCounts] = useState(null);
   const [percentRAIU, setPercentRAIU] = useState(null);
 
-  const calculatePercentRAIU = () => {
-    if (countThigh && countNeck && administeredDoseCounts) {
-      const thighCount = parseFloat(countThigh);
-      const neckCount = parseFloat(countNeck);
-      const doseCounts = parseFloat(administeredDoseCounts);
+  const calculateRAIU = () => {
+    if (neckCounts && backgroundCounts && administeredDoseCounts) {
+      const neckCountsValue = parseFloat(neckCounts);
+      const backgroundCountsValue = parseFloat(backgroundCounts);
+      const administeredDoseCountsValue = parseFloat(administeredDoseCounts);
 
-      const backgroundCountsValue = thighCount - neckCount;
-      setBackgroundCounts(backgroundCountsValue.toFixed(2)); // rounding to 2 decimal places
+      const backgroundCorrectedCountsResult = neckCountsValue - backgroundCountsValue;
+      setBackgroundCorrectedCounts(backgroundCorrectedCountsResult);
 
-      const percentRAIUValue = (backgroundCountsValue / doseCounts) * 100;
-      setPercentRAIU(percentRAIUValue.toFixed(2)); // rounding to 2 decimal places
+      const percentRAIUResult = (backgroundCorrectedCountsResult / administeredDoseCountsValue) * 100;
+      setPercentRAIU(percentRAIUResult.toFixed(2)); // rounding to 2 decimal places
     }
   };
 
   const resetFields = () => {
-    setCountThigh('');
-    setCountNeck('');
-    setAdministeredDoseCounts('');
+    setNeckCounts('');
     setBackgroundCounts('');
+    setAdministeredDoseCounts('');
+    setBackgroundCorrectedCounts(null);
     setPercentRAIU(null);
   };
 
@@ -40,25 +40,25 @@ const CalculateRAIU = ({ route }) => {
         <View style={styles.container}>
           <Header title={` ${name}`} />
 
-          <Text style={styles.label}>Count Patient Thigh (for 1 min):</Text>
+          <Text style={styles.label}>Neck Counts (for 1 min):</Text>
           <TextInput
             style={styles.input}
             keyboardType="numeric"
-            placeholder="Enter count for patient thigh"
-            value={countThigh}
-            onChangeText={(text) => setCountThigh(text)}
+            placeholder="Enter neck counts"
+            value={neckCounts}
+            onChangeText={(text) => setNeckCounts(text)}
           />
 
-          <Text style={styles.label}>Count Patient Neck (for 1 min):</Text>
+          <Text style={styles.label}>Background Counts (for 1 min):</Text>
           <TextInput
             style={styles.input}
             keyboardType="numeric"
-            placeholder="Enter count for patient neck"
-            value={countNeck}
-            onChangeText={(text) => setCountNeck(text)}
+            placeholder="Enter background counts"
+            value={backgroundCounts}
+            onChangeText={(text) => setBackgroundCounts(text)}
           />
 
-          <Text style={styles.label}>Administered Dose Capsule Counts (decay and background corrected) per min:</Text>
+          <Text style={styles.label}>Administered Dose Capsule Counts (decay corrected and background corrected) (for 1 min):</Text>
           <TextInput
             style={styles.input}
             keyboardType="numeric"
@@ -69,15 +69,15 @@ const CalculateRAIU = ({ route }) => {
 
           <View style={styles.buttonContainer}>
             <UIButtonReset title='Reset' onPress={resetFields} />
-            <UIButton title='Calculate %RAIU' onPress={calculatePercentRAIU} />
+            <UIButton title='Calculate RAIU' onPress={calculateRAIU} />
           </View>
 
-          {backgroundCounts !== '' ? (
-            <Text style={styles.resultLabel}>Background Counts: {backgroundCounts}</Text>
+          {backgroundCorrectedCounts !== null ? (
+            <Text style={styles.resultLabel}>Background Corrected Counts: {backgroundCorrectedCounts}</Text>
           ) : null}
 
           {percentRAIU !== null ? (
-            <Text style={styles.resultLabel}>%RAIU: {percentRAIU}</Text>
+            <Text style={styles.resultLabel}>%RAIU: {percentRAIU}%</Text>
           ) : null}
         </View>
       </ScrollView>

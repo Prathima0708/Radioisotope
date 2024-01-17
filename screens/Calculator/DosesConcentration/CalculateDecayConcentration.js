@@ -4,31 +4,29 @@ import Header from '../../../components/Header';
 import UIButton from '../../../components/UIButton/UIButton';
 import UIButtonReset from '../../../components/UIButton/UIButtonReset';
 
-const Activity = ({ route }) => {
+const CalculateDecayConcentration = ({ route }) => {
   const { name } = route.params;
-  const e=2.178
-  const [initialActivity, setInitialActivity] = useState('');
+  const [initialConcentration, setInitialConcentration] = useState('');
   const [decayConstant, setDecayConstant] = useState('');
   const [time, setTime] = useState('');
-  const [resultActivity, setResultActivity] = useState(null);
+  const [resultConcentration, setResultConcentration] = useState(null);
 
-  const calculateActivity = () => {
-    if (initialActivity && decayConstant && time) {
-      const initialActivityValue = parseFloat(initialActivity);
-      const decayConstantValue = parseFloat(decayConstant);
-      const timeValue = parseFloat(time);
-      const result = initialActivityValue * Math.exp(-decayConstantValue * timeValue);
-     // const result = initialActivityValue * Math.pow(2.178, -decayConstantValue * timeValue);
-     
-      setResultActivity(result.toFixed(2)); // rounding to 2 decimal places
+  const calculateDecayConcentration = () => {
+    if (initialConcentration && decayConstant && time) {
+      const c1 = parseFloat(initialConcentration);
+      const lambda = parseFloat(decayConstant);
+      const t = parseFloat(time);
+      const result = c1 * Math.exp(-lambda * t);
+    //  const result = c1 * Math.exp(-lambda * t);
+      setResultConcentration(result.toFixed(3)); // rounding to 3 decimal places
     }
   };
 
   const resetFields = () => {
-    setInitialActivity('');
+    setInitialConcentration('');
     setDecayConstant('');
     setTime('');
-    setResultActivity(null);
+    setResultConcentration(null);
   };
 
   return (
@@ -37,20 +35,20 @@ const Activity = ({ route }) => {
         <View style={styles.container}>
           <Header title={` ${name}`} />
 
-          <Text style={styles.label}>Initial Activity (A⁰):</Text>
+          <Text style={styles.label}>Initial Concentration (C1):</Text>
           <TextInput
             style={styles.input}
             keyboardType="numeric"
-            placeholder="Enter initial activity"
-            value={initialActivity}
-            onChangeText={(text) => setInitialActivity(text)}
+            placeholder="Enter initial concentration"
+            value={initialConcentration}
+            onChangeText={(text) => setInitialConcentration(text)}
           />
 
-          <Text style={styles.label}>Lamda value (λ):</Text>
+          <Text style={styles.label}>Decay Constant (λ):</Text>
           <TextInput
             style={styles.input}
             keyboardType="numeric"
-            placeholder="Enter lamda value"
+            placeholder="Enter decay constant"
             value={decayConstant}
             onChangeText={(text) => setDecayConstant(text)}
           />
@@ -66,11 +64,11 @@ const Activity = ({ route }) => {
 
           <View style={styles.buttonContainer}>
             <UIButtonReset title='Reset' onPress={resetFields} />
-            <UIButton title='Calculate Activity' onPress={calculateActivity} />
+            <UIButton title='Calculate Decay Concentration' onPress={calculateDecayConcentration} />
           </View>
 
-          {resultActivity !== null ? (
-            <Text style={styles.resultLabel}>Activity (A): {resultActivity}</Text>
+          {resultConcentration !== null ? (
+            <Text style={styles.resultLabel}>Decay Concentration (C2): {resultConcentration}</Text>
           ) : null}
         </View>
       </ScrollView>
@@ -111,4 +109,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Activity;
+export default CalculateDecayConcentration;

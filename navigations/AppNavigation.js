@@ -103,6 +103,7 @@ import AdministeredCounts from '../screens/Calculator/ExtraFormulas/Administered
 import ElutionEfficiency from '../screens/Calculator/ExtraFormulas/ElutionEfficiency'
 import Infection from '../screens/Calculator/Infection/Infection'
 import Activity from '../screens/Calculator/ExtraFormulas/Activity'
+import CalculateDecayConcentration from '../screens/Calculator/DosesConcentration/CalculateDecayConcentration'
 
 const Stack = createNativeStackNavigator()
 
@@ -229,6 +230,7 @@ const AppNavigation = () => {
 
                 <Stack.Screen name="DosesConcentration" component={DosesConcentration}/>
                 <Stack.Screen name="DrawConcentration" component={DrawConcentration}/>
+                <Stack.Screen name="CalculateDecayConcentration" component={CalculateDecayConcentration}/>
 
                 <Stack.Screen name="BiologicalHL" component={BiologicalHL}/>
                 <Stack.Screen name="CalculateTe" component={CalculateTE}/>

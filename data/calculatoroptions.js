@@ -144,7 +144,7 @@ export const morecalculatorOptions = [
             {
                 id:'1',
                 name:'Decay concentration',
-                navigate:'CalculateTargetHeartRate'
+                navigate:'CalculateDecayConcentration'
             },
             {
                 id:'2',

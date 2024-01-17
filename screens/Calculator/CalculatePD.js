@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { StyleSheet } from 'react-native'
 import Header from '../../components/Header'
 import { COLORS } from '../../constants'
+import UIButton from '../../components/UIButton/UIButton'
+import UIButtonReset from '../../components/UIButton/UIButtonReset'
 
 const CalculatePD = ({route}) => {
  
@@ -49,13 +51,14 @@ const CalculatePD = ({route}) => {
       />
 
 <View style={styles.buttonContainer}>
-        <Button title="Calculate" onPress={calculatePediatricDose} />
-        <Button title="Reset" onPress={resetFields} />
+<UIButtonReset title='Reset' onPress={resetFields} />
+            <UIButton title='Calculate ' onPress={calculatePediatricDose} />
+        
       </View>
 
       {pediatricDose !== null && (
         <Text style={styles.resultLabel}>
-          Pediatric Dose: {pediatricDose} mg
+          Pediatric Dose: {pediatricDose} mCi
         </Text>
       )}
     </View>

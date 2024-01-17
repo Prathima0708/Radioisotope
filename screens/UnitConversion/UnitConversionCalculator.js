@@ -58,45 +58,45 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Bq' &&
-            selectedDestinationUnit === 'MBq'
+            selectedDestinationUnit === 'mBq'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -6)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Bq' &&
-            selectedDestinationUnit === 'KBq'
+            selectedDestinationUnit === 'kBq'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Bq' &&
-            selectedDestinationUnit === 'MBq'
+            selectedDestinationUnit === 'mBq'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Bq' &&
-            selectedDestinationUnit === 'KCi'
+            selectedDestinationUnit === 'kCi'
         ) {
-            const result = inputValue * 2.702 * Math.pow(10, -14)
+            const result = inputValue * 2.7027027027027 * Math.pow(10, -14)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Bq' &&
             selectedDestinationUnit === 'Ci'
         ) {
-            const result = inputValue * 2.702 * Math.pow(10, -11)
+            const result = inputValue * 2.7027027027027 * Math.pow(10, -11)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Bq' &&
-            selectedDestinationUnit === 'MCi'
+            selectedDestinationUnit === 'mCi'
         ) {
-            const result = inputValue * 2.702 * Math.pow(10, -8)
+            const result = inputValue * 2.7027027027027  * Math.pow(10, -8)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Bq' &&
             selectedDestinationUnit === 'µCi'
         ) {
-            const result = inputValue * 2.702 * Math.pow(10, -7)
+            const result = inputValue * 2.7027027027027 * Math.pow(10, -7)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Bq' &&
@@ -106,13 +106,13 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'GBq' &&
-            selectedDestinationUnit === 'MBq'
+            selectedDestinationUnit === 'mBq'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'GBq' &&
-            selectedDestinationUnit === 'KBq'
+            selectedDestinationUnit === 'kBq'
         ) {
             const result = inputValue * 1000000
             setOutputValue(result)
@@ -124,27 +124,27 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'GBq' &&
-            selectedDestinationUnit === 'MBq'
+            selectedDestinationUnit === 'mBq'
         ) {
             const result = inputValue * 1000000000000
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'GBq' &&
-            selectedDestinationUnit === 'KCi'
+            selectedDestinationUnit === 'kCi'
         ) {
-            const result = inputValue * 2.7 * Math.pow(10, -5)
+            const result = inputValue * 2.70 * Math.pow(10, -5)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'GBq' &&
             selectedDestinationUnit === 'Ci'
         ) {
-            const result = inputValue * 0.027
+            const result = inputValue * 0.027027027
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'GBq' &&
-            selectedDestinationUnit === 'MCi'
+            selectedDestinationUnit === 'mCi'
         ) {
-            const result = inputValue * 27.027
+            const result = inputValue * 27.02702703
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'GBq' &&
@@ -154,9 +154,9 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'GBq' &&
-            selectedDestinationUnit === 'PCi'
+            selectedDestinationUnit === 'pCi'
         ) {
-            const result = inputValue * 270
+            const result = inputValue * 27027027027
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'GBq' &&
@@ -165,181 +165,181 @@ const UnitConversionCalculator = ({ route }) => {
             const result = inputValue * 60000000000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
+            selectedSourceUnit === 'mBq' &&
             selectedDestinationUnit === 'GBq'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
-            selectedDestinationUnit === 'KBq'
+            selectedSourceUnit === 'mBq' &&
+            selectedDestinationUnit === 'kBq'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
+            selectedSourceUnit === 'mBq' &&
             selectedDestinationUnit === 'Bq'
         ) {
             const result = inputValue * 1000000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
-            selectedDestinationUnit === 'MBq'
+            selectedSourceUnit === 'mBq' &&
+            selectedDestinationUnit === 'mBq'
         ) {
             const result = inputValue * 1000000000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
-            selectedDestinationUnit === 'KCi'
+            selectedSourceUnit === 'mBq' &&
+            selectedDestinationUnit === 'kCi'
         ) {
-            const result = inputValue * 2.702 * Math.pow(10, -8)
+            const result = inputValue * 2.7027027027027 * Math.pow(10, -8)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
+            selectedSourceUnit === 'mBq' &&
             selectedDestinationUnit === 'Ci'
         ) {
-            const result = inputValue * 2.702 * Math.pow(10, -5)
+            const result = inputValue * 2.7027027027027 * Math.pow(10, -5)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
-            selectedDestinationUnit === 'MCi'
+            selectedSourceUnit === 'mBq' &&
+            selectedDestinationUnit === 'mCi'
         ) {
-            const result = inputValue * 0.027
+            const result = inputValue * 0.027027027027027
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
+            selectedSourceUnit === 'mBq' &&
             selectedDestinationUnit === 'µCi'
         ) {
-            const result = inputValue * 27.027
+            const result = inputValue * 27.027027027027
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
-            selectedDestinationUnit === 'PCi'
+            selectedSourceUnit === 'mBq' &&
+            selectedDestinationUnit === 'pCi'
         ) {
-            const result = inputValue * 27027027.027
+            const result = inputValue * 27027027.027027
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
+            selectedSourceUnit === 'mBq' &&
             selectedDestinationUnit === 'dpm'
         ) {
             const result = inputValue * 60000000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'KBq' &&
+            selectedSourceUnit === 'kBq' &&
             selectedDestinationUnit === 'GBq'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -6)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'KBq' &&
-            selectedDestinationUnit === 'MBq'
+            selectedSourceUnit === 'kBq' &&
+            selectedDestinationUnit === 'mBq'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'KBq' &&
+            selectedSourceUnit === 'kBq' &&
             selectedDestinationUnit === 'Bq'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'KBq' &&
-            selectedDestinationUnit === 'MBq'
+            selectedSourceUnit === 'kBq' &&
+            selectedDestinationUnit === 'mBq'
         ) {
             const result = inputValue * 1000000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'KBq' &&
-            selectedDestinationUnit === 'KCi'
+            selectedSourceUnit === 'kBq' &&
+            selectedDestinationUnit === 'kCi'
         ) {
-            const result = inputValue * 2.702 * Math.pow(10, -11)
+            const result = inputValue * 2.7027027027027 * Math.pow(10, -11)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'KBq' &&
+            selectedSourceUnit === 'kBq' &&
             selectedDestinationUnit === 'Ci'
         ) {
-            const result = inputValue * 2.702 * Math.pow(10, -8)
+            const result = inputValue * 2.7027027027027 * Math.pow(10, -8)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'KBq' &&
-            selectedDestinationUnit === 'MCi'
+            selectedSourceUnit === 'kBq' &&
+            selectedDestinationUnit === 'mCi'
         ) {
-            const result = inputValue * 2.702 * Math.pow(10, -5)
+            const result = inputValue * 2.7027027027027 * Math.pow(10, -5)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'KBq' &&
+            selectedSourceUnit === 'kBq' &&
             selectedDestinationUnit === 'µCi'
         ) {
-            const result = inputValue * 0.027
+            const result = inputValue * 0.027027027027027
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'KBq' &&
-            selectedDestinationUnit === 'PCi'
+            selectedSourceUnit === 'mBq' &&
+            selectedDestinationUnit === 'pCi'
         ) {
-            const result = inputValue * 27027.027
+            const result = inputValue * 27027.027027027
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'KBq' &&
+            selectedSourceUnit === 'kBq' &&
             selectedDestinationUnit === 'dpm'
         ) {
             const result = inputValue * 60000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
+            selectedSourceUnit === 'mBq' &&
             selectedDestinationUnit === 'GBq'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -12)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
-            selectedDestinationUnit === 'MBq'
+            selectedSourceUnit === 'mBq' &&
+            selectedDestinationUnit === 'mBq'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -9)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
+            selectedSourceUnit === 'mBq' &&
             selectedDestinationUnit === 'Bq'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
-            selectedDestinationUnit === 'KBq'
+            selectedSourceUnit === 'mBq' &&
+            selectedDestinationUnit === 'kBq'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -6)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
-            selectedDestinationUnit === 'KCi'
+            selectedSourceUnit === 'mBq' &&
+            selectedDestinationUnit === 'kCi'
         ) {
-            const result = inputValue * 2.702 * Math.pow(10, -17)
+            const result = inputValue * 2.7027027027027 * Math.pow(10, -17)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
+            selectedSourceUnit === 'mBq' &&
             selectedDestinationUnit === 'Ci'
         ) {
-            const result = inputValue * 2.702 * Math.pow(10, -14)
+            const result = inputValue * 2.7027027027027 * Math.pow(10, -14)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
-            selectedDestinationUnit === 'MCi'
+            selectedSourceUnit === 'mBq' &&
+            selectedDestinationUnit === 'mCi'
         ) {
-            const result = inputValue * 2.702 * Math.pow(10, -11)
+            const result = inputValue * 2.7027027027027 * Math.pow(10, -11)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
+            selectedSourceUnit === 'mBq' &&
             selectedDestinationUnit === 'µCi'
         ) {
-            const result = inputValue * 2.702 * Math.pow(10, -8)
+            const result = inputValue * 2.7027027027027 * Math.pow(10, -8)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
-            selectedDestinationUnit === 'PCi'
+            selectedSourceUnit === 'mBq' &&
+            selectedDestinationUnit === 'pCi'
         ) {
-            const result = inputValue * 0.027
+            const result = inputValue * 0.027027027027027
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MBq' &&
+            selectedSourceUnit === 'mBq' &&
             selectedDestinationUnit === 'dpm'
         ) {
             const result = inputValue * 0.06
@@ -348,7 +348,7 @@ const UnitConversionCalculator = ({ route }) => {
         //equivalent
         else if (
             selectedSourceUnit === 'Sv' &&
-            selectedDestinationUnit === 'MSv'
+            selectedDestinationUnit === 'mSv'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
@@ -360,49 +360,49 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Sv' &&
-            selectedDestinationUnit === 'REm'
+            selectedDestinationUnit === 'rem'
         ) {
             const result = inputValue * 100
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Sv' &&
-            selectedDestinationUnit === 'MRem'
+            selectedDestinationUnit === 'mrem'
         ) {
             const result = inputValue * 100000
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Sv' &&
-            selectedDestinationUnit === 'µRem'
+            selectedDestinationUnit === 'µrem'
         ) {
             const result = inputValue * 100000000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MSv' &&
+            selectedSourceUnit === 'mSv' &&
             selectedDestinationUnit === 'Sv'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MSv' &&
+            selectedSourceUnit === 'mSv' &&
             selectedDestinationUnit === 'µSv'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MSv' &&
-            selectedDestinationUnit === 'REm'
+            selectedSourceUnit === 'mSv' &&
+            selectedDestinationUnit === 'rem'
         ) {
             const result = inputValue * 0.1
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MSv' &&
-            selectedDestinationUnit === 'MRem'
+            selectedSourceUnit === 'mSv' &&
+            selectedDestinationUnit === 'mrem'
         ) {
             const result = inputValue * 100
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MSv' &&
-            selectedDestinationUnit === 'µRem'
+            selectedSourceUnit === 'mSv' &&
+            selectedDestinationUnit === 'µrem'
         ) {
             const result = inputValue * 100000
             setOutputValue(result)
@@ -414,115 +414,115 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µSv' &&
-            selectedDestinationUnit === 'MSv'
+            selectedDestinationUnit === 'mSv'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µSv' &&
-            selectedDestinationUnit === 'REm'
+            selectedDestinationUnit === 'rem'
         ) {
             const result = inputValue * 0.0001
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µSv' &&
-            selectedDestinationUnit === 'MRem'
+            selectedDestinationUnit === 'mrem'
         ) {
             const result = inputValue * 0.1
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µSv' &&
-            selectedDestinationUnit === 'µRem'
+            selectedDestinationUnit === 'µrem'
         ) {
             const result = inputValue * 100
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'REm' &&
+            selectedSourceUnit === 'rem' &&
             selectedDestinationUnit === 'Sv'
         ) {
             const result = inputValue * 0.01
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'REm' &&
-            selectedDestinationUnit === 'MSv'
+            selectedSourceUnit === 'rem' &&
+            selectedDestinationUnit === 'mSv'
         ) {
             const result = inputValue * 10
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'REm' &&
+            selectedSourceUnit === 'rem' &&
             selectedDestinationUnit === 'µSv'
         ) {
             const result = inputValue * 10000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'REm' &&
-            selectedDestinationUnit === 'MRem'
+            selectedSourceUnit === 'rem' &&
+            selectedDestinationUnit === 'mrem'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'REm' &&
-            selectedDestinationUnit === 'µRem'
+            selectedSourceUnit === 'rem' &&
+            selectedDestinationUnit === 'µrem'
         ) {
             const result = inputValue * 1000000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MRem' &&
+            selectedSourceUnit === 'mrem' &&
             selectedDestinationUnit === 'Sv'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -5)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MRem' &&
-            selectedDestinationUnit === 'MSv'
+            selectedSourceUnit === 'mrem' &&
+            selectedDestinationUnit === 'mSv'
         ) {
             const result = inputValue * 0.01
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MRem' &&
+            selectedSourceUnit === 'mrem' &&
             selectedDestinationUnit === 'µSv'
         ) {
             const result = inputValue * 10
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MRem' &&
-            selectedDestinationUnit === 'Rem'
+            selectedSourceUnit === 'mrem' &&
+            selectedDestinationUnit === 'rem'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MRem' &&
-            selectedDestinationUnit === 'µRem'
+            selectedSourceUnit === 'mrem' &&
+            selectedDestinationUnit === 'µrem'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'µRem' &&
+            selectedSourceUnit === 'µrem' &&
             selectedDestinationUnit === 'Sv'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -8)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'µRem' &&
-            selectedDestinationUnit === 'MSv'
+            selectedSourceUnit === 'µrem' &&
+            selectedDestinationUnit === 'mSv'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -5)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'µRem' &&
+            selectedSourceUnit === 'µrem' &&
             selectedDestinationUnit === 'µSv'
         ) {
             const result = inputValue * 0.01
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'µRem' &&
-            selectedDestinationUnit === 'REm'
+            selectedSourceUnit === 'µrem' &&
+            selectedDestinationUnit === 'rem'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -6)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'µRem' &&
-            selectedDestinationUnit === 'MRem'
+            selectedSourceUnit === 'µrem' &&
+            selectedDestinationUnit === 'mrem'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
@@ -530,7 +530,7 @@ const UnitConversionCalculator = ({ route }) => {
         //absorbed
         else if (
             selectedSourceUnit === 'Gy' &&
-            selectedDestinationUnit === 'MGy'
+            selectedDestinationUnit === 'mGy'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
@@ -548,7 +548,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Gy' &&
-            selectedDestinationUnit === 'MRd'
+            selectedDestinationUnit === 'mrd'
         ) {
             const result = inputValue * 100000
             setOutputValue(result)
@@ -566,7 +566,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Gy' &&
-            selectedDestinationUnit === 'MJ/Kg'
+            selectedDestinationUnit === 'mJ/Kg'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
@@ -577,49 +577,49 @@ const UnitConversionCalculator = ({ route }) => {
             const result = inputValue * 1000000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MGy' &&
+            selectedSourceUnit === 'mGy' &&
             selectedDestinationUnit === 'Gy'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MGy' &&
+            selectedSourceUnit === 'mGy' &&
             selectedDestinationUnit === 'µGy'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MGy' &&
+            selectedSourceUnit === 'mGy' &&
             selectedDestinationUnit === 'rd'
         ) {
             const result = inputValue * 0.1
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MGy' &&
-            selectedDestinationUnit === 'MRd'
+            selectedSourceUnit === 'mGy' &&
+            selectedDestinationUnit === 'mrd'
         ) {
             const result = inputValue * 100
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MGy' &&
+            selectedSourceUnit === 'mGy' &&
             selectedDestinationUnit === 'µrd'
         ) {
             const result = inputValue * 100000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MGy' &&
+            selectedSourceUnit === 'mGy' &&
             selectedDestinationUnit === 'J/Kg'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MGy' &&
-            selectedDestinationUnit === 'MJ/Kg'
+            selectedSourceUnit === 'mGy' &&
+            selectedDestinationUnit === 'mJ/Kg'
         ) {
             const result = inputValue * 1
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MGy' &&
+            selectedSourceUnit === 'mGy' &&
             selectedDestinationUnit === 'µJ/Kg'
         ) {
             const result = inputValue * 1000
@@ -632,7 +632,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µGy' &&
-            selectedDestinationUnit === 'MGy'
+            selectedDestinationUnit === 'mGy'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
@@ -644,7 +644,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µGy' &&
-            selectedDestinationUnit === 'MRd'
+            selectedDestinationUnit === 'mrd'
         ) {
             const result = inputValue * 0.1
             setOutputValue(result)
@@ -662,7 +662,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µGy' &&
-            selectedDestinationUnit === 'MJ/Kg'
+            selectedDestinationUnit === 'mJ/Kg'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
@@ -680,7 +680,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'rd' &&
-            selectedDestinationUnit === 'MGy'
+            selectedDestinationUnit === 'mGy'
         ) {
             const result = inputValue * 10
             setOutputValue(result)
@@ -692,7 +692,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'rd' &&
-            selectedDestinationUnit === 'MRd'
+            selectedDestinationUnit === 'mrd'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
@@ -710,7 +710,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'rd' &&
-            selectedDestinationUnit === 'MJ/Kg'
+            selectedDestinationUnit === 'mJ/Kg'
         ) {
             const result = inputValue * 10
             setOutputValue(result)
@@ -721,49 +721,49 @@ const UnitConversionCalculator = ({ route }) => {
             const result = inputValue * 10000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MRd' &&
+            selectedSourceUnit === 'mrd' &&
             selectedDestinationUnit === 'Gy'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -5)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MRd' &&
-            selectedDestinationUnit === 'MGy'
+            selectedSourceUnit === 'mrd' &&
+            selectedDestinationUnit === 'mGy'
         ) {
             const result = inputValue * 0.01
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MRd' &&
+            selectedSourceUnit === 'mrd' &&
             selectedDestinationUnit === 'µGy'
         ) {
             const result = inputValue * 10
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MRd' &&
+            selectedSourceUnit === 'mrd' &&
             selectedDestinationUnit === 'rd'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MRd' &&
+            selectedSourceUnit === 'mrd' &&
             selectedDestinationUnit === 'µrd'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MRd' &&
+            selectedSourceUnit === 'mrd' &&
             selectedDestinationUnit === 'J/Kg'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -5)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MRd' &&
-            selectedDestinationUnit === 'MJ/Kg'
+            selectedSourceUnit === 'mrd' &&
+            selectedDestinationUnit === 'mJ/Kg'
         ) {
             const result = inputValue * 0.01
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MRd' &&
+            selectedSourceUnit === 'mrd' &&
             selectedDestinationUnit === 'µJ/Kg'
         ) {
             const result = inputValue * 10
@@ -776,7 +776,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µrd' &&
-            selectedDestinationUnit === 'MGy'
+            selectedDestinationUnit === 'mGy'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -5)
             setOutputValue(result)
@@ -794,7 +794,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µrd' &&
-            selectedDestinationUnit === 'MRd'
+            selectedDestinationUnit === 'mrd'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
@@ -806,7 +806,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µrd' &&
-            selectedDestinationUnit === 'MJ/Kg'
+            selectedDestinationUnit === 'mJ/Kg'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -5)
             setOutputValue(result)
@@ -824,7 +824,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'J/Kg' &&
-            selectedDestinationUnit === 'MGy'
+            selectedDestinationUnit === 'mGy'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
@@ -842,7 +842,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'J/Kg' &&
-            selectedDestinationUnit === 'MRd'
+            selectedDestinationUnit === 'mrd'
         ) {
             const result = inputValue * 100000
             setOutputValue(result)
@@ -854,7 +854,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'J/Kg' &&
-            selectedDestinationUnit === 'MJ/Kg'
+            selectedDestinationUnit === 'mJ/Kg'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
@@ -865,49 +865,49 @@ const UnitConversionCalculator = ({ route }) => {
             const result = inputValue * 1000000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MJ/Kg' &&
+            selectedSourceUnit === 'mJ/Kg' &&
             selectedDestinationUnit === 'Gy'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MJ/Kg' &&
-            selectedDestinationUnit === 'MGy'
+            selectedSourceUnit === 'mJ/Kg' &&
+            selectedDestinationUnit === 'mGy'
         ) {
             const result = inputValue * 1
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MJ/Kg' &&
+            selectedSourceUnit === 'mJ/Kg' &&
             selectedDestinationUnit === 'µGy'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MJ/Kg' &&
+            selectedSourceUnit === 'mJ/Kg' &&
             selectedDestinationUnit === 'rd'
         ) {
             const result = inputValue * 0.1
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MJ/Kg' &&
-            selectedDestinationUnit === 'µrd'
+            selectedSourceUnit === 'mJ/Kg' &&
+            selectedDestinationUnit === 'mrd'
         ) {
             const result = inputValue * 100
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MJ/Kg' &&
-            selectedDestinationUnit === 'J/Kg'
+            selectedSourceUnit === 'mJ/Kg' &&
+            selectedDestinationUnit === 'µrd'
         ) {
             const result = inputValue * 100000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MJ/Kg' &&
-            selectedDestinationUnit === 'µJ/Kg'
+            selectedSourceUnit === 'mJ/Kg' &&
+            selectedDestinationUnit === 'J/Kg'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'MJ/Kg' &&
+            selectedSourceUnit === 'mJ/Kg' &&
             selectedDestinationUnit === 'µJ/Kg'
         ) {
             const result = inputValue * 1000
@@ -920,7 +920,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µJ/Kg' &&
-            selectedDestinationUnit === 'MGy'
+            selectedDestinationUnit === 'mGy'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
@@ -938,7 +938,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µJ/Kg' &&
-            selectedDestinationUnit === 'MRd'
+            selectedDestinationUnit === 'mrd'
         ) {
             const result = inputValue * 0.1
             setOutputValue(result)
@@ -956,7 +956,7 @@ const UnitConversionCalculator = ({ route }) => {
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'µJ/Kg' &&
-            selectedDestinationUnit === 'MJ/Kg'
+            selectedDestinationUnit === 'mJ/Kg'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
@@ -964,27 +964,27 @@ const UnitConversionCalculator = ({ route }) => {
         //Contiunation
         //weight
         else if (
-            selectedSourceUnit === 'Kgs' &&
+            selectedSourceUnit === 'kg' &&
             selectedDestinationUnit === 'lbs'
         ) {
-            const result = inputValue / 2.2
+            const result = inputValue * 2.2
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'lbs' &&
-            selectedDestinationUnit === 'Kgs'
+            selectedDestinationUnit === 'kg'
         ) {
-            const result = inputValue * 2.2
+            const result = inputValue / 2.2
             setOutputValue(result)
         }
         //height
         else if (
             selectedSourceUnit === 'inches' &&
-            selectedDestinationUnit === 'CM'
+            selectedDestinationUnit === 'cm'
         ) {
             const result = inputValue / 2.54
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'CM' &&
+            selectedSourceUnit === 'cm' &&
             selectedDestinationUnit === 'inches'
         ) {
             const result = inputValue * 2.54
@@ -1004,7 +1004,7 @@ const UnitConversionCalculator = ({ route }) => {
             const result = inputValue * 1.8 + 32
             setOutputValue(result)
         }
-
+    
         //Liquid
         else if (
             selectedSourceUnit === 'Ounce' &&
@@ -1055,1010 +1055,7 @@ const UnitConversionCalculator = ({ route }) => {
         }
     }
 
-    // const convertUnits = () => {
-    //     setShowDestinationUnit(true)
-    //     console.log(selectedSourceUnit, selectedDestinationUnit)
-    //     if (selectedSourceUnit === 'Bq' && selectedDestinationUnit === 'GBq') {
-    //         const result = inputValue * 1.0 * Math.pow(10, -9)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Bq' &&
-    //         selectedDestinationUnit === 'MBq'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -6)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Bq' &&
-    //         selectedDestinationUnit === 'kBq'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Bq' &&
-    //         selectedDestinationUnit === 'mBq'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Bq' &&
-    //         selectedDestinationUnit === 'KCi'
-    //     ) {
-    //         const result = inputValue * 2.702 * Math.pow(10, -14)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Bq' &&
-    //         selectedDestinationUnit === 'Ci'
-    //     ) {
-    //         const result = inputValue * 2.702 * Math.pow(10, -11)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Bq' &&
-    //         selectedDestinationUnit === 'mCi'
-    //     ) {
-    //         const result = inputValue * 2.702 * Math.pow(10, -8)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Bq' &&
-    //         selectedDestinationUnit === 'µCi'
-    //     ) {
-    //         const result = inputValue * 2.702 * Math.pow(10, -7)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Bq' &&
-    //         selectedDestinationUnit === 'dpm'
-    //     ) {
-    //         const result = inputValue * 60
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'GBq' &&
-    //         selectedDestinationUnit === 'MBQ'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'GBq' &&
-    //         selectedDestinationUnit === 'kBq'
-    //     ) {
-    //         const result = inputValue * 1000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'GBq' &&
-    //         selectedDestinationUnit === 'Bq'
-    //     ) {
-    //         const result = inputValue * 1000000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'GBq' &&
-    //         selectedDestinationUnit === 'mBq'
-    //     ) {
-    //         const result = inputValue * 1000000000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'GBq' &&
-    //         selectedDestinationUnit === 'kCi'
-    //     ) {
-    //         const result = inputValue * 2.7 * Math.pow(10, -5)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'GBq' &&
-    //         selectedDestinationUnit === 'Ci'
-    //     ) {
-    //         const result = inputValue * 0.027
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'GBq' &&
-    //         selectedDestinationUnit === 'mCi'
-    //     ) {
-    //         const result = inputValue * 27.027
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'GBq' &&
-    //         selectedDestinationUnit === 'µCi'
-    //     ) {
-    //         const result = 1 * 27027.02703
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'GBq' &&
-    //         selectedDestinationUnit === 'pCi'
-    //     ) {
-    //         const result = inputValue * 270
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'GBq' &&
-    //         selectedDestinationUnit === 'dpm'
-    //     ) {
-    //         const result = inputValue * 60000000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'MBq' &&
-    //         selectedDestinationUnit === 'GBq'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'MBq' &&
-    //         selectedDestinationUnit === 'kBq'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'MBq' &&
-    //         selectedDestinationUnit === 'Bq'
-    //     ) {
-    //         const result = inputValue * 1000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'MBq' &&
-    //         selectedDestinationUnit === 'mBq'
-    //     ) {
-    //         const result = inputValue * 1000000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'MBq' &&
-    //         selectedDestinationUnit === 'kCi'
-    //     ) {
-    //         const result = inputValue * 2.702 * Math.pow(10, -8)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'MBq' &&
-    //         selectedDestinationUnit === 'Ci'
-    //     ) {
-    //         const result = inputValue * 2.702 * Math.pow(10, -5)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'MBq' &&
-    //         selectedDestinationUnit === 'mCi'
-    //     ) {
-    //         const result = inputValue * 0.027
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'MBq' &&
-    //         selectedDestinationUnit === 'µCi'
-    //     ) {
-    //         const result = inputValue * 27.027
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'MBq' &&
-    //         selectedDestinationUnit === 'pCi'
-    //     ) {
-    //         const result = inputValue * 27027027.027
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'MBq' &&
-    //         selectedDestinationUnit === 'dpm'
-    //     ) {
-    //         const result = inputValue * 60000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'KBq' &&
-    //         selectedDestinationUnit === 'GBq'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -6)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'KBq' &&
-    //         selectedDestinationUnit === 'MBq'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'KBq' &&
-    //         selectedDestinationUnit === 'Bq'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'KBq' &&
-    //         selectedDestinationUnit === 'mBq'
-    //     ) {
-    //         const result = inputValue * 1000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'KBq' &&
-    //         selectedDestinationUnit === 'KCi'
-    //     ) {
-    //         const result = inputValue * 2.702 * Math.pow(10, -11)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'KBq' &&
-    //         selectedDestinationUnit === 'Ci'
-    //     ) {
-    //         const result = inputValue * 2.702 * Math.pow(10, -8)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'KBq' &&
-    //         selectedDestinationUnit === 'mCi'
-    //     ) {
-    //         const result = inputValue * 2.702 * Math.pow(10, -5)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'KBq' &&
-    //         selectedDestinationUnit === 'µCi'
-    //     ) {
-    //         const result = inputValue * 0.027
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'KBq' &&
-    //         selectedDestinationUnit === 'pCi'
-    //     ) {
-    //         const result = inputValue * 27027.027
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'KBq' &&
-    //         selectedDestinationUnit === 'dpm'
-    //     ) {
-    //         const result = inputValue * 60000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mBq' &&
-    //         selectedDestinationUnit === 'GBq'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -12)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mBq' &&
-    //         selectedDestinationUnit === 'MBq'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -9)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mBq' &&
-    //         selectedDestinationUnit === 'Bq'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mBq' &&
-    //         selectedDestinationUnit === 'kBq'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -6)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mBq' &&
-    //         selectedDestinationUnit === 'kCi'
-    //     ) {
-    //         const result = inputValue * 2.702 * Math.pow(10, -17)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mBq' &&
-    //         selectedDestinationUnit === 'Ci'
-    //     ) {
-    //         const result = inputValue * 2.702 * Math.pow(10, -14)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mBq' &&
-    //         selectedDestinationUnit === 'mCi'
-    //     ) {
-    //         const result = inputValue * 2.702 * Math.pow(10, -11)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mBq' &&
-    //         selectedDestinationUnit === 'µCi'
-    //     ) {
-    //         const result = inputValue * 2.702 * Math.pow(10, -8)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mBq' &&
-    //         selectedDestinationUnit === 'pCi'
-    //     ) {
-    //         const result = inputValue * 0.027
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mBq' &&
-    //         selectedDestinationUnit === 'dpm'
-    //     ) {
-    //         const result = inputValue * 0.06
-    //         setOutputValue(result)
-    //     }
-    //     //equivalent
-    //     else if (
-    //         selectedSourceUnit === 'Sv' &&
-    //         selectedDestinationUnit === 'mSv'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Sv' &&
-    //         selectedDestinationUnit === 'µSv'
-    //     ) {
-    //         const result = inputValue * 1000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Sv' &&
-    //         selectedDestinationUnit === 'rem'
-    //     ) {
-    //         const result = inputValue * 100
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Sv' &&
-    //         selectedDestinationUnit === 'mrem'
-    //     ) {
-    //         const result = inputValue * 100000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Sv' &&
-    //         selectedDestinationUnit === 'µrem'
-    //     ) {
-    //         const result = inputValue * 100000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mSv' &&
-    //         selectedDestinationUnit === 'Sv'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mSv' &&
-    //         selectedDestinationUnit === 'µSv'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mSv' &&
-    //         selectedDestinationUnit === 'rem'
-    //     ) {
-    //         const result = inputValue * 0.1
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mSv' &&
-    //         selectedDestinationUnit === 'mrem'
-    //     ) {
-    //         const result = inputValue * 100
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mSv' &&
-    //         selectedDestinationUnit === 'µrem'
-    //     ) {
-    //         const result = inputValue * 100000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µSv' &&
-    //         selectedDestinationUnit === 'Sv'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -6)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µSv' &&
-    //         selectedDestinationUnit === 'mSv'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µSv' &&
-    //         selectedDestinationUnit === 'rem'
-    //     ) {
-    //         const result = inputValue * 0.0001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µSv' &&
-    //         selectedDestinationUnit === 'mrem'
-    //     ) {
-    //         const result = inputValue * 0.1
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µSv' &&
-    //         selectedDestinationUnit === 'µrem'
-    //     ) {
-    //         const result = inputValue * 100
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'rem' &&
-    //         selectedDestinationUnit === 'Sv'
-    //     ) {
-    //         const result = inputValue * 0.01
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'rem' &&
-    //         selectedDestinationUnit === 'mSv'
-    //     ) {
-    //         const result = inputValue * 10
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'rem' &&
-    //         selectedDestinationUnit === 'µSv'
-    //     ) {
-    //         const result = inputValue * 10000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'rem' &&
-    //         selectedDestinationUnit === 'mrem'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'rem' &&
-    //         selectedDestinationUnit === 'µrem'
-    //     ) {
-    //         const result = inputValue * 1000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mrem' &&
-    //         selectedDestinationUnit === 'Sv'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -5)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mrem' &&
-    //         selectedDestinationUnit === 'mSv'
-    //     ) {
-    //         const result = inputValue * 0.01
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mrem' &&
-    //         selectedDestinationUnit === 'µSv'
-    //     ) {
-    //         const result = inputValue * 10
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mrem' &&
-    //         selectedDestinationUnit === 'rem'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mrem' &&
-    //         selectedDestinationUnit === 'µrem'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µrem' &&
-    //         selectedDestinationUnit === 'Sv'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -8)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µrem' &&
-    //         selectedDestinationUnit === 'mSv'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -5)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µrem' &&
-    //         selectedDestinationUnit === 'µSv'
-    //     ) {
-    //         const result = inputValue * 0.01
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µrem' &&
-    //         selectedDestinationUnit === 'rem'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -6)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µrem' &&
-    //         selectedDestinationUnit === 'mrem'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     }
-    //     //absorbed
-    //     else if (
-    //         selectedSourceUnit === 'Gy' &&
-    //         selectedDestinationUnit === 'mGy'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Gy' &&
-    //         selectedDestinationUnit === 'µGy'
-    //     ) {
-    //         const result = inputValue * 1000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Gy' &&
-    //         selectedDestinationUnit === 'rd'
-    //     ) {
-    //         const result = inputValue * 100
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Gy' &&
-    //         selectedDestinationUnit === 'mrd'
-    //     ) {
-    //         const result = inputValue * 100000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Gy' &&
-    //         selectedDestinationUnit === 'µrd'
-    //     ) {
-    //         const result = inputValue * 100000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Gy' &&
-    //         selectedDestinationUnit === 'J/kg'
-    //     ) {
-    //         const result = inputValue * 1
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Gy' &&
-    //         selectedDestinationUnit === 'mJ/kg'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Gy' &&
-    //         selectedDestinationUnit === 'µJ/kg'
-    //     ) {
-    //         const result = inputValue * 1000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mGy' &&
-    //         selectedDestinationUnit === 'Gy'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mGy' &&
-    //         selectedDestinationUnit === 'µGy'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mGy' &&
-    //         selectedDestinationUnit === 'rd'
-    //     ) {
-    //         const result = inputValue * 0.1
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mGy' &&
-    //         selectedDestinationUnit === 'mrd'
-    //     ) {
-    //         const result = inputValue * 100
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mGy' &&
-    //         selectedDestinationUnit === 'µrd'
-    //     ) {
-    //         const result = inputValue * 100000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mGy' &&
-    //         selectedDestinationUnit === 'J/kg'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mGy' &&
-    //         selectedDestinationUnit === 'mJ/kg'
-    //     ) {
-    //         const result = inputValue * 1
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mGy' &&
-    //         selectedDestinationUnit === 'µJ/kg'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µGy' &&
-    //         selectedDestinationUnit === 'Gy'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -6)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µGy' &&
-    //         selectedDestinationUnit === 'mGy'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µGy' &&
-    //         selectedDestinationUnit === 'rd'
-    //     ) {
-    //         const result = inputValue * 0.0001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µGy' &&
-    //         selectedDestinationUnit === 'mrd'
-    //     ) {
-    //         const result = inputValue * 0.1
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µGy' &&
-    //         selectedDestinationUnit === 'µrd'
-    //     ) {
-    //         const result = inputValue * 100
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µGy' &&
-    //         selectedDestinationUnit === 'J/kg'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -6)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µGy' &&
-    //         selectedDestinationUnit === 'mJ/kg'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µGy' &&
-    //         selectedDestinationUnit === 'µJ/kg'
-    //     ) {
-    //         const result = inputValue * 1
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'rd' &&
-    //         selectedDestinationUnit === 'Gy'
-    //     ) {
-    //         const result = inputValue * 0.01
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'rd' &&
-    //         selectedDestinationUnit === 'mGy'
-    //     ) {
-    //         const result = inputValue * 10
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'rd' &&
-    //         selectedDestinationUnit === 'µGy'
-    //     ) {
-    //         const result = inputValue * 10000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'rd' &&
-    //         selectedDestinationUnit === 'mrd'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'rd' &&
-    //         selectedDestinationUnit === 'µrd'
-    //     ) {
-    //         const result = inputValue * 1000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'rd' &&
-    //         selectedDestinationUnit === 'J/kg'
-    //     ) {
-    //         const result = inputValue * 0.01
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'rd' &&
-    //         selectedDestinationUnit === 'mJ/kg'
-    //     ) {
-    //         const result = inputValue * 10
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'rd' &&
-    //         selectedDestinationUnit === 'µJ/kg'
-    //     ) {
-    //         const result = inputValue * 10000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mrd' &&
-    //         selectedDestinationUnit === 'Gy'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -5)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mrd' &&
-    //         selectedDestinationUnit === 'mGy'
-    //     ) {
-    //         const result = inputValue * 0.01
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mrd' &&
-    //         selectedDestinationUnit === 'µGy'
-    //     ) {
-    //         const result = inputValue * 10
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mrd' &&
-    //         selectedDestinationUnit === 'rd'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mrd' &&
-    //         selectedDestinationUnit === 'µrd'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mrd' &&
-    //         selectedDestinationUnit === 'J/kg'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -5)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mrd' &&
-    //         selectedDestinationUnit === 'mJ/kg'
-    //     ) {
-    //         const result = inputValue * 0.01
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mrd' &&
-    //         selectedDestinationUnit === 'µJ/kg'
-    //     ) {
-    //         const result = inputValue * 10
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µrd' &&
-    //         selectedDestinationUnit === 'Gy'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -8)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µrd' &&
-    //         selectedDestinationUnit === 'mGy'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -5)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µrd' &&
-    //         selectedDestinationUnit === 'µGy'
-    //     ) {
-    //         const result = inputValue * 0.01
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µrd' &&
-    //         selectedDestinationUnit === 'rd'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -6)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µrd' &&
-    //         selectedDestinationUnit === 'mrd'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µrd' &&
-    //         selectedDestinationUnit === 'J/kg'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -8)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µrd' &&
-    //         selectedDestinationUnit === 'mJ/kg'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -5)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µrd' &&
-    //         selectedDestinationUnit === 'µJ/kg'
-    //     ) {
-    //         const result = inputValue * 0.01
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'J/kg' &&
-    //         selectedDestinationUnit === 'Gy'
-    //     ) {
-    //         const result = inputValue * 1
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'J/kg' &&
-    //         selectedDestinationUnit === 'mGy'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'J/kg' &&
-    //         selectedDestinationUnit === 'µGy'
-    //     ) {
-    //         const result = inputValue * 1000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'J/kg' &&
-    //         selectedDestinationUnit === 'rd'
-    //     ) {
-    //         const result = inputValue * 100
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'J/kg' &&
-    //         selectedDestinationUnit === 'mrd'
-    //     ) {
-    //         const result = inputValue * 100000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'J/kg' &&
-    //         selectedDestinationUnit === 'µrd'
-    //     ) {
-    //         const result = inputValue * 100000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'J/kg' &&
-    //         selectedDestinationUnit === 'mJ/kg'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'J/kg' &&
-    //         selectedDestinationUnit === 'µJ/kg'
-    //     ) {
-    //         const result = inputValue * 1000000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mJ/kg' &&
-    //         selectedDestinationUnit === 'Gy'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mJ/kg' &&
-    //         selectedDestinationUnit === 'mGy'
-    //     ) {
-    //         const result = inputValue * 1
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mJ/kg' &&
-    //         selectedDestinationUnit === 'µGy'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mJ/kg' &&
-    //         selectedDestinationUnit === 'rd'
-    //     ) {
-    //         const result = inputValue * 0.1
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mJ/kg' &&
-    //         selectedDestinationUnit === 'µrd'
-    //     ) {
-    //         const result = inputValue * 100
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mJ/kg' &&
-    //         selectedDestinationUnit === 'J/kg'
-    //     ) {
-    //         const result = inputValue * 100000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mJ/kg' &&
-    //         selectedDestinationUnit === 'µJ/kg'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mJ/kg' &&
-    //         selectedDestinationUnit === 'µJ/kg'
-    //     ) {
-    //         const result = inputValue * 1000
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µJ/kg' &&
-    //         selectedDestinationUnit === 'Gy'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -6)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µJ/kg' &&
-    //         selectedDestinationUnit === 'mGy'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µJ/kg' &&
-    //         selectedDestinationUnit === 'µGy'
-    //     ) {
-    //         const result = inputValue * 1
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µJ/kg' &&
-    //         selectedDestinationUnit === 'rd'
-    //     ) {
-    //         const result = inputValue * 0.0001
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µJ/kg' &&
-    //         selectedDestinationUnit === 'mrd'
-    //     ) {
-    //         const result = inputValue * 0.1
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µJ/kg' &&
-    //         selectedDestinationUnit === 'µrd'
-    //     ) {
-    //         const result = inputValue * 100
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µJ/kg' &&
-    //         selectedDestinationUnit === 'J/kg'
-    //     ) {
-    //         const result = inputValue * 1.0 * Math.pow(10, -6)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'µJ/kg' &&
-    //         selectedDestinationUnit === 'mJ/kg'
-    //     ) {
-    //         const result = inputValue * 0.001
-    //         setOutputValue(result)
-    //     }
-    //     //Contiunation
-    //     //weight
-    //     else if (
-    //         selectedSourceUnit === 'kgs' &&
-    //         selectedDestinationUnit === 'lbs'
-    //     ) {
-    //         const result = inputValue / 2.2
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'lbs' &&
-    //         selectedDestinationUnit === 'kg'
-    //     ) {
-    //         const result = inputValue * 2.2
-    //         setOutputValue(result)
-    //     }
-    //     //height
-    //     else if (
-    //         selectedSourceUnit === 'inches' &&
-    //         selectedDestinationUnit === 'cm'
-    //     ) {
-    //         const result = inputValue / 2.54
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'cm' &&
-    //         selectedDestinationUnit === 'inches'
-    //     ) {
-    //         const result = inputValue * 2.54
-    //         setOutputValue(result)
-    //     }
-    //     //Temperature
-    //     else if (
-    //         selectedSourceUnit === 'F' &&
-    //         selectedDestinationUnit === 'C'
-    //     ) {
-    //         const result = (inputValue - 32) / 1.8
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'C' &&
-    //         selectedDestinationUnit === 'F'
-    //     ) {
-    //         const result = inputValue * 1.8 + 32
-    //         setOutputValue(result)
-    //     }
-
-    //     //Liquid
-    //     else if (
-    //         selectedSourceUnit === 'Ounce' &&
-    //         selectedDestinationUnit === 'mL'
-    //     ) {
-    //         const result = inputValue * 29.57352956
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'mL' &&
-    //         selectedDestinationUnit === 'Ounce'
-    //     ) {
-    //         const result = inputValue / 29.57
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'Ounce' &&
-    //         selectedDestinationUnit === 'mL'
-    //     ) {
-    //         const result = inputValue / 29.57
-    //         setOutputValue(result)
-    //     }
-    //     //Energy
-    //     else if (
-    //         selectedSourceUnit === 'J' &&
-    //         selectedDestinationUnit === 'eV'
-    //     ) {
-    //         const result = inputValue * 6.242 * Math.pow(10, 18)
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'eV' &&
-    //         selectedDestinationUnit === 'J'
-    //     ) {
-    //         const result = inputValue * 1.602 * Math.pow(10, -19)
-    //         setOutputValue(result)
-    //     }
-    //     //Exposure
-    //     else if (
-    //         selectedSourceUnit === 'C/kg' &&
-    //         selectedDestinationUnit === 'R'
-    //     ) {
-    //         const result = inputValue * 3876
-    //         setOutputValue(result)
-    //     } else if (
-    //         selectedSourceUnit === 'R' &&
-    //         selectedDestinationUnit === 'C/kg'
-    //     ) {
-    //         const result = inputValue * 2.58 * Math.pow(10, -4)
-    //         setOutputValue(result)
-    //     }
-    // }
+   
 
     const filteredDestinationUnits = units
         .filter((unit) => unit.destinationUnit !== selectedSourceUnit)
@@ -2067,10 +1064,13 @@ const UnitConversionCalculator = ({ route }) => {
             value: unit.destinationUnit,
             // disabled: shouldDisableDestination(unit.destinationUnit),
         }))
-    const filteredSourceUnits = units.map((unit) => ({
-        key: unit.id,
-        value: unit.sourceUnit,
-    }))
+        const filteredSourceUnits = units
+        .filter((unit) => unit.sourceUnit !== null) // Filter out units where sourceUnit is null
+        .map((unit) => ({
+          key: unit.id,
+          value: unit.sourceUnit,
+        }));
+      
 
     const handleInputFocus = () => {
         // Immediately blur the input to prevent the keyboard from appearing
@@ -2134,7 +1134,7 @@ const UnitConversionCalculator = ({ route }) => {
                             fontFamily: 'regular',
                         }}
                     >
-                        {name} Calculator
+                        {name} Conversion
                     </Text>
                 </View>
                 <TouchableOpacity
@@ -2273,7 +1273,7 @@ const UnitConversionCalculator = ({ route }) => {
                     /> */}
                 </View>
                 {/* Calculator Buttons */}
-                {showDestinationUnit && (
+                {outputValue && (
                     <Text style={styles.resultLabel}>
                         {outputValue} {selectedDestinationUnit}
                     </Text>
