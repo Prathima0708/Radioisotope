@@ -2,7 +2,7 @@ import { images } from "../constants";
 export const calculatorOptions = [
     {
         id: 1,
-        name: 'Half Life',
+        name: 'Biological \n Half Life',
         image: images.halfLife,
         navigate:'BiologicalHL'
     },
@@ -28,7 +28,7 @@ export const calculatorOptions = [
 export const morecalculatorOptions = [
     {
         id: 1,
-        name: 'Biological \n Half Life',
+        name: 'Biological \nHalf Life',
         image: images.halfLife,
         navigate:'BiologicalHL',
         options:[
@@ -47,13 +47,13 @@ export const morecalculatorOptions = [
     },
     {
         id: 2,
-        name: 'Volume to draw \n up(in ml)',
+        name: 'Volume to \ndraw up(in ml)',
         image: images.elution,
         navigate:'Volumedraw'
     },
     {
         id: 3,
-        name: 'Cardiac \n functions',
+        name: 'Cardiac \nfunctions',
         image: images.cardiac,
         navigate:'Cardiacfunction',
         options:[
@@ -81,7 +81,7 @@ export const morecalculatorOptions = [
     },
     {
         id: 4,
-        name: 'Inverse\n square law',
+        name: 'Inverse\nsquare law',
         image: images.inversesl,
         navigate:'InverseSL',
         options:[
@@ -135,9 +135,24 @@ export const morecalculatorOptions = [
             },
         ]
     },
+
+    {
+        id: 9,
+        name: 'Sensitivity',
+        image: images.sensitivity,
+        navigate:'CalculateSensitivity'
+    },
+  
+    {
+        id: 7,
+        name: 'Shielding ',
+        image: images.shielding,
+        navigate:'Shielding',
+     
+    },
     {
         id: 6,
-        name: 'Doses \n Concentration',
+        name: 'Doses \nConcentration',
         image: images.PD,
         navigate:'DosesConcentration',
         options:[
@@ -155,28 +170,16 @@ export const morecalculatorOptions = [
         ]
     },
     {
-        id: 7,
-        name: 'Shielding ',
-        image: images.shielding,
-        navigate:'Shielding',
-     
-    },
-    {
         id: 8,
-        name: 'Paediatric \n dose',
+        name: 'Paediatric \ndose',
         image: images.child,
         navigate:'CalculatePD'
     },
-    {
-        id: 9,
-        name: 'Sensitivity',
-        image: images.sensitivity,
-        navigate:'CalculateSensitivity'
-    },
+   
     {
         id: 10,
         name: 'Decay factor',
-        image: images.PD,
+        image: images.decay,
         navigate: 'DecayFactor',
         options:[
             {
@@ -277,7 +280,7 @@ export const morecalculatorOptions = [
     },
     {
         id: 13,
-        name: 'Pet Oncology',
+        name: '    Pet \nOncology',
         image: images.pet,
         navigate:'PetOncology',
         options:[
@@ -303,7 +306,7 @@ export const morecalculatorOptions = [
     },
     {
         id: 15,
-        name: 'Infection and \n Inflammation',
+        name: 'Infection and \nInflammation',
         image: images.infection,
         navigate:'Infection',
         options:[
@@ -314,34 +317,61 @@ export const morecalculatorOptions = [
             },
         ]
     },
+    // {
+    //     id: 16,
+    //     name: 'Extra Formulas',
+    //     image: images.more,
+    //     navigate:'Extraformulas',
+    //     options:[
+    //         {
+    //             id:'1',
+    //             name:'Net Counts',
+    //             navigate:'NetCounts'
+    //         },
+    //         {
+    //             id:'2',
+    //             name:'Administered counts',
+    //             navigate:'AdministeredCounts'
+    //         },
+    //         {
+    //             id:'3',
+    //             name:'Activity calculation',
+    //             navigate:'Activity'
+    //         },
+    //         {
+    //             id:'4',
+    //             name:'Elution efficiency',
+    //             navigate:'ElutionEfficiency'
+    //         },
+           
+    //     ]
+    // },
     {
         id: 16,
-        name: 'Extra Formulas',
-        image: images.more,
-        navigate:'Extraformulas',
-        options:[
-            {
-                id:'1',
-                name:'Net Counts',
-                navigate:'NetCounts'
-            },
-            {
-                id:'2',
-                name:'Administered counts',
-                navigate:'AdministeredCounts'
-            },
-            {
-                id:'3',
-                name:'Activity calculation',
-                navigate:'Activity'
-            },
-            {
-                id:'4',
-                name:'Elution efficiency',
-                navigate:'ElutionEfficiency'
-            },
-           
-        ]
+        name: 'Net Counts',
+        image: images.netcounts,
+        navigate:'NetCounts',
+       
     },
-  
+    {
+        id: 17,
+        name: 'Administered \n counts',
+        image: images.AdministeredCounts,
+        navigate:'AdministeredCounts',
+       
+    },
+    {
+        id: 18,
+        name: 'Activity\ncalculation',
+        image: images.AC,
+        navigate:'Activity',
+       
+    },
+    {
+        id: 19,
+        name: 'Elution \nefficiency',
+        image: images.ellution,
+        navigate:'ElutionEfficiency',
+       
+    },
 ]

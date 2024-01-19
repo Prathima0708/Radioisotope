@@ -1030,8 +1030,10 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'J' &&
             selectedDestinationUnit === 'eV'
         ) {
-            const result = inputValue * 6.242 * Math.pow(10, 18)
-            setOutputValue(result)
+            
+            const result = (inputValue * 6.242 * Math.pow(10, 18)).toExponential(2);
+            const formattedResult = result.replace(/e\+(\d+)/, 'E$1 ');
+            setOutputValue(formattedResult)
         } else if (
             selectedSourceUnit === 'eV' &&
             selectedDestinationUnit === 'J'

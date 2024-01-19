@@ -18,7 +18,7 @@ const CalculateDecayConcentration = ({ route }) => {
       const t = parseFloat(time);
       const result = c1 * Math.exp(-lambda * t);
     //  const result = c1 * Math.exp(-lambda * t);
-      setResultConcentration(result.toFixed(3)); // rounding to 3 decimal places
+      setResultConcentration(result.toFixed(5)); // rounding to 3 decimal places
     }
   };
 
@@ -53,7 +53,7 @@ const CalculateDecayConcentration = ({ route }) => {
             onChangeText={(text) => setDecayConstant(text)}
           />
 
-          <Text style={styles.label}>Time (t):</Text>
+          <Text style={styles.label}>Time (t) in hours:</Text>
           <TextInput
             style={styles.input}
             keyboardType="numeric"

@@ -17,6 +17,9 @@ const Activity = ({ route }) => {
       const initialActivityValue = parseFloat(initialActivity);
       const decayConstantValue = parseFloat(decayConstant);
       const timeValue = parseFloat(time);
+      console.log('Initial Activity:', initialActivityValue);
+      console.log('Decay Constant:', decayConstantValue);
+      console.log('Time:', timeValue);
       const result = initialActivityValue * Math.exp(-decayConstantValue * timeValue);
      // const result = initialActivityValue * Math.pow(2.178, -decayConstantValue * timeValue);
      
@@ -55,7 +58,7 @@ const Activity = ({ route }) => {
             onChangeText={(text) => setDecayConstant(text)}
           />
 
-          <Text style={styles.label}>Time (t):</Text>
+          <Text style={styles.label}>Time (t) in hours:</Text>
           <TextInput
             style={styles.input}
             keyboardType="numeric"
