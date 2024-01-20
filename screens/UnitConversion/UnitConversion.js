@@ -9,6 +9,7 @@ import {
     SafeAreaView,
     StatusBar,
     FlatList,
+    Dimensions,
 } from 'react-native'
 import { Table, Row, Rows } from 'react-native-table-component'
 import { COLORS, icons } from '../../constants'
@@ -16,7 +17,7 @@ import { commonStyles } from '../../styles/CommonStyles'
 import { ADB } from '../../data/data'
 import { UnitConversionOptions } from '../../data/unitconversiondata'
 
-
+const {height,width}=Dimensions.get('window')
 const UnitConversion = ({ navigation }) => {
    
     const renderHeader = () => {
@@ -27,7 +28,7 @@ const UnitConversion = ({ navigation }) => {
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    marginTop: 20,
+                    marginTop: height*0.09,
                     marginHorizontal: 16,
                 }}
             >
@@ -65,7 +66,7 @@ const UnitConversion = ({ navigation }) => {
     }
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
-            <StatusBar hidden={true} />
+          <StatusBar barStyle="dark-content" backgroundColor="white" />
             {renderHeader()}
             <View style={styles.container}>
                 <FlatList

@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
         tintColor: COLORS.black
     },
     title: {
-        fontSize: 16,
+        fontSize: 14,
         fontFamily: "bold",
         color: COLORS.black
     }

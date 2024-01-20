@@ -9,6 +9,7 @@ import {
     Image,
     SafeAreaView,
     StatusBar,
+    Dimensions,
 } from 'react-native'
 import { COLORS, icons } from '../../constants'
 import { useNavigation } from '@react-navigation/native'
@@ -19,7 +20,7 @@ import ModalDropdown from 'react-native-modal-dropdown'
 import { SelectList } from 'react-native-dropdown-select-list'
 import { Dropdown } from 'react-native-element-dropdown'
 import { AntDesign } from '@expo/vector-icons'
-
+const { height, width } = Dimensions.get('window')
 const UnitConversionCalculator = ({ route }) => {
     const [inputValue, setInputValue] = useState('')
     const [outputValue, setOutputValue] = useState()
@@ -52,15 +53,24 @@ const UnitConversionCalculator = ({ route }) => {
 
     const convertUnits = () => {
         setShowDestinationUnit(true)
-     
+
         if (selectedSourceUnit === 'Bq' && selectedDestinationUnit === 'GBq') {
             const result = inputValue * 1.0 * Math.pow(10, -9)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Bq' &&
-            selectedDestinationUnit === 'mBq'
+            selectedDestinationUnit === 'MBq'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -6)
+            const formattedResult = result
+                .toExponential(1)
+                .replace(/e\+(\d+)/, 'E+$1')
+            setOutputValue(formattedResult)
+        } else if (
+            selectedSourceUnit === 'Bq' &&
+            selectedDestinationUnit === 'mBq'
+        ) {
+            const result = inputValue * 1000
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Bq' &&
@@ -90,7 +100,7 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'Bq' &&
             selectedDestinationUnit === 'mCi'
         ) {
-            const result = inputValue * 2.7027027027027  * Math.pow(10, -8)
+            const result = inputValue * 2.7027027027027 * Math.pow(10, -8)
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Bq' &&
@@ -105,10 +115,22 @@ const UnitConversionCalculator = ({ route }) => {
             const result = inputValue * 60
             setOutputValue(result)
         } else if (
+            selectedSourceUnit === 'Bq' &&
+            selectedDestinationUnit === 'pCi'
+        ) {
+            const result = inputValue * 2.7027027027027 * Math.pow(10, 0)
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'GBq' &&
+            selectedDestinationUnit === 'MBq'
+        ) {
+            const result = inputValue * 1000
+            setOutputValue(result)
+        } else if (
             selectedSourceUnit === 'GBq' &&
             selectedDestinationUnit === 'mBq'
         ) {
-            const result = inputValue * 1000
+            const result = inputValue * 1000000000000
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'GBq' &&
@@ -132,8 +154,12 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'GBq' &&
             selectedDestinationUnit === 'kCi'
         ) {
-            const result = inputValue * 2.70 * Math.pow(10, -5)
-            setOutputValue(result)
+            const result = inputValue * 2.7 * Math.pow(10, -5)
+            const formattedResult = result
+                .toExponential(2)
+                .replace(/e\+(\d+)/, 'E+$1')
+
+            setOutputValue(formattedResult)
         } else if (
             selectedSourceUnit === 'GBq' &&
             selectedDestinationUnit === 'Ci'
@@ -165,61 +191,62 @@ const UnitConversionCalculator = ({ route }) => {
             const result = inputValue * 60000000000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'mBq' &&
+            selectedSourceUnit === 'MBq' &&
             selectedDestinationUnit === 'GBq'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'mBq' &&
+            selectedSourceUnit === 'MBq' &&
             selectedDestinationUnit === 'kBq'
         ) {
             const result = inputValue * 1000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'mBq' &&
+            selectedSourceUnit === 'MBq' &&
             selectedDestinationUnit === 'Bq'
         ) {
             const result = inputValue * 1000000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'mBq' &&
+            selectedSourceUnit === 'MBq' &&
             selectedDestinationUnit === 'mBq'
         ) {
             const result = inputValue * 1000000000
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'mBq' &&
+            selectedSourceUnit === 'MBq' &&
             selectedDestinationUnit === 'kCi'
         ) {
             const result = inputValue * 2.7027027027027 * Math.pow(10, -8)
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'mBq' &&
+            selectedSourceUnit === 'MBq' &&
             selectedDestinationUnit === 'Ci'
         ) {
             const result = inputValue * 2.7027027027027 * Math.pow(10, -5)
-            setOutputValue(result)
+            const formattedResult = result.toExponential(13).replace(/e\+(\d+)/, 'E+$1');
+            setOutputValue(formattedResult)
         } else if (
-            selectedSourceUnit === 'mBq' &&
+            selectedSourceUnit === 'MBq' &&
             selectedDestinationUnit === 'mCi'
         ) {
             const result = inputValue * 0.027027027027027
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'mBq' &&
+            selectedSourceUnit === 'MBq' &&
             selectedDestinationUnit === 'µCi'
         ) {
             const result = inputValue * 27.027027027027
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'mBq' &&
+            selectedSourceUnit === 'MBq' &&
             selectedDestinationUnit === 'pCi'
         ) {
             const result = inputValue * 27027027.027027
             setOutputValue(result)
         } else if (
-            selectedSourceUnit === 'mBq' &&
+            selectedSourceUnit === 'MBq' &&
             selectedDestinationUnit === 'dpm'
         ) {
             const result = inputValue * 60000000
@@ -229,14 +256,23 @@ const UnitConversionCalculator = ({ route }) => {
             selectedDestinationUnit === 'GBq'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -6)
-            setOutputValue(result)
+            const formattedResult = result.toExponential(1).replace(/e\+(\d+)/, 'E+$1');
+            setOutputValue(formattedResult)
         } else if (
             selectedSourceUnit === 'kBq' &&
-            selectedDestinationUnit === 'mBq'
+            selectedDestinationUnit === 'MBq'
         ) {
             const result = inputValue * 0.001
             setOutputValue(result)
-        } else if (
+        }
+        else if (
+            selectedSourceUnit === 'kBq' &&
+            selectedDestinationUnit === 'mBq'
+        ) {
+            const result = inputValue * 1000000
+            setOutputValue(result)
+        }
+         else if (
             selectedSourceUnit === 'kBq' &&
             selectedDestinationUnit === 'Bq'
         ) {
@@ -265,8 +301,17 @@ const UnitConversionCalculator = ({ route }) => {
             selectedDestinationUnit === 'mCi'
         ) {
             const result = inputValue * 2.7027027027027 * Math.pow(10, -5)
+            const formattedResult = result.toExponential(13).replace(/e\+(\d+)/, 'E+$1');
+            setOutputValue(formattedResult)
+        } 
+        else if (
+            selectedSourceUnit === 'kBq' &&
+            selectedDestinationUnit === 'pCi'
+        ) {
+            const result = inputValue * 27027.027027027
             setOutputValue(result)
-        } else if (
+        }
+        else if (
             selectedSourceUnit === 'kBq' &&
             selectedDestinationUnit === 'µCi'
         ) {
@@ -289,8 +334,18 @@ const UnitConversionCalculator = ({ route }) => {
             selectedDestinationUnit === 'GBq'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -12)
-            setOutputValue(result)
-        } else if (
+            const formattedResult = result.toExponential(1).replace(/e\+(\d+)/, 'E+$1');
+            setOutputValue(formattedResult)
+        }
+        else if (
+            selectedSourceUnit === 'mBq' &&
+            selectedDestinationUnit === 'MBq'
+        ) {
+            const result = inputValue * 1.0 * Math.pow(10, -9)
+            const formattedResult = result.toExponential(1).replace(/e\+(\d+)/, 'E+$1');
+            setOutputValue(formattedResult)
+        }
+         else if (
             selectedSourceUnit === 'mBq' &&
             selectedDestinationUnit === 'mBq'
         ) {
@@ -307,7 +362,8 @@ const UnitConversionCalculator = ({ route }) => {
             selectedDestinationUnit === 'kBq'
         ) {
             const result = inputValue * 1.0 * Math.pow(10, -6)
-            setOutputValue(result)
+            const formattedResult = result.toExponential(1).replace(/e\+(\d+)/, 'E+$1');
+            setOutputValue(formattedResult)
         } else if (
             selectedSourceUnit === 'mBq' &&
             selectedDestinationUnit === 'kCi'
@@ -981,13 +1037,13 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'inches' &&
             selectedDestinationUnit === 'cm'
         ) {
-            const result = inputValue / 2.54
+            const result = inputValue * 2.54
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'cm' &&
             selectedDestinationUnit === 'inches'
         ) {
-            const result = inputValue * 2.54
+            const result = inputValue / 2.54
             setOutputValue(result)
         }
         //Temperature
@@ -1004,7 +1060,7 @@ const UnitConversionCalculator = ({ route }) => {
             const result = inputValue * 1.8 + 32
             setOutputValue(result)
         }
-    
+
         //Liquid
         else if (
             selectedSourceUnit === 'Ounce' &&
@@ -1030,9 +1086,12 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'J' &&
             selectedDestinationUnit === 'eV'
         ) {
-            
-            const result = (inputValue * 6.242 * Math.pow(10, 18)).toExponential(2);
-            const formattedResult = result.replace(/e\+(\d+)/, 'E$1 ');
+            const result = (
+                inputValue *
+                6.242 *
+                Math.pow(10, 18)
+            ).toExponential(3)
+            const formattedResult = result.replace(/e\+(\d+)/, 'E$1 ')
             setOutputValue(formattedResult)
         } else if (
             selectedSourceUnit === 'eV' &&
@@ -1052,12 +1111,456 @@ const UnitConversionCalculator = ({ route }) => {
             selectedSourceUnit === 'R' &&
             selectedDestinationUnit === 'C/Kg'
         ) {
-            const result = inputValue * 2.58 * Math.pow(10, -4)
+            const result = inputValue * 2.58e-4
+            setOutputValue(result.toFixed(6))
+        }
+
+        // source :dpm
+        else if (
+            selectedSourceUnit === 'dpm' &&
+            selectedDestinationUnit === 'GBq'
+        ) {
+            const result = inputValue * 1.6666666666667 * Math.pow(10, -11)
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'dpm' &&
+            selectedDestinationUnit === 'MBq'
+        ) {
+            const result = inputValue * 1.6666666666667 * Math.pow(10, -8)
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'dpm' &&
+            selectedDestinationUnit === 'mbq'
+        ) {
+            const result = inputValue * 16.666666666667
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'dpm' &&
+            selectedDestinationUnit === 'kBq'
+        ) {
+            const result = inputValue * 1.6666666666667 * Math.pow(10, -5)
+            const formattedResult = result
+                .toExponential(13)
+                .replace(/e\+(\d+)/, 'E+$1')
+            setOutputValue(formattedResult)
+        } else if (
+            selectedSourceUnit === 'dpm' &&
+            selectedDestinationUnit === 'Bq'
+        ) {
+            const result = inputValue * 0.016666666666667
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'dpm' &&
+            selectedDestinationUnit === 'mBq'
+        ) {
+            const result = inputValue * 16.666666666667
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'dpm' &&
+            selectedDestinationUnit === 'kCi'
+        ) {
+            const result = inputValue * 4.5045045045045 * Math.pow(10, -16)
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'dpm' &&
+            selectedDestinationUnit === 'Ci'
+        ) {
+            const result = inputValue * 4.5045045045045 * Math.pow(10, -13)
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'dpm' &&
+            selectedDestinationUnit === 'mCi'
+        ) {
+            const result = inputValue * 4.5045045045045 * Math.pow(10, -10)
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'dpm' &&
+            selectedDestinationUnit === 'µCi'
+        ) {
+            const result = inputValue * 4.5045045045045 * Math.pow(10, -7)
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'dpm' &&
+            selectedDestinationUnit === 'pCi'
+        ) {
+            const result = inputValue * 0.45045045045045
+            setOutputValue(result)
+        }
+
+        //CONVERSION OF CURIE (Ci) INTO BECQUEREL(Bq), CURIE(Ci), RUTHERFORD (Rd) AND DISINTEGRATION PER MINUTE (dpm)
+        //source:kci
+        else if (
+            selectedSourceUnit === 'kCi' &&
+            selectedDestinationUnit === 'GBq'
+        ) {
+            const result = inputValue * 37000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'kCi' &&
+            selectedDestinationUnit === 'MBq'
+        ) {
+            const result = inputValue * 37000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'kCi' &&
+            selectedDestinationUnit === 'mBq'
+        ) {
+            const result = inputValue * 3.7 * Math.pow(10, 16)
+            const formattedResult = result
+                .toExponential(1)
+                .replace(/e\+(\d+)/, 'E+$1')
+            setOutputValue(formattedResult)
+        } else if (
+            selectedSourceUnit === 'kCi' &&
+            selectedDestinationUnit === 'kBq'
+        ) {
+            const result = inputValue * 37000000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'kCi' &&
+            selectedDestinationUnit === 'Bq'
+        ) {
+            const result = inputValue * 37000000000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'kCi' &&
+            selectedDestinationUnit === 'mBq'
+        ) {
+            const result = inputValue * 3.7 * Math.pow(10, 16)
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'kCi' &&
+            selectedDestinationUnit === 'Ci'
+        ) {
+            const result = inputValue * 1000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'kCi' &&
+            selectedDestinationUnit === 'mCi'
+        ) {
+            const result = inputValue * 1000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'kCi' &&
+            selectedDestinationUnit === 'µCi'
+        ) {
+            const result = inputValue * 1000000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'kCi' &&
+            selectedDestinationUnit === 'pCi'
+        ) {
+            const result = inputValue * 1.0 * Math.pow(10, 15)
+            const formattedResult = result
+                .toExponential(1)
+                .replace(/e\+(\d+)/, 'E+$1')
+            setOutputValue(formattedResult)
+        } else if (
+            selectedSourceUnit === 'kCi' &&
+            selectedDestinationUnit === 'dpm'
+        ) {
+            const result = inputValue * 2.22 * Math.pow(10, 15)
+            const formattedResult = result
+                .toExponential(2)
+                .replace(/e\+(\d+)/, 'E$1')
+            setOutputValue(formattedResult)
+        }
+        //source : mci
+        else if (
+            selectedSourceUnit === 'mCi' &&
+            selectedDestinationUnit === 'GBq'
+        ) {
+            const result = inputValue * 0.037
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'mCi' &&
+            selectedDestinationUnit === 'MBq'
+        ) {
+            const result = inputValue * 37
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'mCi' &&
+            selectedDestinationUnit === 'mBq'
+        ) {
+            const result = inputValue * 37000000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'mCi' &&
+            selectedDestinationUnit === 'kBq'
+        ) {
+            const result = inputValue * 37000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'mCi' &&
+            selectedDestinationUnit === 'Bq'
+        ) {
+            const result = inputValue * 37000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'mCi' &&
+            selectedDestinationUnit === 'mBq'
+        ) {
+            const result = inputValue * 37000000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'mCi' &&
+            selectedDestinationUnit === 'kCi'
+        ) {
+            const result = inputValue * 1.0 * Math.pow(10, -6)
+            const formattedResult = result
+                .toExponential(1)
+                .replace(/e\+(\d+)/, 'E+$1')
+            setOutputValue(formattedResult)
+        } else if (
+            selectedSourceUnit === 'mCi' &&
+            selectedDestinationUnit === 'Ci'
+        ) {
+            const result = inputValue * 0.001
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'mCi' &&
+            selectedDestinationUnit === 'µCi'
+        ) {
+            const result = inputValue * 1000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'mCi' &&
+            selectedDestinationUnit === 'pCi'
+        ) {
+            const result = inputValue * 1000000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'mCi' &&
+            selectedDestinationUnit === 'dpm'
+        ) {
+            const result = inputValue * 2220000000
+            setOutputValue(result)
+        }
+        //source : µCi
+        else if (
+            selectedSourceUnit === 'µCi' &&
+            selectedDestinationUnit === 'GBq'
+        ) {
+            const result = inputValue * 3.7 * Math.pow(10, -5)
+            const formattedResult = result
+                .toExponential(1)
+                .replace(/e\+(\d+)/, 'E+$1')
+            setOutputValue(formattedResult)
+        } else if (
+            selectedSourceUnit === 'µCi' &&
+            selectedDestinationUnit === 'MBq'
+        ) {
+            const result = inputValue * 0.037
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'µCi' &&
+            selectedDestinationUnit === 'mBq'
+        ) {
+            const result = inputValue * 37000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'µCi' &&
+            selectedDestinationUnit === 'kBq'
+        ) {
+            const result = inputValue * 37
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'µCi' &&
+            selectedDestinationUnit === 'Bq'
+        ) {
+            const result = inputValue * 37000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'µCi' &&
+            selectedDestinationUnit === 'mBq'
+        ) {
+            const result = inputValue * 37000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'µCi' &&
+            selectedDestinationUnit === 'kCi'
+        ) {
+            const result = inputValue * 1.0 * Math.pow(10, -9)
+            const formattedResult = result
+                .toExponential(1)
+                .replace(/e\+(\d+)/, 'E+$1')
+            setOutputValue(formattedResult)
+        } else if (
+            selectedSourceUnit === 'µCi' &&
+            selectedDestinationUnit === 'Ci'
+        ) {
+            const result = inputValue * 1.0 * Math.pow(10, -6)
+            const formattedResult = result
+                .toExponential(1)
+                .replace(/e\+(\d+)/, 'E+$1')
+            setOutputValue(formattedResult)
+        } else if (
+            selectedSourceUnit === 'µCi' &&
+            selectedDestinationUnit === 'mCi'
+        ) {
+            const result = inputValue * 0.001
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'µCi' &&
+            selectedDestinationUnit === 'pCi'
+        ) {
+            const result = inputValue * 1000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'µCi' &&
+            selectedDestinationUnit === 'dpm'
+        ) {
+            const result = inputValue * 2220000
+            setOutputValue(result)
+        }
+
+        //source : pci
+        else if (
+            selectedSourceUnit === 'pCi' &&
+            selectedDestinationUnit === 'GBq'
+        ) {
+            const result = inputValue * 3.7 * Math.pow(10, -11)
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'pCi' &&
+            selectedDestinationUnit === 'kBq'
+        ) {
+            const result = inputValue * 3.7 * Math.pow(10, -5)
+            const formattedResult = result
+                .toExponential(1)
+                .replace(/e\+(\d+)/, 'E+$1')
+            setOutputValue(formattedResult)
+        } else if (
+            selectedSourceUnit === 'pCi' &&
+            selectedDestinationUnit === 'Bq'
+        ) {
+            const result = inputValue * 0.037
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'pCi' &&
+            selectedDestinationUnit === 'MBq'
+        ) {
+            const result = inputValue * 3.7 * Math.pow(10, -8)
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'pCi' &&
+            selectedDestinationUnit === 'mBq'
+        ) {
+            const result = inputValue * 37
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'pCi' &&
+            selectedDestinationUnit === 'kCi'
+        ) {
+            const result = inputValue * 1.0 * Math.pow(10, -15)
+            const formattedResult = result
+                .toExponential(1)
+                .replace(/e\+(\d+)/, 'E+$1')
+            setOutputValue(formattedResult)
+        } else if (
+            selectedSourceUnit === 'pCi' &&
+            selectedDestinationUnit === 'Ci'
+        ) {
+            const result = inputValue * 1.0 * Math.pow(10, -12)
+            const formattedResult = result
+                .toExponential(1)
+                .replace(/e\+(\d+)/, 'E+$1')
+            setOutputValue(formattedResult)
+        } else if (
+            selectedSourceUnit === 'pCi' &&
+            selectedDestinationUnit === 'mCi'
+        ) {
+            const result = inputValue * 1.0 * Math.pow(10, -9)
+            const formattedResult = result
+                .toExponential(1)
+                .replace(/e\+(\d+)/, 'E+$1')
+            setOutputValue(formattedResult)
+        } else if (
+            selectedSourceUnit === 'pCi' &&
+            selectedDestinationUnit === 'µCi'
+        ) {
+            const result = inputValue * 1.0 * Math.pow(10, -6)
+            const formattedResult = result
+                .toExponential(1)
+                .replace(/e\+(\d+)/, 'E+$1')
+            setOutputValue(formattedResult)
+        } else if (
+            selectedSourceUnit === 'pCi' &&
+            selectedDestinationUnit === 'dpm'
+        ) {
+            const result = inputValue * 2.22
+            setOutputValue(result)
+        }
+
+        //source:Ci
+        else if (
+            selectedSourceUnit === 'Ci' &&
+            selectedDestinationUnit === 'GBq'
+        ) {
+            const result = inputValue * 37
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'Ci' &&
+            selectedDestinationUnit === 'MBq'
+        ) {
+            const result = inputValue * 37000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'Ci' &&
+            selectedDestinationUnit === 'mBq'
+        ) {
+            const result = inputValue * 37000000000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'Ci' &&
+            selectedDestinationUnit === 'kBq'
+        ) {
+            const result = inputValue * 37000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'Ci' &&
+            selectedDestinationUnit === 'Bq'
+        ) {
+            const result = inputValue * 37000000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'Ci' &&
+            selectedDestinationUnit === 'mBq'
+        ) {
+            const result = inputValue * 37000000000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'Ci' &&
+            selectedDestinationUnit === 'kCi'
+        ) {
+            const result = inputValue * 0.001
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'Ci' &&
+            selectedDestinationUnit === 'mCi'
+        ) {
+            const result = inputValue * 1000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'Ci' &&
+            selectedDestinationUnit === 'µCi'
+        ) {
+            const result = inputValue * 1000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'Ci' &&
+            selectedDestinationUnit === 'dpm'
+        ) {
+            const result = inputValue * 2220000000000
+            setOutputValue(result)
+        } else if (
+            selectedSourceUnit === 'Ci' &&
+            selectedDestinationUnit === 'dps'
+        ) {
+            const result = inputValue * 37000000000
             setOutputValue(result)
         }
     }
-
-   
 
     const filteredDestinationUnits = units
         .filter((unit) => unit.destinationUnit !== selectedSourceUnit)
@@ -1066,13 +1569,12 @@ const UnitConversionCalculator = ({ route }) => {
             value: unit.destinationUnit,
             // disabled: shouldDisableDestination(unit.destinationUnit),
         }))
-        const filteredSourceUnits = units
+    const filteredSourceUnits = units
         .filter((unit) => unit.sourceUnit !== null) // Filter out units where sourceUnit is null
         .map((unit) => ({
-          key: unit.id,
-          value: unit.sourceUnit,
-        }));
-      
+            key: unit.id,
+            value: unit.sourceUnit,
+        }))
 
     const handleInputFocus = () => {
         // Immediately blur the input to prevent the keyboard from appearing
@@ -1110,7 +1612,7 @@ const UnitConversionCalculator = ({ route }) => {
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    marginTop: 20,
+                    marginTop: height * 0.09,
                     marginHorizontal: 16,
                 }}
             >
@@ -1149,7 +1651,7 @@ const UnitConversionCalculator = ({ route }) => {
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
-            <StatusBar hidden={true} />
+            <StatusBar barStyle="dark-content" backgroundColor="white" />
             {renderHeader()}
             <View style={styles.container}>
                 <View>
@@ -1177,6 +1679,7 @@ const UnitConversionCalculator = ({ route }) => {
                         <View style={styles.space} />
                         <View style={{ width: 120 }}>
                             <Dropdown
+                                search
                                 style={styles.dropdown}
                                 placeholderStyle={styles.placeholderStyle}
                                 selectedTextStyle={styles.selectedTextStyle}
@@ -1222,6 +1725,7 @@ const UnitConversionCalculator = ({ route }) => {
                         {/* <View style={styles.space} /> */}
                         <View style={{ width: 120 }}>
                             <Dropdown
+                                search
                                 style={styles.dropdown}
                                 placeholderStyle={styles.placeholderStyle}
                                 selectedTextStyle={styles.selectedTextStyle}

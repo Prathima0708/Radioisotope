@@ -2,10 +2,11 @@ import { View, Platform, Image } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { COLORS, icons } from '../constants'
-import { Profile, Search, Message, HomeV1, MyOrders, HomeV2, HomeV3, PersonalProfile, TermsAndConditions } from '../screens'
+import { Profile, Search, Message, HomeV1, MyOrders, HomeV2, HomeV3, TermsAndConditions } from '../screens'
 import { Ionicons } from '@expo/vector-icons'
 import DrawerNavigation from './DrawerNavigation'
 import Radioisotope from '../screens/Radioisotope/Radioisotope'
+import About from '../screens/About'
 
 const Tab = createBottomTabNavigator()
 
@@ -19,7 +20,9 @@ const screenOptions = {
         left: 0,
         elevation: 0,
         height: 60,
+      
         background: COLORS.white,
+       
     },
 }
 
@@ -70,7 +73,7 @@ const BottomTabNavigation = () => {
 
             <Tab.Screen
                 name="Message"
-                component={TermsAndConditions}
+                component={About}
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (

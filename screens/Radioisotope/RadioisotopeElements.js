@@ -4,29 +4,16 @@ import {
     StyleSheet,
     SafeAreaView,
     TouchableOpacity,
+    Dimensions,
 } from 'react-native'
 import React from 'react'
 import { ScrollView } from 'react-native'
 import Header from '../../components/Header'
 import { COLORS } from '../../constants'
-import { FlatList } from 'react-native'
 
 const RadioisotopeElements = ({ route, navigation }) => {
     const { itemName, itemDetails } = route.params
 
-    //  const elementsArray = itemDetails.split('\n')
-    const getElementDetails = (element) => {
-        // Retrieve and format additional details for the clicked element
-        // Modify this logic based on your actual data structure
-        return `
-          Symbol: ${element.symbol}
-          Period: ${element.period}
-          Group: ${element.group}
-          Atomic Number: ${element.atomicNumber}
-          Atomic Weight: ${element.atomicWeight}
-          // ... other details
-        `
-    }
     const navigateToDetailsScreen = (element) => {
         // Navigate to a new screen and pass the details as parameters
         navigation.navigate('ElementDetailsScreen', {
@@ -37,7 +24,7 @@ const RadioisotopeElements = ({ route, navigation }) => {
         <View style={styles.container}>
             <Header title={`${itemName} elements`} />
 
-            <ScrollView style={{ padding: 16, }}>
+            <ScrollView style={{ marginHorizontal:20 }}>
                 {itemDetails?.map((element, index) => (
                     <TouchableOpacity
                         key={index}
@@ -87,7 +74,7 @@ const RadioisotopeElements = ({ route, navigation }) => {
 }
 
 export default RadioisotopeElements
-
+const { width, height } = Dimensions.get('window')
 const styles = StyleSheet.create({
     area: {
         flex: 1,
@@ -96,13 +83,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: COLORS.white,
-        paddingTop: 50,
+        paddingTop: width * 0.15,
     },
     elementButton: {
         backgroundColor: '#3498db', // You can replace this with your desired background color
         padding: 10,
         borderRadius: 5,
         marginVertical: 10,
+        marginHorizontal:5
     },
     elementButtonText: {
         color: '#fff', // Text color

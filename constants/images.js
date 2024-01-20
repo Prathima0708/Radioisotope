@@ -41,7 +41,7 @@ const chair = require("../assets/images/categories/chair.png");
 const livingroom = require("../assets/images/categories/livingroom.png");
 const sofa = require("../assets/images/categories/sofa.png");
 const table = require("../assets/images/categories/table.png");
-const logo=require("../assets/images/logo.png")
+const logo=require("../assets/images/Rlogo.png")
 
 const halfLife=require("../assets/images/halflife.png")
 const elution=require("../assets/images/elution.png")

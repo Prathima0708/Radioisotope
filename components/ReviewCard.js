@@ -1,48 +1,47 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native'
 import React from 'react'
-import ReviewStars from './ReviewStars'
-import { COLORS, SIZES } from "../constants"
+
+import { COLORS, SIZES } from '../constants'
 import { useNavigation } from '@react-navigation/native'
 
-const ReviewCard = ({ image, date, title, description, num }) => {
-    const navigation=useNavigation()
+const ReviewCard = () => {
+    const navigation = useNavigation()
     return (
         <View style={styles.container}>
-           
             <View style={styles.content}>
-               
                 <Text style={styles.title}>Unit Conversion</Text>
-                
-                <Text style={styles.description}>Enter a value below to perform a conversion</Text>
-                <TouchableOpacity style={styles.reorderButton} onPress={()=>navigation.navigate('UnitConversion')}>
-                        <Text
-                            style={[
-                                styles.buttonText,
-                                styles.reorderButtonText,
-                            ]}
-                        >
-                           Click here {'>'}
-                        </Text>
-                    </TouchableOpacity>
+
+                <Text style={styles.description}>
+                    Enter a value below to perform a conversion
+                </Text>
+                <TouchableOpacity
+                    style={styles.reorderButton}
+                    onPress={() => navigation.navigate('UnitConversion')}
+                >
+                    <Text style={[styles.buttonText, styles.reorderButtonText]}>
+                        Click here {'>'}
+                    </Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
 }
 
+const {height,width}=Dimensions.get('window')
+
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        marginVertical: 12,
+        marginVertical: 32,
         width: SIZES.width - 24,
-        marginBottom:10,
-        paddingBottom:70,
-       
+        marginBottom: height*0.01,
+        paddingBottom:width*0.2,
     },
     avatar: {
         height: 48,
         width: 48,
         borderRadius: 24,
-        marginRight: 12
+        marginRight: 12,
     },
     content: {
         flexDirection: 'column',
@@ -50,22 +49,22 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         paddingVertical: 12,
         paddingHorizontal: 12,
-        backgroundColor: COLORS.lightBlue
+        backgroundColor: COLORS.lightBlue,
     },
     date: {
         fontSize: 12,
         fontFamily: 'regular',
-        color: COLORS.gray5
+        color: COLORS.gray5,
     },
     title: {
         fontSize: 14,
         fontFamily: 'bold',
-        marginVertical: 6
+        marginVertical: 6,
     },
     description: {
         fontSize: 14,
         fontFamily: 'regular',
-        marginTop: 6
+        marginTop: 6,
     },
     receiptText: {
         fontSize: 14,
@@ -106,7 +105,7 @@ const styles = StyleSheet.create({
     },
     reorderButtonText: {
         color: COLORS.white,
-        fontWeight:'500'
+        fontWeight: '500',
     },
 })
 

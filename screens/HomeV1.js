@@ -4,36 +4,23 @@ import {
     SafeAreaView,
     StyleSheet,
     Image,
-    TextInput,
     TouchableOpacity,
     FlatList,
+    Dimensions,
 } from 'react-native'
-import React, { useState } from 'react'
-import { COLORS, FONTS, SIZES, icons, images } from '../constants'
-import {
-    Feather,
-    Ionicons,
-    MaterialIcons,
-    Octicons,
-    MaterialCommunityIcons,
-    Fontisto,
-} from '@expo/vector-icons'
+import React from 'react'
+import { COLORS, FONTS, SIZES, images } from '../constants'
+
 import { ScrollView } from 'react-native-virtualized-view'
 import { StatusBar } from 'expo-status-bar'
-import CustomModal from '../components/CustomModal'
-import { furnitureStores } from '../data/shops'
 
 import { useNavigation } from '@react-navigation/native'
 
 import ReviewCard from '../components/ReviewCard'
-import {  homescreenOptions } from '../data/homescreendata'
-import { calculatorOptions, homeCategories } from '../data/calculatoroptions'
+import { homescreenOptions } from '../data/homescreendata'
+import { calculatorOptions } from '../data/calculatoroptions'
 
 const HomeV1 = ({ navigation }) => {
-    
-
-   
-
     const renderProductCategories = () => {
         return (
             <View>
@@ -57,11 +44,13 @@ const HomeV1 = ({ navigation }) => {
                             style={{
                                 alignItems: 'center',
                                 flexDirection: 'column',
-                                marginHorizontal:11,
+                                marginHorizontal: 11,
                             }}
-                            onPress={()=>navigation.navigate(item.navigate,{
-                                name:item.name
-                            })}
+                            onPress={() =>
+                                navigation.navigate(item.navigate, {
+                                    name: item.name,
+                                })
+                            }
                         >
                             <View
                                 style={{
@@ -105,9 +94,6 @@ const HomeV1 = ({ navigation }) => {
             </View>
         )
     }
-  
-
-   
 
     const renderProducts = () => {
         const navigation = useNavigation()
@@ -143,7 +129,7 @@ const HomeV1 = ({ navigation }) => {
                                 shadowOpacity: 0.2,
                                 shadowRadius: 4,
                                 elevation: 3,
-                                marginTop:20
+                                marginTop: 20,
                             }}
                         >
                             <Text
@@ -164,16 +150,17 @@ const HomeV1 = ({ navigation }) => {
             </View>
         )
     }
+    const { width, height } = Dimensions.get('window')
     return (
         <SafeAreaView style={styles.area}>
             <View style={{ flex: 1, marginHorizontal: 16 }}>
-                <StatusBar  />
+                <StatusBar />
                 <View
                     style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
                         alignItems: 'center',
-                        marginTop: 20,
+                        marginTop: width * 0.09,
                     }}
                 >
                     <View
@@ -182,11 +169,11 @@ const HomeV1 = ({ navigation }) => {
                             alignItems: 'center',
                         }}
                     >
-                      
                         <View
                             style={{
                                 flexDirection: 'column',
-                                marginLeft: 12,
+                                marginLeft: 37,
+                                marginTop: 20,
                             }}
                         >
                             <Image
@@ -201,8 +188,6 @@ const HomeV1 = ({ navigation }) => {
                 </View>
 
                 <ScrollView style={{ marginTop: 5 }}>
-                
-
                     {renderProducts()}
                     {renderProductCategories()}
                     <View>
@@ -210,12 +195,6 @@ const HomeV1 = ({ navigation }) => {
                     </View>
                 </ScrollView>
             </View>
-            {/* <CustomModal
-              modalVisible={modalVisible}
-              setModalVisible={setModalVisible}
-              onPressGotIt={handlePressGotIt}
-              code="#1243CD2"
-          /> */}
         </SafeAreaView>
     )
 }

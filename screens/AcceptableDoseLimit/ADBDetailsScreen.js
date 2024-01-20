@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, SafeAreaView, StatusBar } from 'react-native'
+import { View, Text, StyleSheet, SafeAreaView, StatusBar, Dimensions } from 'react-native'
 import React from 'react'
 import { Row, Rows, Table } from 'react-native-table-component'
 import { COLORS } from '../../constants'
@@ -11,7 +11,7 @@ const ADBDetailsScreen = ({ route }) => {
         <SafeAreaView style={styles.area}>
             <StatusBar/>
             <View style={styles.container}>
-      <Header title={`${details.name} details`} />
+      <Header title={`${details.name} `} />
       <View style={styles.tableContainer}>
             <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
                 <Row
@@ -28,12 +28,12 @@ const ADBDetailsScreen = ({ route }) => {
 }
 
 export default ADBDetailsScreen
-
+const {height,width}=Dimensions.get('window')
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: COLORS.white,
-        paddingTop: 50,
+        marginTop: height*0.09,
       },
     head: { height: 65, backgroundColor: '#f1f8ff', width: 'auto' },
     text: { margin: 6 },
@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
         padding: 16,
         paddingTop: 30,
         backgroundColor: '#fff',
+        marginHorizontal:10
     },
     area: {
         flex: 1,

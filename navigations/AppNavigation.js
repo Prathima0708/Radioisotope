@@ -19,7 +19,7 @@ import { Onboarding1,
     PaymentMethod,
     PaymentSuccess,
     Settings,
-    EditProfile,
+  
     Cart,
     EditCart,
     AddNewPaymentMethod,
@@ -31,9 +31,9 @@ import { Onboarding1,
     ProductDetailsV1,
     ProductReviews,
     Call,
-    Message,
+  
     Favourite,
-    PersonalProfile,
+  
     AddNewPaymentMethodDeclined,
     AddNewPaymentMethodSuccess,
     TransactionHistory,
@@ -48,7 +48,7 @@ import { Onboarding1,
     Notifications,
     CancelOrders,
     OpenShops,
-    TermsAndConditions,
+  
     CaptureProduct
 } from '../screens'
 import { NavigationContainer } from '@react-navigation/native'
@@ -104,6 +104,7 @@ import ElutionEfficiency from '../screens/Calculator/ExtraFormulas/ElutionEffici
 import Infection from '../screens/Calculator/Infection/Infection'
 import Activity from '../screens/Calculator/ExtraFormulas/Activity'
 import CalculateDecayConcentration from '../screens/Calculator/DosesConcentration/CalculateDecayConcentration'
+import About from '../screens/About'
 
 const Stack = createNativeStackNavigator()
 
@@ -142,63 +143,12 @@ const AppNavigation = () => {
                     headerShown: false
                  }}
                 >
-                {/* <Stack.Screen name="Onboarding1" component={Onboarding1}/>
-                <Stack.Screen name="Onboarding2" component={Onboarding2}/>
-                <Stack.Screen name="Onboarding3" component={Onboarding3}/>
-                <Stack.Screen name="Onboarding4" component={Onboarding4}/>
-                <Stack.Screen name="Signup" component={Signup}/>
-                <Stack.Screen name="StartUpScreen" component={StartUpScreen}/>
-                <Stack.Screen name="Login" component={Login}/>
-                <Stack.Screen name="ForgotPassword" component={ForgotPassword}/>
-                <Stack.Screen name="ResetPassword" component={ResetPassword}/>
-                <Stack.Screen name="Verification" component={Verification}/>
-                <Stack.Screen name="LocationAccess" component={LocationAccess}/> */}
-                
-                {/* <Stack.Screen name="PersonalProfile" component={PersonalProfile}/>
-                <Stack.Screen name="AddNewAddress" component={AddNewAddress}/>
-                <Stack.Screen name="Address" component={Address}/>
-                <Stack.Screen name="EditProfile" component={EditProfile}/>
-                <Stack.Screen name="PaymentDeclined" component={PaymentDeclined}/>
-                <Stack.Screen name="PaymentMethod" component={PaymentMethod}/>
-                <Stack.Screen name="PaymentSuccess" component={PaymentSuccess}/>
-                <Stack.Screen name="AddNewPaymentMethod" component={AddNewPaymentMethod} />
-                <Stack.Screen name="PaymentCardSuccess" component={PaymentCardSuccess}/>
-                <Stack.Screen name="PaymentCardDeclined" component={PaymentCardDeclined}/>
-                <Stack.Screen name="AddNewPaymentMethodDeclined" component={AddNewPaymentMethodDeclined}/>
-                <Stack.Screen name="AddNewPaymentMethodSuccess" component={AddNewPaymentMethodSuccess}/>
-                <Stack.Screen name="Faqs" component={Faqs}/>
-                <Stack.Screen name="Settings" component={Settings}/>
-                <Stack.Screen name="SubmitQuestion" component={SubmitQuestion}/>
-                <Stack.Screen name="Call"  component={Call}/>
-                <Stack.Screen name="Chat"  component={Chat}/>
-                <Stack.Screen name='VideoCall' component={VideoCall}/>
-                <Stack.Screen name='CancelOrders' component={CancelOrders}/>
-                <Stack.Screen name='AddReviews' component={AddReviews}/>
-                <Stack.Screen name='TrackingOrdersV1' component={TrackingOrdersV1}/>
-                <Stack.Screen name='TrackingOrdersV2' component={TrackingOrdersV2}/>
-                <Stack.Screen name='History' component={History}/>
-                <Stack.Screen name='OpenShops' component={OpenShops}/>
-                <Stack.Screen name='ShopView1' component={ShopView1}/>
-                <Stack.Screen name='ShopView2' component={ShopView2}/>
-                <Stack.Screen name="ProductByKeywords" component={ProductByKeywords}/>
-                <Stack.Screen name="ProductDetails" component={ProductDetailsV2} />
-                <Stack.Screen name="ProductReviews" component={ProductReviews} />
-                <Stack.Screen name="Cart" component={Cart}/>
-                <Stack.Screen name="EditCart" component={EditCart}/>
-                <Stack.Screen name="TransactionHistory" component={TransactionHistory}/>
-                <Stack.Screen name="Message" component={Message}/>
-                <Stack.Screen name='Notifications' component={Notifications}/>
-                <Stack.Screen name="Favourite" component={Favourite}/>
-                <Stack.Screen name="TermsAndConditions" component={TermsAndConditions}/>
-                <Stack.Screen name="CaptureProduct" component={CaptureProduct}/> */}
-
-
-                <Stack.Screen name="Signup" component={Signup}/>
+             
                 <Stack.Screen name="Login" component={Login}/>
                 <Stack.Screen name="Main" component={BottomTabNavigation}/>
-                <Stack.Screen name="PersonalProfile" component={PersonalProfile}/>
-                <Stack.Screen name="EditProfile" component={EditProfile}/>
-                <Stack.Screen name="ForgotPassword" component={ForgotPassword}/>
+              
+             
+               
                 <Stack.Screen name="Radio" component={Radioisotope}/>
                 <Stack.Screen name="Radioisotopeelements" component={RadioisotopeElements}/>
                 <Stack.Screen name="ElementDetailsScreen" component={ElementsDetailsScreen}/>
@@ -263,7 +213,7 @@ const AppNavigation = () => {
 
                 <Stack.Screen name="AcceptableDoseLimit" component={AcceptableDoseLimit}/>
                 <Stack.Screen name="ADBDetails" component={ADBDetailsScreen}/>
-                <Stack.Screen name="Aboutapplication" component={TermsAndConditions}/>
+                <Stack.Screen name="Aboutapplication" component={About}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

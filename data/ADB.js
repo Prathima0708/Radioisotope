@@ -31,7 +31,7 @@ export const ADB = [
     {
         id: '1',
 
-        name: 'OCCUPATIONAL DOSE LIMIT',
+        name: 'Occupational Dose Limit',
         tableData: [
             [
                 '1',
@@ -47,8 +47,7 @@ export const ADB = [
 
     {
         id: '2',
-
-        name: 'APPRENTICES AND TRAINEES BETWEEN 16 TO 18 YEAR AGE',
+        name: 'Apprentices and tainees between 16-18 year age ',
         tableData: [
             ['1', 'Effective Dose for Whole body', '6', 'mSv/yr'],
             ['2', 'eye lens', '50', 'mSv/yr'],
@@ -61,7 +60,7 @@ export const ADB = [
     {
         id: '3',
 
-        name: 'DOSE LIMIT FOR PUBLIC',
+        name: 'Dose Limit for public',
         tableData: [
             ['1', 'Effective Dose for Whole body', '1', 'mSv/yr'],
             ['2', 'eye lens', '15', 'mSv/yr'],
@@ -75,7 +74,7 @@ export const ADB = [
     {
         id: '4',
 
-        name: 'GUIDELINE FOR UNSEALED SOURCES',
+        name: 'Guideline for unsealed sources',
         tableData: [
             [
                 '1',
@@ -123,7 +122,7 @@ export const ADB = [
     {
         id: '5',
 
-        name: 'RADIOLOGICAL SAFETY CRITERIA',
+        name: 'Radiological safety criteria',
         tableData: [
             ['1', 'Delay and decay tank', '0.6', 'µ Ci/lit'],
             [
@@ -145,7 +144,7 @@ export const ADB = [
     {
         id: '6',
 
-        name: 'RADIATION HANDLING FACILTY LIMITS',
+        name: 'Radiation Handling activity limits',
         tableData: [
             ['1', 'WHITE', 'NO ACITIVITY'],
             [
@@ -166,7 +165,7 @@ export const ADB = [
     {
         id: '7',
 
-        name: 'DISCHARGE AND DISPOSAL LIMITS',
+        name: 'Discharge and disposal limits',
         tableData: [
             [
                 '1',

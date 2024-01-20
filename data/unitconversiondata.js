@@ -1,4 +1,3 @@
-
 // export const UnitConversionOptions = [
 //     {
 //         id: '1',
@@ -96,8 +95,6 @@
 //     },
 // ]
 
-
-
 export const UnitConversionOptions = [
     {
         id: '1',
@@ -107,13 +104,14 @@ export const UnitConversionOptions = [
             { id: '2', sourceUnit: 'GBq', destinationUnit: 'mBq' },
             { id: '3', sourceUnit: 'mBq', destinationUnit: 'kBq' },
             { id: '4', sourceUnit: 'kBq', destinationUnit: 'kCi' },
-            { id: '5', sourceUnit: null, destinationUnit: 'Ci' },
-            { id: '6', sourceUnit: null, destinationUnit: 'mCi' },
-            { id: '7', sourceUnit: null, destinationUnit: 'µCi' },
-            { id: '8', sourceUnit: null, destinationUnit: 'pCi' },
-            { id: '9', sourceUnit: null, destinationUnit: 'dpm' },
-            { id: '10', sourceUnit: null, destinationUnit: 'Bq' },
-
+            { id: '5', sourceUnit: 'mCi', destinationUnit: 'Ci' },
+            { id: '6', sourceUnit: 'Ci', destinationUnit: 'mCi' },
+            { id: '7', sourceUnit: 'pCi', destinationUnit: 'µCi' },
+            { id: '8', sourceUnit: 'µCi', destinationUnit: 'pCi' },
+            { id: '9', sourceUnit: 'kCi', destinationUnit: 'dpm' },
+            { id: '10', sourceUnit: 'dpm', destinationUnit: 'Bq' },
+            { id: '10', sourceUnit: 'MBq', destinationUnit: 'dps' },
+            { id: '10', sourceUnit: null, destinationUnit: 'MBq' },
 
             // Additional unit for "Activity"
             // Add other source and destination units for "Activity"
@@ -197,7 +195,9 @@ export const UnitConversionOptions = [
     {
         id: '9',
         name: 'Liquid',
-        units: [{ id: '1', sourceUnit: 'Ounce', destinationUnit: 'ML' },
-        { id: '2', sourceUnit: 'ML', destinationUnit: 'Ounce' }],
+        units: [
+            { id: '1', sourceUnit: 'Ounce', destinationUnit: 'ML' },
+            { id: '2', sourceUnit: 'ML', destinationUnit: 'Ounce' },
+        ],
     },
 ]

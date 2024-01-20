@@ -1,149 +1,4 @@
-// import { images } from "../constants";
-// import radioisotopeimages from "./radioisotopeimages";
-
-// export const RadioisotopeData = [
-//     {
-//         id: '1',
-//         image: images.diagnostic,
-//         name: 'Diagnostic Radioisotope',
-//         date: 'General',
-//         elements: [
-//             {
-//                 id: 'e1',
-//                 name: 'Carbon-11',
-//                 symbol: 'C-11',
-//                 period: 2,
-//                 group: 14,
-//                 atomicNumber: 6,
-//                 atomicWeight: 11.011,
-//                 halfLife: '20.364 minutes',
-//                 productionMethod: 'Cyclotron, Nuclear fission ',
-//                 energyType: 'Positron emission',
-//                 oxidationstate:4,
-//                 parentRadionuclide:' 14N(p,α)11C',
-//                 decayproduct:'B-11',
-//                 naturalstructure:'Tetrahedral',
-//                 decayimage:require('../assets/radioisotopeimages/diagnoticimages/sorenson.png')
-//                 // ... other details
-//             },
-//             {
-//                 id: 'e2',
-//                 name: 'Copper62',
-//                 symbol: 'Cu',
-//                 period: 4,
-//                 group: 11,
-//                 atomicNumber: 29,
-//                 atomicWeight: 61.932,
-//                 halfLife: '9.67 minutes',
-//                 productionMethod: 'Cyclotron',
-//                 energyType: 'Positron emission',
-//                 oxidationstate:2,
-//                 parentRadionuclide:'Zn-62',
-//                 decayproduct:'Ni-62',
-//                 naturalstructure:'Face centred cubic crystal (FCC)'
-
-//                 // ... other details
-//             },
-//             {
-//                 id: 'e3',
-//                 name: 'Copper-64',
-//                 symbol: 'Cu-64',
-//                 period: 4,
-//                 group: 11,
-//                 atomicNumber: 29,
-//                 atomicWeight: 63.929,
-//                 halfLife: '12.70hrs',
-//                 productionMethod: 'Cyclotron',
-//                 energyType: 'Positron emission',
-//                 oxidationstate:2,
-//                 parentRadionuclide:'64Ni(p,n)64Cu',
-//                 decayproduct:'Zn-64, Ni-64',
-//                 naturalstructure:'Face centred cubic crystal (FCC)'
-//                 // ... other details
-//             },
-
-//             // ... other elements
-//         ],
-//     },
-//     {
-//         id: '2',
-//         image: images.therapeutic,
-//         name: 'Therapeutic Radioisotope',
-//         date: 'General',
-//         elements: [
-//             {
-//                 id: 'e1',
-//                 name: 'Carbon-11',
-//                 symbol: 'C-11',
-//                 period: 2,
-//                 group: 14,
-//                 atomicNumber: 6,
-//                 atomicWeight: 11.011,
-//                 halfLife: '20.364 minutes',
-//                 productionMethod: 'Cyclotron, Nuclear fission ',
-//                 energyType: 'Positron emission',
-//                 oxidationstate:4,
-//                 parentRadionuclide:' 14N(p,α)11C',
-//                 decayproduct:'B-11',
-//                 naturalstructure:'Tetrahedral',
-//                 decayimage:require('../assets/radioisotopeimages/diagnoticimages/sorenson.png')
-//                 // ... other details
-//             },
-//             {
-//                 id: 'e2',
-//                 name: 'Copper62',
-//                 symbol: 'Cu',
-//                 period: 4,
-//                 group: 11,
-//                 atomicNumber: 29,
-//                 atomicWeight: 61.932,
-//                 halfLife: '9.67 minutes',
-//                 productionMethod: 'Cyclotron',
-//                 energyType: 'Positron emission',
-//                 oxidationstate:2,
-//                 parentRadionuclide:'Zn-62',
-//                 decayproduct:'Ni-62',
-//                 naturalstructure:'Face centred cubic crystal (FCC)'
-
-//                 // ... other details
-//             },
-//             {
-//                 id: 'e3',
-//                 name: 'Copper-64',
-//                 symbol: 'Cu-64',
-//                 period: 4,
-//                 group: 11,
-//                 atomicNumber: 29,
-//                 atomicWeight: 63.929,
-//                 halfLife: '12.70hrs',
-//                 productionMethod: 'Cyclotron',
-//                 energyType: 'Positron emission',
-//                 oxidationstate:2,
-//                 parentRadionuclide:'64Ni(p,n)64Cu',
-//                 decayproduct:'Zn-64, Ni-64',
-//                 naturalstructure:'Face centred cubic crystal (FCC)'
-//                 // ... other details
-//             },
-
-//             // ... other elements
-//         ],
-//     },
-//     {
-//         id: '3',
-//         image: images.theranostic,
-//         name: 'Theranostic Radioisotope',
-//         date: 'General',
-//     },
-//     {
-//         id: '4',
-//         image: images.nonclinical,
-//         name: 'Non Clinical Radioisotope',
-//         date: 'General',
-//     },
-// ]
-
 import { images } from '../constants'
-import radioisotopeimages from './radioisotopeimages'
 
 export const RadioisotopeData = [
     {
@@ -175,7 +30,7 @@ export const RadioisotopeData = [
             {
                 id: 'e2',
                 name: 'Copper62',
-                symbol: 'Cu',
+                symbol: 'Cu-62',
                 period: 4,
                 group: 11,
                 atomicNumber: 29,
@@ -240,8 +95,8 @@ export const RadioisotopeData = [
                 atomicWeight: 66.928,
                 halfLife: '3.2617days',
                 productionMethod: 'Generator',
-                energy: '', //value not given
-                energyType: 'Gamma',
+                energy: 'γ:1077.34 KeV , β+:836KeV', //value not given
+                energyType: 'Gamma,Beta',
                 oxidationstate: 3,
                 parentRadionuclide: 'Ge-67, 68Zn (p,2n)67Ga',
                 decayproduct: 'Zn-67',
@@ -286,18 +141,18 @@ export const RadioisotopeData = [
             },
             {
                 id: 'e8',
-                name: 'Indium-113',
-                symbol: 'In-113',
+                name: 'Indium-113m',
+                symbol: 'In113m',
                 period: 5,
                 group: 13,
                 atomicNumber: 49,
                 atomicWeight: 112.9,
-                halfLife: 'Stable',
+                halfLife: '99.476mins',
                 productionMethod: 'Cyclotron',
-                energy: '', //value not given
+                energy: '391.698 Kev', //value not given
                 energyType: 'Gamma',
                 oxidationstate: '1+3',
-                parentRadionuclide: 'Cd-113,Sn-113,In-113m,Cd-113m,Sn-113m',
+                parentRadionuclide: 'Sn-113',
                 decayproduct: 'stable',
                 naturalstructure: 'Tetragonal crystal',
                 decayimage: '',
@@ -310,10 +165,10 @@ export const RadioisotopeData = [
                 group: 17,
                 atomicNumber: 53,
                 atomicWeight: 122.90559,
-                halfLife: '122.90559',
+                halfLife: '13.2230hrs',
                 productionMethod: 'Cyclotron',
                 energy: 'γ:159KeV',
-                energyType: 'Gamma',
+                energyType: 'beta-,gamma',
                 oxidationstate: -1,
                 parentRadionuclide: 'Xe-123',
                 decayproduct: 'Te-123',
@@ -366,7 +221,7 @@ export const RadioisotopeData = [
                 atomicWeight: 130.9061,
                 halfLife: '8.025days',
                 productionMethod: 'Nuclear fission',
-                energy: 'β+:0.6MeV,γ:364KeV',
+                energy: 'β- : 191.6KeV ,γ : 364.489 KeV',
                 energyType: 'Beta',
                 oxidationstate: -1,
                 parentRadionuclide: 'Te-131,Te-131m',
@@ -381,7 +236,7 @@ export const RadioisotopeData = [
                 period: 4,
                 group: 18,
                 atomicNumber: 36,
-                atomicWeight: '',
+                atomicWeight: '80.91659',
                 halfLife: '13.10secs',
                 productionMethod: 'Generator',
                 energy: 'γ:190',
@@ -431,12 +286,12 @@ export const RadioisotopeData = [
             {
                 id: 'e16',
                 name: 'Rubidium-82',
-                symbol: 'RU-82',
+                symbol: 'Ru-82',
                 period: 5,
                 group: 1,
                 atomicNumber: 44,
-                atomicWeight: '',
-                halfLife: '',
+                atomicWeight: '81.91821 g/mol',
+                halfLife: '75seconds',
                 productionMethod: 'Generator',
                 energy: 'β+:1.535MeV,β-:777KeV',
                 energyType: 'Positron emission',
@@ -492,8 +347,8 @@ export const RadioisotopeData = [
                 atomicWeight: 200.97,
                 halfLife: '3.0421hrs',
                 productionMethod: 'Cyclotron',
-                energy: 'γ:X-rays:67,82 gamma:135,167',
-                energyType: 'X-rays, Gamma',
+                energy: 'gamma:135,167',
+                energyType: 'Gamma',
                 oxidationstate: 1,
                 parentRadionuclide: 'Pb-201, Tl-201m',
                 decayproduct: 'Hg-201',
@@ -1420,7 +1275,7 @@ export const RadioisotopeData = [
                 id: 'e11',
                 name: 'Selenium-75',
                 symbol: 'Se-75',
-                period: 6,
+                period: 4,
                 group: 16,
                 atomicNumber: 34,
                 atomicWeight: 74.922,
@@ -1428,7 +1283,7 @@ export const RadioisotopeData = [
                 productionMethod: 'Neutron reactor',
                 energy: 'γ:264.65',
                 energyType: 'γ',
-                oxidationstate: -246,
+                oxidationstate: '-2, +4 and +6',
                 parentRadionuclide: 'Br-75',
                 decayproduct: 'As-75',
                 naturalstructure: 'trigonal',

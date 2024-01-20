@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, Image, ScrollView, Dimensions } from 'react-native'
 import Header from '../../components/Header'
 import { COLORS } from '../../constants'
 
@@ -38,13 +38,14 @@ const ElementsDetailsScreen = ({ route }) => {
                 <Text style={styles.detailText}>
                     Production Method: {elementDetails.productionMethod}
                 </Text>
-                <Text style={styles.detailText}>
+
+                {/* <Text style={styles.detailText}>
                     Type of energy emission: {elementDetails.energyType}
-                </Text>
+                </Text> */}
                 <Text style={styles.detailText}>
                     Oxidation state: {elementDetails.oxidationstate}
                 </Text>
-               
+
                 <Text style={styles.detailText}>
                     Parent Radionuclide: {elementDetails.parentRadionuclide}
                 </Text>
@@ -52,17 +53,21 @@ const ElementsDetailsScreen = ({ route }) => {
                     Decay Product : {elementDetails.decayproduct}
                 </Text>
                 <Text style={styles.detailText}>
-                Natural Structure : {elementDetails.naturalstructure}
+                    Natural Structure : {elementDetails.naturalstructure}
                 </Text>
                 {elementDetails.decayimage && (
-  <React.Fragment>
-    <Text style={styles.detailText}> Decay Scheme:</Text>
-    <Image
-      source={elementDetails.decayimage}
-      style={{ height: 200, width: 270, resizeMode: 'contain' }}
-    />
-  </React.Fragment>
-)}
+                    <React.Fragment>
+                        <Text style={styles.detailText}> Decay Scheme:</Text>
+                        <Image
+                            source={elementDetails.decayimage}
+                            style={{
+                                height: 200,
+                                width: 270,
+                                resizeMode: 'contain',
+                            }}
+                        />
+                    </React.Fragment>
+                )}
 
                 {/* <Image
                     source={elementDetails.decayimage}
@@ -77,26 +82,23 @@ const ElementsDetailsScreen = ({ route }) => {
 }
 
 export default ElementsDetailsScreen
-
+const {height,width}=Dimensions.get('window')
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: COLORS.white,
-        paddingTop: 50,
-       // marginBottom:10
+        paddingTop: width*0.13,
+        // marginBottom:10
     },
     detailsContainer: {
         padding: 16,
         marginHorizontal: 30,
-       
-       
     },
     detailText: {
         fontSize: 16,
         marginBottom: 15,
-        fontWeight:'500',
-        fontFamily:'regular',
-        marginVertical:10
-       
+        fontWeight: '500',
+        fontFamily: 'regular',
+        marginVertical: 10,
     },
 })

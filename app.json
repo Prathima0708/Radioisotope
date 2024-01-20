@@ -4,10 +4,10 @@
     "slug": "Radioisotope",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/icon2.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/splashnew.png",
       "resizeMode": "contain",
       "backgroundColor": "#E5F1FF"
     },
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/icon.png",
+        "foregroundImage": "./assets/images/icon2.png",
         "backgroundColor": "#5A6CEA"
       },
       "config": {
@@ -35,7 +35,7 @@
       "package": "com.bluelover19.Moderna"
     },
     "web": {
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/Radioisotopia_fav.jpg"
     },
     "plugins": [
       [
