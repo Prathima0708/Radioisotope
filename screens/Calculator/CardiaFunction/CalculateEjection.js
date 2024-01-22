@@ -1,8 +1,10 @@
-import { View, Text, SafeAreaView, ScrollView, TextInput, Button } from 'react-native'
+import { View, Text, SafeAreaView, ScrollView, TextInput, Button, Dimensions } from 'react-native'
 import React, { useState } from 'react'
 import { StyleSheet } from 'react-native'
 import Header from '../../../components/Header'
 import { COLORS } from '../../../constants'
+import UIButton from '../../../components/UIButton/UIButton'
+import UIButtonReset from '../../../components/UIButton/UIButtonReset'
 
 
 const CalculateEjection = ({route}) => {
@@ -56,8 +58,9 @@ const CalculateEjection = ({route}) => {
       />
 
       <View style={styles.buttonContainer}>
-        <Button title="Calculate" onPress={calculateEjectionFraction} />
-        <Button title="Reset" onPress={resetFields} />
+      <UIButtonReset title="Reset" onPress={resetFields} />
+        <UIButton title="Calculate" onPress={calculateEjectionFraction} />
+       
       </View>
 
       {ejectionFraction !== null && (
@@ -72,7 +75,7 @@ const CalculateEjection = ({route}) => {
 }
 
 export default CalculateEjection
-
+const {height,width}=Dimensions.get('window')
 const styles = StyleSheet.create({
     area: {
         flex: 1,
@@ -83,7 +86,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: COLORS.white,
         padding: 12,
-        paddingTop:50,
+        marginTop:height*0.03
     },
     calculatecontainer: {
         padding: 20,

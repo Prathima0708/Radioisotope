@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet, ScrollView, SafeAreaView, Dimensions } from 'react-native';
 import Header from '../../../components/Header';
 import UIButtonReset from '../../../components/UIButton/UIButtonReset';
 import UIButton from '../../../components/UIButton/UIButton';
@@ -75,7 +75,7 @@ const CalculateI2 = ({ route }) => {
     </SafeAreaView>
   );
 };
-
+const {height,width}=Dimensions.get('window')
 const styles = StyleSheet.create({
   area: {
     flex: 1,
@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 20,
+    marginTop:height*0.03
   },
   label: {
     fontSize: 16,

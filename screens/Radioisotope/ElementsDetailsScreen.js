@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     View,
     Text,
@@ -6,14 +6,38 @@ import {
     Image,
     ScrollView,
     Dimensions,
+    TouchableOpacity,
+    Modal,
 } from 'react-native'
 import Header from '../../components/Header'
 import { COLORS } from '../../constants'
 import { SafeAreaView } from 'react-native'
+import ImageZoom from 'react-native-image-pan-zoom'
+import Animated, {
+    useAnimatedGestureHandler,
+    useAnimatedStyle,
+    useSharedValue,
+    withSpring,
+} from 'react-native-reanimated'
+import { PinchGestureHandler } from 'react-native-gesture-handler'
+import ImageViewer from 'react-native-image-zoom-viewer'
 
 const ElementsDetailsScreen = ({ route }) => {
     const { elementDetails } = route.params
+    const [isZoomModalVisible, setZoomModalVisible] = useState(false)
 
+    const openZoomModal = () => {
+        setZoomModalVisible(true)
+    }
+
+    const closeZoomModal = () => {
+        setZoomModalVisible(false)
+    }
+    const [isZoomed, setIsZoomed] = useState(false);
+
+    const toggleZoom = () => {
+      setIsZoomed(!isZoomed);
+    };
     return (
         <SafeAreaView style={styles.container}>
             <Header title={`${elementDetails.name} details`} />
@@ -69,23 +93,91 @@ const ElementsDetailsScreen = ({ route }) => {
                                 {' '}
                                 Decay Scheme:
                             </Text>
-                            <Image
-                                source={elementDetails.decayimage}
-                                style={{
-                                    height: 200,
-                                    width: 270,
-                                    resizeMode: 'contain',
-                                }}
-                            />
+                            <ImageZoom
+                               cropWidth={270}
+                               cropHeight={200}
+                               imageWidth={270}
+                               imageHeight={200}
+                               enableSwipeDown={true}
+                               onSwipeDown={toggleZoom}
+                               panToMove={true}
+                               pinchToZoom={isZoomed}
+                               enableCenterFocus={false}
+                            >
+                                <Image
+                                    source={elementDetails.decayimage}
+                                    style={{
+                                        height: 200,
+                                        width: 270,
+                                        resizeMode: 'contain',
+                                    }}
+                                />
+                            </ImageZoom>
                         </React.Fragment>
                     )}
 
-                    {/* <Image
-                    source={elementDetails.decayimage}
-                    //style={{ height: 100, width: 200 }}
-                /> */}
+{elementDetails.decayimage2 && (
+                        <React.Fragment>
+                            <Text style={styles.detailText}>
+                                {' '}
+                                Decay Scheme:
+                            </Text>
+                            <ImageZoom
+                               cropWidth={270}
+                               cropHeight={200}
+                               imageWidth={270}
+                               imageHeight={200}
+                               enableSwipeDown={true}
+                               onSwipeDown={toggleZoom}
+                               panToMove={true}
+                               pinchToZoom={isZoomed}
+                               enableCenterFocus={false}
+                            >
+                                <Image
+                                    source={elementDetails.decayimage2}
+                                    style={{
+                                        height: 200,
+                                        width: 270,
+                                        resizeMode: 'contain',
+                                    }}
+                                />
+                            </ImageZoom>
+                        </React.Fragment>
+                    )}
 
-                    {/* Add more details as needed */}
+                    {/* <React.Fragment>
+      {elementDetails.decayimage && (
+        <React.Fragment>
+          <TouchableOpacity onPress={openZoomModal}>
+            <Text style={styles.detailText}>Decay Scheme:</Text>
+            <Image
+              source={elementDetails.decayimage}
+              style={{
+                height: 200,
+                width: 270,
+                resizeMode: 'contain',
+              }}
+            />
+          </TouchableOpacity>
+        </React.Fragment>
+      )}
+
+      <Modal visible={isZoomModalVisible} transparent={true} onRequestClose={closeZoomModal}>
+        <ImageViewer
+          imageUrls={[
+            {
+             // url: 'https://reactnative.dev/img/tiny_logo.png',
+              props: {
+                source:elementDetails.decayimage
+                // You can add more props for customization here
+              },
+            },
+          ]}
+          enableSwipeDown
+          onSwipeDown={closeZoomModal}
+        />
+      </Modal>
+    </React.Fragment> */}
                 </View>
                 <View style={{ height: 50 }} />
             </ScrollView>

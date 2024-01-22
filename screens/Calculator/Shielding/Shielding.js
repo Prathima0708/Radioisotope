@@ -5,6 +5,7 @@ import {
     ScrollView,
     TextInput,
     Button,
+    Dimensions,
 } from 'react-native'
 import React, { useState } from 'react'
 import { StyleSheet } from 'react-native'
@@ -89,7 +90,7 @@ const Shielding = ({ route }) => {
 }
 
 export default Shielding
-
+const {height,width}=Dimensions.get('window')
 const styles = StyleSheet.create({
     area: {
         flex: 1,
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: COLORS.white,
         padding: 12,
-        paddingTop: 50,
+        paddingTop: width*0.1,
     },
     calculatecontainer: {
         padding: 20,

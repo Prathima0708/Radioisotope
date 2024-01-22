@@ -80,34 +80,6 @@ export const morecalculatorOptions = [
         ]
     },
     {
-        id: 4,
-        name: 'Inverse\nsquare law',
-        image: images.inversesl,
-        navigate:'InverseSL',
-        options:[
-            {
-                id:'1',
-                name:'Calculate Intensity 1',
-                navigate:'CalculateI1'
-            },
-            {
-                id:'2',
-                name:'Calculate Distance 1²',
-                navigate:'CalculateD1'
-            },
-            {
-                id:'3',
-                name:'Calculate Intensity 2',
-                navigate:'CalculateI2'
-            },
-            {
-                id:'4',
-                name:'Calculate Distance 2²',
-                navigate:'CalculateD2'
-            },
-        ]
-    },
-    {
         id: 5,
         name: 'Concentration',
         image: images.concentration,
@@ -135,6 +107,35 @@ export const morecalculatorOptions = [
             },
         ]
     },
+    {
+        id: 4,
+        name: 'Inverse\nsquare law',
+        image: images.inversesl,
+        navigate:'InverseSL',
+        options:[
+            {
+                id:'1',
+                name:'Calculate Intensity 1',
+                navigate:'CalculateI1'
+            },
+            {
+                id:'2',
+                name:'Calculate Distance 1²',
+                navigate:'CalculateD1'
+            },
+            {
+                id:'3',
+                name:'Calculate Intensity 2',
+                navigate:'CalculateI2'
+            },
+            {
+                id:'4',
+                name:'Calculate Distance 2²',
+                navigate:'CalculateD2'
+            },
+        ]
+    },
+   
 
     {
         id: 9,
@@ -258,7 +259,19 @@ export const morecalculatorOptions = [
            
         ]
     },
-
+    {
+        id: 14,
+        name: 'Gastrointestinal',
+        image: images.Gastrointestinal,
+        navigate:'Gastrointestinal',
+        options:[
+            {
+                id:'1',
+                name:'Percentage retention of semisolid meal',
+                navigate:'Calculate'
+            },
+        ]
+    },
     {
         id: 12,
         name: 'Genitourinary',
@@ -291,19 +304,7 @@ export const morecalculatorOptions = [
             },
         ]
     },
-    {
-        id: 14,
-        name: 'Gastrointestinal',
-        image: images.Gastrointestinal,
-        navigate:'Gastrointestinal',
-        options:[
-            {
-                id:'1',
-                name:'Percentage retention of semisolid meal',
-                navigate:'Calculate'
-            },
-        ]
-    },
+   
     {
         id: 15,
         name: 'Infection and \nInflammation',

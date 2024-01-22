@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, ScrollView, SafeAreaView, Dimensions } from 'react-native';
 import Header from '../../../components/Header';
 import { COLORS } from '../../../constants';
 import UIButton from '../../../components/UIButton/UIButton';
@@ -74,7 +74,7 @@ const VolumeDraw = ({route}) => {
     </SafeAreaView>
   );
 };
-
+const {height,width}=Dimensions.get('window')
 const styles = StyleSheet.create({
     area: {
         flex: 1,
@@ -84,8 +84,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: COLORS.white,
-        padding: 12,
-        paddingTop:50,
+        padding: 20,
+        marginTop:height*0.03
     },
     calculatecontainer: {
         padding: 20,

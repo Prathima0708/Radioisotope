@@ -21,7 +21,7 @@ import Header from '../../components/Header'
 
 const CalculatorOptions = () => {
     const navigation = useNavigation()
-
+    const {height,width}=Dimensions.get('window')
     return (
         <SafeAreaView style={styles.area}>
             <View style={styles.container}>
@@ -45,10 +45,10 @@ const CalculatorOptions = () => {
                             <TouchableOpacity
                                 style={{
                                     flexDirection: 'column',
-                                    justifyContent: 'space-between',
-                                    marginHorizontal: 50,
-                                    marginBottom: 30,
-                                    marginRight: 30,
+                                    justifyContent: 'center',
+                                   margin: height*0.07, 
+                                   marginVertical:height*0.03
+                                  
                                     // Adjust spacing between rows
                                 }}
                                 onPress={() =>

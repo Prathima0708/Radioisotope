@@ -4,6 +4,7 @@ import {
     StyleSheet,
     SafeAreaView,
     TouchableOpacity,
+    Dimensions,
 } from 'react-native'
 import React from 'react'
 import { ScrollView } from 'react-native'
@@ -21,7 +22,7 @@ const BiologicalHL = ({ route,navigation }) => {
         <View style={styles.container}>
             <Header title={`Calculate ${name}`} />
 
-            <ScrollView style={{ padding: 16,height:500 }}>
+            <ScrollView style={{ padding: 16,height:500 ,backgroundColor:'white'}}>
       
 
       {/* Map the options inside the object with id 5 */}
@@ -43,7 +44,7 @@ const BiologicalHL = ({ route,navigation }) => {
 }
 
 export default BiologicalHL
-
+const {height,width}=Dimensions.get('window')
 const styles = StyleSheet.create({
     area: {
         flex: 1,
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: COLORS.white,
-        paddingTop: 50,
+        paddingTop: width*0.1,
     },
     elementButton: {
         backgroundColor: '#3498db', // You can replace this with your desired background color
