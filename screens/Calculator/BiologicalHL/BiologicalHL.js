@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: COLORS.white,
-        paddingTop: width*0.1,
+        paddingTop: width*0.2,
     },
     elementButton: {
         backgroundColor: '#3498db', // You can replace this with your desired background color

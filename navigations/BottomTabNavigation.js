@@ -2,7 +2,16 @@ import { View, Platform, Image } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { COLORS, icons } from '../constants'
-import { Profile, Search, Message, HomeV1, MyOrders, HomeV2, HomeV3, TermsAndConditions } from '../screens'
+import {
+    Profile,
+    Search,
+    Message,
+    HomeV1,
+    MyOrders,
+    HomeV2,
+    HomeV3,
+    TermsAndConditions,
+} from '../screens'
 import { Ionicons } from '@expo/vector-icons'
 import DrawerNavigation from './DrawerNavigation'
 import Radioisotope from '../screens/Radioisotope/Radioisotope'
@@ -20,9 +29,8 @@ const screenOptions = {
         left: 0,
         elevation: 0,
         height: 60,
-      
+
         background: COLORS.white,
-       
     },
 }
 
@@ -36,12 +44,16 @@ const BottomTabNavigation = () => {
                     tabBarIcon: ({ focused }) => {
                         return (
                             <Image
-                                source={focused ? icons.home : icons.homeOutline}
+                                source={
+                                    focused ? icons.home : icons.homeOutline
+                                }
                                 resizeMode="contain"
                                 style={{
                                     height: 24,
                                     width: 24,
-                                    tintColor: focused ? COLORS.blue : COLORS.black
+                                    tintColor: focused
+                                        ? COLORS.blue
+                                        : COLORS.black,
                                 }}
                             />
                         )
@@ -56,20 +68,20 @@ const BottomTabNavigation = () => {
                     tabBarIcon: ({ focused }) => {
                         return (
                             <Image
-                            source={require('../assets/images/nonclinical.png')}
+                                source={require('../assets/images/nonclinical.png')}
                                 resizeMode="contain"
                                 style={{
                                     height: 24,
                                     width: 24,
-                                    tintColor: focused ? COLORS.blue : COLORS.black
+                                    tintColor: focused
+                                        ? COLORS.blue
+                                        : COLORS.black,
                                 }}
                             />
                         )
                     },
                 }}
             />
-
-          
 
             <Tab.Screen
                 name="Message"
@@ -78,12 +90,14 @@ const BottomTabNavigation = () => {
                     tabBarIcon: ({ focused }) => {
                         return (
                             <Image
-                                source={focused ? icons.chat : icons.chatOutline2}
+                                source={focused ? icons.about : icons.about}
                                 resizeMode="contain"
                                 style={{
                                     height: 24,
                                     width: 24,
-                                    tintColor: focused ? COLORS.blue : COLORS.black
+                                    tintColor: focused
+                                        ? COLORS.blue
+                                        : COLORS.black,
                                 }}
                             />
                         )

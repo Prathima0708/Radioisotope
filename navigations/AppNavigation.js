@@ -1,56 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import React, { useState, useEffect } from 'react'
-import { Onboarding1, 
-    Onboarding2, 
-    Onboarding3, 
-    Onboarding4 ,
-    Signup, 
-    Verification,
-    Login, 
-    StartUpScreen, 
-    ForgotPassword, 
-    ResetPassword, 
-    LocationAccess,
-    AddNewAddress,
-    Address,
-    Faqs,
-    PaymentDeclined,
-    PaymentMethod,
-    PaymentSuccess,
-    Settings,
-  
-    Cart,
-    EditCart,
-    AddNewPaymentMethod,
-    PaymentCardSuccess,
-    PaymentCardDeclined,
-    SubmitQuestion,
-    ProductByKeywords,
-    ShopView2,
-    ProductDetailsV1,
-    ProductReviews,
-    Call,
-  
-    Favourite,
-  
-    AddNewPaymentMethodDeclined,
-    AddNewPaymentMethodSuccess,
-    TransactionHistory,
-    Chat,
-    VideoCall,
-    ShopView1,
-    ProductDetailsV2,
-    TrackingOrdersV1,
-    TrackingOrdersV2,
-    AddReviews,
-    History,
-    Notifications,
-    CancelOrders,
-    OpenShops,
-  
-    CaptureProduct
-} from '../screens'
+
 import { NavigationContainer } from '@react-navigation/native'
 import BottomTabNavigation from './BottomTabNavigation'
 import Radioisotope from '../screens/Radioisotope/Radioisotope'
@@ -105,6 +56,7 @@ import Infection from '../screens/Calculator/Infection/Infection'
 import Activity from '../screens/Calculator/ExtraFormulas/Activity'
 import CalculateDecayConcentration from '../screens/Calculator/DosesConcentration/CalculateDecayConcentration'
 import About from '../screens/About'
+import { Login } from '../screens'
 
 const Stack = createNativeStackNavigator()
 

@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: COLORS.white,
         padding: 12,
-        paddingTop: width*0.1,
+        paddingTop: width*0.2,
     },
     calculatecontainer: {
         padding: 20,

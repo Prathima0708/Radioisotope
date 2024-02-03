@@ -5,8 +5,7 @@ import Checkbox from 'expo-checkbox'
 import * as Animatable from 'react-native-animatable'
 import Input from '../components/Input'
 import Button from '../components/Button'
-import { validateInput } from '../utils/actions/formActions'
-import { reducer } from '../utils/reducers/formReducers'
+
 import { commonStyles } from '../styles/CommonStyles'
 import { StatusBar } from 'expo-status-bar'
 import { LinearGradient } from 'expo-linear-gradient'
@@ -127,6 +126,7 @@ const Login = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
+              
             <Image
                 source={require('../assets/images/w2.png')} // Replace with the actual path to your first image
                 style={styles.image}

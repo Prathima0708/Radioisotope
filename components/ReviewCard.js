@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginVertical: 32,
         width: SIZES.width - 24,
-        marginBottom: height*0.01,
-        paddingBottom:width*0.2,
+       // marginBottom: height*0.01,
+        paddingBottom:width*0.15,
     },
     avatar: {
         height: 48,

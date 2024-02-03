@@ -24,18 +24,30 @@ const RadioisotopeElements = ({ route, navigation }) => {
         <View style={styles.container}>
             <Header title={`${itemName} elements`} />
 
-            <ScrollView style={{ marginHorizontal:20 }}>
+            <ScrollView style={{ marginHorizontal: 20 }}>
                 {itemDetails?.map((element, index) => (
                     <TouchableOpacity
                         key={index}
-                        style={styles.elementButton}
-                        onPress={() => navigateToDetailsScreen(element)}
+                        style={[
+                            styles.elementButton,
+                            element.id === 'u1'
+                                ? { backgroundColor: '#17006B' }
+                                : null,
+                        ]}
+                        onPress={() => {
+                            // Only navigate if the ID is not 'u1'
+                            if (element.id !== 'u1') {
+                                navigateToDetailsScreen(element)
+                            }
+                        }}
                     >
                         <View>
                             {element.name ? (
-                                <Text style={styles.elementButtonText}>
-                                    {element.name}
-                                </Text>
+                                <>
+                                    <Text style={styles.elementButtonText}>
+                                        {element.name}
+                                    </Text>
+                                </>
                             ) : (
                                 <Text style={styles.elementButtonText}>
                                     Name Missing
@@ -46,6 +58,7 @@ const RadioisotopeElements = ({ route, navigation }) => {
                 ))}
                 <View style={{ height: 30 }} />
             </ScrollView>
+
             {/* <FlatList
                 style={{ padding: 16 }}
                 data={itemDetails}
@@ -83,17 +96,22 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: COLORS.white,
-        paddingTop: width * 0.15,
+        paddingTop: width * 0.17,
     },
     elementButton: {
         backgroundColor: '#3498db', // You can replace this with your desired background color
         padding: 10,
         borderRadius: 5,
         marginVertical: 10,
-        marginHorizontal:5
+        marginHorizontal: 5,
     },
     elementButtonText: {
         color: '#fff', // Text color
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    headingText: {
+        color: '#00173D', // Text color
         fontSize: 16,
         fontWeight: 'bold',
     },

@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 20,
-    marginTop:height*0.03
+    marginTop:height*0.04
   },
   header: {
     fontSize: 20,

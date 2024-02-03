@@ -62,7 +62,7 @@ const About = () => {
                         app, you signify your agreement to be bound by
                         RADIOISOTOPE’s condition. For any queries or issues
                         related to RADIOISOTOPE, you can contact us by
-                        ____________________________
+                        radioisotopia@gmail.com
                     </Text>
                     
                     {/* Button after Current Radiation Section */}

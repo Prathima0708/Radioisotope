@@ -21,7 +21,7 @@ import Header from '../../components/Header'
 
 const CalculatorOptions = () => {
     const navigation = useNavigation()
-    const {height,width}=Dimensions.get('window')
+    const { height, width } = Dimensions.get('window')
     return (
         <SafeAreaView style={styles.area}>
             <View style={styles.container}>
@@ -46,9 +46,10 @@ const CalculatorOptions = () => {
                                 style={{
                                     flexDirection: 'column',
                                     justifyContent: 'center',
-                                   margin: height*0.07, 
-                                   marginVertical:height*0.03
-                                  
+                                    //   margin: height*0.07,
+                                    marginVertical: height * 0.03,
+                                    marginHorizontal: height * 0.07,
+
                                     // Adjust spacing between rows
                                 }}
                                 onPress={() =>
