@@ -56,6 +56,7 @@ const UnitConversionCalculator = ({ route }) => {
 
         if (selectedSourceUnit === 'Bq' && selectedDestinationUnit === 'GBq') {
             const result = inputValue * 1.0 * Math.pow(10, -9)
+            
             setOutputValue(result)
         } else if (
             selectedSourceUnit === 'Bq' &&
